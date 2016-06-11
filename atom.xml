@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[hhstore's blog]]></title>
+  <subtitle><![CDATA[Python]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://hhstore.github.io//"/>
+  <updated>2016-03-16T07:28:31.000Z</updated>
+  <id>http://hhstore.github.io//</id>
+  
+  <author>
+    <name><![CDATA[hhstore]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://hhstore.github.io/2016/03/16/MongoDB-Replica-Set/"/>
+    <id>http://hhstore.github.io/2016/03/16/MongoDB-Replica-Set/</id>
+    <published>2016-03-16T07:28:31.000Z</published>
+    <updated>2016-03-16T07:28:31.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
+<li>使用pymongo</li>
+</ul>
+<p>参考文档:</p>
+<p>官方文档,必看, 看完,就可以配置.</p>
+<ul>
+<li><a href="https://api.mongodb.org/python/current/examples/high_availability.html" target="_blank" rel="external">High Availability and PyMongo</a></li>
+</ul>
+<ul>
+<li><a href="https://api.mongodb.org/python/current/api/pymongo/mongo_client.html" target="_blank" rel="external">MongoClient</a></li>
+</ul>
+<p>下面这个API可能要废弃, 因为MongoClient 已经包含 MongoReplicaSetClient() 全部功能</p>
+<ul>
+<li><a href="https://api.mongodb.org/python/current/api/pymongo/mongo_replica_set_client.html" target="_blank" rel="external">mongo_replica_set_client</a></li>
+</ul>
+<h2 id="两阶段提交2PC">两阶段提交2PC</h2><p>四、缺陷<br>算法执行过程中，所有节点都处于阻塞状态，所有节点所持有的资源（例如数据库数据，本地文件等）都处于封锁状态。</p>
+<p>六、结论<br>2PC效率很低，分布式事务很难做。</p>
+<p><a href="http://chuansong.me/n/1928604" target="_blank" rel="external">http://chuansong.me/n/1928604</a></p>
+<h2 id="pool">pool</h2><ul>
+<li><a href="http://api.mongodb.org/python/current/faq.html#how-does-connection-pooling-work-in-pymongo" target="_blank" rel="external">How does connection pooling work in PyMongo?</a></li>
+</ul>
+<h2 id="mongodb_不支持_事务,_解决:">mongodb 不支持 事务, 解决:</h2><ul>
+<li><a href="http://www.uml.org.cn/sjjm/2014081111.asp?artid=10313" target="_blank" rel="external">五个解决方案让MongoDB拥有RDBMS的鲁棒性事务</a></li>
+</ul>
+<ul>
+<li><a href="https://coding.net/u/tuxpy/p/tmongo/git/blob/master/tmongo.py" target="_blank" rel="external">实现事务支持: 源码 - py</a></li>
+</ul>
+<ul>
+<li><a href="http://www.tuicool.com/articles/f6ZBjm" target="_blank" rel="external">MongoDB两阶段提交实现事务</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
+<li>使用pymongo</li>
+</ul>
+<p>参考文档:</p>
+<p>官方文档,必看, 看完,就可以配置.</p>
+<ul>
+<li><a href="https://api.]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://hhstore.github.io/2016/02/16/python-best-practice-law/"/>
+    <id>http://hhstore.github.io/2016/02/16/python-best-practice-law/</id>
+    <published>2016-02-16T09:19:36.000Z</published>
+    <updated>2016-02-16T09:19:36.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="python最佳实践基本法">python最佳实践基本法</h2><ol>
+<li><p>模块化,低耦合</p>
+</li>
+<li><p>代码越少越好.杜绝一坨烂代码</p>
+</li>
+<li><p>函数,类,模块,命名高度语义化, 命名自洽(表意准确,力求精确)</p>
+</li>
+<li><p>do not repeat youself.&lt;杜绝重复烂代码&gt;</p>
+<ul>
+<li>当同一块代码,重复出现多次,说明代码有异味,需要及时重构</li>
+</ul>
+</li>
+<li><p>重构基本法.</p>
+<ul>
+<li>大事化小.</li>
+<li>反复重构,及时重构</li>
+<li>重构是第一生产力.(切记: 烂代码,遗留时间越久,危害越大.)</li>
+</ul>
+</li>
+<li><p>思维和行为自洽.(言行一致)</p>
+<ol>
+<li><p>函数自洽.</p>
+<ul>
+<li>言行一致: 命名 和 实际功能,统一</li>
+<li>杜绝: 命名指向 A 功能, 实际是 A,B,C,D功能合集.</li>
+<li>less is better.&lt;极简主义&gt; (经验: 通常情况下, 超过50行, 注意是否需要重构)</li>
+</ul>
+</li>
+<li><p>类自洽.</p>
+<ul>
+<li>言行一致: 命名 和 实际功能,统一</li>
+<li>深入理解需求,业务场景.</li>
+<li>合理抽象,准确建模.</li>
+<li>多维度抽象.</li>
+<li>少继承,多组合.(mixin机制)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>合理组织代码结构.</p>
+<ul>
+<li>良好的结构, 不仅仅是赏心悦目.</li>
+<li>方便重构,复用成熟模块</li>
+<li>逻辑清晰</li>
+<li>一篇好的文章,自然逻辑和结构都是完美的.</li>
+</ul>
+</li>
+<li><p>遵循代码规范.(PEP8是基本法)</p>
+<ul>
+<li>变量,函数,等命名</li>
+<li>缩进,空行,注释规则</li>
+<li>导包规则</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>谨慎造轮子.<ul>
+<li>杜绝恶心的hack烂代码.</li>
+<li>杜绝无聊的炫技.&lt;请说人话,代码是给人看的&gt;</li>
+<li>简单,明了.&lt;下里巴人 vs 阳春白雪&gt;</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>提升代码品位.<ul>
+<li>提高写代码的姿势水平.</li>
+<li>阅读github经典项目源码.(人丑就应该多读书)</li>
+<li>和大牛做朋友.</li>
+<li>远离猪队友.(人蠢,不思进取,不学习,代码臭不可闻)</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="python最佳实践基本法">python最佳实践基本法</h2><ol>
+<li><p>模块化,低耦合</p>
+</li>
+<li><p>代码越少越好.杜绝一坨烂代码</p>
+</li>
+<li><p>函数,类,模块,命名高度语义化, 命名自洽(表意准确,力求精]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://hhstore.github.io/2016/02/15/RPC-VS-MQ/"/>
+    <id>http://hhstore.github.io/2016/02/15/RPC-VS-MQ/</id>
+    <published>2016-02-15T08:58:18.000Z</published>
+    <updated>2016-02-15T08:58:18.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="RPC(分布式远程过程调用)_和_MQ(消息队列)_的_应用场景_和区别">RPC(分布式远程过程调用) 和 MQ(消息队列) 的 应用场景 和区别</h2><ul>
+<li><p><a href="http://blog.sina.com.cn/s/blog_4e017a9001000951.html" target="_blank" rel="external">消息机制和RPC的区别</a></p>
+</li>
+<li><p><a href="http://oldratlee.com/post/2013-02-01/synchronous-rpc-vs-asynchronous-message/" target="_blank" rel="external">远程调用服务(RPC)和消息(Message Queue)对比及其适用/不适用场合</a></p>
+</li>
+</ul>
+<ul>
+<li><a href="http://ternarysearch.blogspot.com/2013/01/message-queues-and-rpc.html" target="_blank" rel="external">Message Queues and RPC</a></li>
+</ul>
+<h3 id="系统结构">系统结构</h3><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">RPC系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Consumer</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Provider</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Consumer调用的Provider提供的服务。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">Message</span> <span class="comment">Queue系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Sender</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Queue</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Receiver</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Sender发送消息给Queue；Receiver从Queue拿到消息来处理。</span></span><br></pre></td></tr></table></figure>
+<p>功能特点<br>在架构上，RPC和Message的差异点是，Message有一个中间结点Message Queue，可以把消息存储。</p>
+<h2 id="区别:">区别:</h2><p>消息机制主要用于端到端的延迟通信;<br>而RPC用于端到端的同步通信。</p>
+<p>在RPC机制下，用于接收数据的进程必须在数据发送时处于执行状态。</p>
+<p>如果在消息发送过程中，接收进程死掉了，则数据将不能再传输。</p>
+<p>相反，在消息传递机制下，则可以在服务进程死掉后，仍然可以发送消息，而不必因为此时服务进程没有接收消息而阻塞或重发消息。<br>这是因为，基于消息机制时，消息被放置在一个消息队列中，而且服务进程可以在任何时候取得所属自己的消息。<br>因此，在发送消息时，服务进程是否在执行不再重要。</p>
+<p>消息机制和RPC的各自特点:</p>
+<p>消息机制的特点<br>客户在等待对方进程的应答时，可以自由的执行其他的操作。<br>消息机制允许对一个请求发多个应答或多个请求发一个应答。<br>消息机制适合具有较长交易周期的应用。<br>消息机制可以通过以任何顺序从消息队列中取走消息、的形式，来支持优先级和负载均衡。<br>消息机制可以支持容错。<br>消息机制主要用于支持大型系统和分布范围很广的分布式系统。</p>
+<p>RPC机制的特点<br>提供了一个较高层次上的通信抽象，更完全地隐藏了应用分布的实质。<br>尽可能地优化了客户和服务器之间的交互，因为这种机制直接的请求/应答协议支持。<br>客户在等待一个服务应答时，只是简单地等待。</p>
+<h3 id="消息队列的使用场景:">消息队列的使用场景:</h3><p>（一）短信发送</p>
+<p>短信通常都是由第三方服务商提供的服务，对于其稳定性与可靠度来说，通常也就是打90分吧。对于那些需要发送短信的应用程序来说，通常将其放入队列中去处理，而不是傻傻的等待。</p>
+<p>（二）日志记录</p>
+<p>不是所有的日志记录都需要使用消息队列来处理。通常只有那些同时操作一个日志文件的情况下才会使用消息队列。另外的一种情况是，需要对日志进行同步处理后分析的场景。</p>
+<p>（三）邮件服务</p>
+<p>邮件服务于短信发送类似，对于那些不需要即时回复和响应速度并不特别特别快的第三方应用，使用队列来处理是最大的好处。既能节省资源，又能提高用户体验，还能防止系统崩溃。</p>
+<p>（四）通知服务</p>
+<p>对于给用户发消息这样的业务来说，使用消息队列也是极好的，尽管几十万内的插入语句使用SQL就可以完全搞定。使用通知服务对于那些SQL不是很好的人来说，也是很好的福利。</p>
+<p>另外，对于多应用使用缓存提高查询效率的情景，使用消息队列也是极好的。试想一下，当你更新一个用户后，使用发布/订阅者模式处理缓存，是不是比其它任何模式都要高效呢。</p>
+<p>（五）高并发请求</p>
+<p>是不是又想起了淘宝双11网站瘫痪，12306一票难求，京东图书大促网页打不开，消息队列尤其适用于这种超负载的场景。通过过消息队列，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务，改善网站系统的性能，这样可以有效地抵御促销活动刚开始就开始大量涌入的订单对系统造成的冲击 。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="RPC(分布式远程过程调用)_和_MQ(消息队列)_的_应用场景_和区别">RPC(分布式远程过程调用) 和 MQ(消息队列) 的 应用场景 和区别</h2><ul>
+<li><p><a href="http://blog.sina.com.cn/s/blog_4]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python实践 - 爬虫]]></title>
+    <link href="http://hhstore.github.io/2015/09/12/Python%E5%AE%9E%E8%B7%B5%20-%20%E7%88%AC%E8%99%AB/"/>
+    <id>http://hhstore.github.io/2015/09/12/Python实践 - 爬虫/</id>
+    <published>2015-09-12T11:12:10.000Z</published>
+    <updated>2015-10-11T04:37:43.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍 Python 爬虫相关的实践.</p>
+<a id="more"></a>
+<h3 id="扩展阅读-">扩展阅读.</h3><ul>
+<li>这篇示例不错.<a href="http://www.the5fire.com/take-a-glance-at-celery.html" target="_blank" rel="external">the5fire - Celery的安装和使用</a></li>
+<li>示例赞.<a href="http://www.the5fire.com/python-thread-pool.html" target="_blank" rel="external">the5fire - python线程池 </a></li>
+<li><a href="http://www.cnblogs.com/hymenz/p/3552157.html" target="_blank" rel="external">基于celery+RabbitMQ+tornado实现网络爬虫</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍 Python 爬虫相关的实践.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python 全栈工程师之路]]></title>
+    <link href="http://hhstore.github.io/2015/09/11/full-stack-python/"/>
+    <id>http://hhstore.github.io/2015/09/11/full-stack-python/</id>
+    <published>2015-09-11T09:12:10.000Z</published>
+    <updated>2015-10-11T04:15:34.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Python全栈工程师必备技能.</p>
+<a id="more"></a>
+<h2 id="github站点巡航:">github站点巡航:</h2><ul>
+<li><a href="https://github.com/jxqlovejava/PopularBlogSites" target="_blank" rel="external">流行技术博客站点收录</a></li>
+</ul>
+<h2 id="全栈工程师">全栈工程师</h2><ul>
+<li>在线阅读:<ul>
+<li><a href="http://zh-google-styleguide.readthedocs.org/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">PEP8风格规范</a></li>
+<li>推荐: <a href="https://pythonpedia.com/" target="_blank" rel="external">Python一站式学习</a></li>
+<li>推荐: <a href="http://www.fullstackpython.com/table-of-contents.html" target="_blank" rel="external">全栈Python工程师 - 技能树</a><ul>
+<li><a href="http://www.fullstackpython.com/task-queues.html" target="_blank" rel="external">Task queues</a></li>
+<li><a href="http://www.fullstackpython.com/api-creation.html" target="_blank" rel="external">API Creation</a></li>
+<li><a href="http://www.fullstackpython.com/no-sql-datastore.html" target="_blank" rel="external">NoSQL Data Stores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Python全栈工程师必备技能.</p>]]>
+    
+    </summary>
+    
+      <category term="Full-Stack-Python" scheme="http://hhstore.github.io/tags/Full-Stack-Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python常用包 - requests]]></title>
+    <link href="http://hhstore.github.io/2015/09/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20requests/"/>
+    <id>http://hhstore.github.io/2015/09/02/Python常用包 - requests/</id>
+    <published>2015-09-02T06:12:10.000Z</published>
+    <updated>2015-10-12T16:47:40.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Python的 requests 包的使用方法.</p>
+<a id="more"></a>
+<h2 id="关于_requests_库-">关于 requests 库.</h2><ul>
+<li>requests是一个用于在程序中进行http协议下的get和post请求的库。</li>
+</ul>
+<h2 id="2-_安装">2. 安装</h2><h2 id="3-_使用">3. 使用</h2><h3 id="GET_请求:">GET 请求:</h3><h3 id="POST_请求:">POST 请求:</h3><h2 id="4-_扩展阅读-">4. 扩展阅读.</h2><ul>
+<li><a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html" target="_blank" rel="external">Requests: 官方中文文档</a></li>
+<li>此在线书籍,很赞 <a href="http://python.xiaoleilu.com/400/401.html" target="_blank" rel="external">requests库</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Python的 requests 包的使用方法.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python拾遗 - WSGI规范]]></title>
+    <link href="http://hhstore.github.io/2015/09/01/Python%E6%8B%BE%E9%81%97%20-%20WSGI/"/>
+    <id>http://hhstore.github.io/2015/09/01/Python拾遗 - WSGI/</id>
+    <published>2015-09-01T09:12:10.000Z</published>
+    <updated>2015-10-12T16:46:39.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Python的 WSGI 规范.</p>
+<a id="more"></a>
+<h2 id="1-_关于_WSGI_规范-">1. 关于 WSGI 规范.</h2><h3 id="WSGI定义:">WSGI定义:</h3><ul>
+<li>WSGI 全称是Web Server Gateway Interface，翻译是Python Web服务器网关接口。</li>
+<li>是一个描述Web服务器和Web应用之间如何通信的规范。</li>
+<li>定义了Web服务器如何与Python应用程序进行交互，使得使用Python写的Web应用程序可以和Web服务器对接起来。</li>
+<li>WSGI一开始是在PEP-0333中定义的，最新版本是在Python的PEP-3333定义的。</li>
+</ul>
+<h3 id="WSGI_和_CGI(FastCGI,SCGI)_区别和联系:">WSGI 和 CGI(FastCGI,SCGI) 区别和联系:</h3><ul>
+<li>WSGI 是 Python Web 服务器网关接口，完成不同协议之间的转换工作。</li>
+<li>CGI（Common Gateway Interface）是Web应用程序和Web Server的底层通信协议，是Web开发过程中需要遵守的标准和规范，不同语言如PHP、Java、Python等完成的Web应用程序均依据此通信协议完成与Web Server的交互。</li>
+<li>CGI的设计存在性能缺陷，因为每次Web Server接受请求的时候总要重新开启一个CGI进程，进程的初始化既费时间又耗资源，对于少量请求的情况，可以容忍此开销，但是若遇到了大量的请求，服务器的性能则会非常低下。</li>
+<li>为了解决CGI的性能缺陷问题，后来出现了 FastCGI 和 SCGI，它们能够有效地解决服务器性能问题，FastCGI不同于CGI的设计之处在于FastCGI要求CGI处理进程常驻内存中，有请求时处理，没有请求时等待，免去了进程初始化带来的开销。SCGI即Simple  CGI，相对FastCGI来说是一种更加简单的实现。目前的Web底层通信机制已经被FastCGI和SCGI所取代。</li>
+<li>WSGI也是为了解决Web应用程序和Web Server之间的交互而提出的一种规范，不过这种规范是以CGI为基础（因为CGI是底层通信协议），位于CGI的上一层更好地去解决应用程序和服务器之间的配合问题。</li>
+</ul>
+<h2 id="2-_WSGI_的用途:">2. WSGI 的用途:</h2><ul>
+<li>WSGI相当于是Web服务器和Python应用程序之间的桥梁。</li>
+<li>让Web服务器,知道如何调用Python应用程序，并且把用户的请求,告诉应用程序。</li>
+<li>让Python应用程序,知道用户的具体请求是什么，以及如何返回结果,给Web服务器。</li>
+</ul>
+<h2 id="3-_WSGI_的结构:">3. WSGI 的结构:</h2><h3 id="3个角色:">3个角色:</h3><ul>
+<li>Web服务器端 称为server或者gateway，</li>
+<li>WSGI Middleware（中间件）</li>
+<li>应用程序端 称为application或者framework</li>
+</ul>
+<h3 id="3者关系:">3者关系:</h3><ul>
+<li>Server认为middleware是一个application。</li>
+<li>Application认为middleware是一个server。</li>
+<li>Middleware可以有多层。</li>
+</ul>
+<h3 id="3层解耦:">3层解耦:</h3><ul>
+<li>Application/Framework层 只需要实现一个callable就可以了；</li>
+<li>Server/Gateway层，只需要把客户端的请求处理成environ，然后传给Application/Framework就可以了；</li>
+<li>Middleware 层，基本上相当于是一个装饰器，同样也是高内聚低耦合的。</li>
+<li>三个部分之间几乎没有依赖，使得使用Python开发和部署Web应用变得十分灵活。</li>
+</ul>
+<h3 id="WSGI的实现:">WSGI的实现:</h3><ul>
+<li><p>Application端:</p>
+<ul>
+<li>实现一般是由Python的各种框架来实现的，比如Django, web.py等，</li>
+<li>一般开发者不需要关心WSGI的实现，框架会提供接口，让开发者获取HTTP请求的内容以及发送HTTP响应。</li>
+</ul>
+</li>
+<li><p>Server端:</p>
+<ul>
+<li>实现会比较复杂一点，这个主要是因为软件架构的原因。</li>
+<li>一般常用的Web服务器，如Apache和nginx，都不会内置WSGI的支持，而是通过扩展来完成。</li>
+<li>Apache服务器，会通过扩展模块mod_wsgi来支持WSGI。Apache和mod_wsgi之间通过程序内部接口传递信息，mod_wsgi会实现WSGI的server端、进程管理以及对application的调用。</li>
+<li>Nginx上一般是用proxy的方式，用nginx的协议将请求封装好，发送给应用服务器，比如uWSGI，应用服务器会实现WSGI的服务端、进程管理以及对application的调用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-_扩展阅读-">4. 扩展阅读.</h2><ul>
+<li>需要完整看完.<a href="https://github.com/mainframer/PEP333-zh-CN" target="_blank" rel="external">WSGI 规范 - PEP333 翻译</a></li>
+<li><a href="https://www.python.org/dev/peps/pep-0333/" target="_blank" rel="external">PEP 0333 — Python Web Server Gateway Interface v1.0</a></li>
+<li><a href="https://pep-3333-wsgi.readthedocs.org/en/latest/" target="_blank" rel="external">Python Web 服务器网关接口</a></li>
+<li><a href="http://wsgi.readthedocs.org/en/latest/" target="_blank" rel="external">WSGI - EN</a></li>
+<li>推荐<a href="http://segmentfault.com/a/1190000003069785" target="_blank" rel="external">WSGI简介</a></li>
+<li><a href="http://segmentfault.com/a/1190000002717571" target="_blank" rel="external">WSGI规范笔记</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386832689740b04430a98f614b6da89da2157ea3efe2000" target="_blank" rel="external">廖雪峰 - WSGI接口</a></li>
+<li><a href="https://skyline75489.github.io/post/2014-9-8_python-wsgi-learning.html" target="_blank" rel="external">Python WSGI学习笔记</a></li>
+<li><a href="https://jasonlvhit.github.io/articles/wsgi/" target="_blank" rel="external">Python中的WSGI</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Python的 WSGI 规范.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python面试题汇总]]></title>
+    <link href="http://hhstore.github.io/2015/08/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://hhstore.github.io/2015/08/25/Python面试题汇总/</id>
+    <published>2015-08-25T13:22:10.000Z</published>
+    <updated>2015-09-14T05:17:07.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇汇总整理一些常见的Python面试题,找工作必备.</p>
+<a id="more"></a>
+<h1 id="面试专题学习">面试专题学习</h1><ul>
+<li><a href="http://www.julyedu.com/" target="_blank" rel="external">七月算法-这个网站不错</a></li>
+<li><a href="http://www.julyedu.com/video/play?course=25" target="_blank" rel="external">面试求职试题精讲-10个视频-免费</a></li>
+<li><a href="http://www.julyedu.com/video/play?course=27" target="_blank" rel="external">实战coding-3个视频</a></li>
+<li><p><a href="http://www.julyedu.com/video/play?course=17" target="_blank" rel="external">算法公开课</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/v_july_v/article/details/7382693" target="_blank" rel="external">July的面试专题博客</a></p>
+</li>
+<li><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/Readme.md" target="_blank" rel="external">July写的书-github-《编程之法：面试和算法心得》</a></li>
+</ul>
+<h1 id="面试题索引">面试题索引</h1><ul>
+<li><a href="http://www.douban.com/group/topic/21206826/?start=0" target="_blank" rel="external">Python-面试题大全-豆瓣</a></li>
+<li><a href="http://www.pythonclub.org/interview/start" target="_blank" rel="external">面试题收集</a></li>
+<li><a href="http://www.51itong.net/python-8337.html" target="_blank" rel="external">45个Python面试题汇总&amp;答案</a></li>
+<li><a href="http://segmentfault.com/a/1190000000618513" target="_blank" rel="external">5个很好的Python面试题</a></li>
+<li><p><a href="http://michaelyou.github.io/2015/05/19/%E7%BF%BB%E8%AF%91-python%E6%8B%9B%E8%81%98%E6%8C%87%E5%8D%97/" target="_blank" rel="external">Python招聘指南-译</a></p>
+</li>
+<li><p><a href="http://michaelyou.github.io/categories/%E9%9D%A2%E8%AF%95/" target="_blank" rel="external">面试收集整理</a></p>
+</li>
+<li><a href="http://michaelyou.github.io/2015/02/01/python%E8%AF%95%E9%A2%98/" target="_blank" rel="external">python试题</a></li>
+<li><a href="http://michaelyou.github.io/2015/05/19/%E7%BF%BB%E8%AF%91-7%E4%B8%AA%E7%BB%8F%E5%85%B8python%E9%9D%A2%E8%AF%95%E9%A2%98/" target="_blank" rel="external">7个经典python面试题&amp;答案</a></li>
+<li><a href="http://www.cnblogs.com/goodhacker/p/3366618.html" target="_blank" rel="external">Python面试题&amp;答案</a></li>
+<li><a href="http://www.cnblogs.com/goodhacker/p/3387027.html" target="_blank" rel="external">Python面试题&amp;答案(二)</a></li>
+<li><a href="http://www.pythonclub.org/algorithm/start" target="_blank" rel="external">几个高质量的题目</a></li>
+<li><a href="http://www.pythonclub.org/" target="_blank" rel="external">值得参考的内容</a></li>
+<li><a href="http://www.pythonclub.org/python-network-application/observer-spider" target="_blank" rel="external">爬虫使用经验总结</a></li>
+<li><a href="http://www.pythonclub.org/python-network-application/start" target="_blank" rel="external">Python网络编程</a></li>
+<li><a href="http://www.pythonclub.org/python-files/start" target="_blank" rel="external">Python各种文件读写操作</a></li>
+<li><a href="http://my.oschina.net/zyzzy/blog/118265" target="_blank" rel="external">几道python笔试题</a></li>
+<li><a href="https://mengzhuo.org/blog/%E6%9C%80%E8%BF%91%E4%B8%80%E4%BA%9B%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88python%EF%BC%89.html" target="_blank" rel="external">最近一些面试题（Python）</a></li>
+<li><a href="http://www.phperz.com/article/14/0924/14407.html" target="_blank" rel="external">一份拉勾网的python面试题</a></li>
+<li><a href="http://www.leafonsword.org/python/" target="_blank" rel="external">一道Python面试题</a></li>
+<li><a href="https://www.v2ex.com/t/65710" target="_blank" rel="external">v2ex-Python面试题</a></li>
+<li><a href="http://www.kanzhun.com/k-mianshitimu/pythonmianshiti/" target="_blank" rel="external">Python面试题整理合集</a></li>
+<li><a href="http://www.9325.org/archives/430" target="_blank" rel="external">这篇,质量也比较高</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇汇总整理一些常见的Python面试题,找工作必备.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python拾遗 - callable()函数]]></title>
+    <link href="http://hhstore.github.io/2015/08/25/Python%E6%8B%BE%E9%81%97%20-%20callable()%E5%87%BD%E6%95%B0/"/>
+    <id>http://hhstore.github.io/2015/08/25/Python拾遗 - callable()函数/</id>
+    <published>2015-08-25T09:12:10.000Z</published>
+    <updated>2015-09-18T16:14:46.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Python的callable()函数的特点以及应用.</p>
+<a id="more"></a>
+<h2 id="缘由">缘由</h2><ul>
+<li><p>在阅读bottle源码中,发现在实现 Bottle() 类中的 add_controller()的时候,有处callable()调用,很好奇这个语法.<br>就仔细了解了一下,很有意思的应用.</p>
+</li>
+<li><p>源码片段如下:</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Bottle()类代码截取片段.</span></span><br><span class="line"><span class="comment"># 注意与 add_route() 相互调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_controller</span><span class="params">(self, route, controller, **kargs)</span>:</span></span><br><span class="line">    <span class="string">""" Adds a controller class or object """</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'&#123;action&#125;'</span> <span class="keyword">not</span> <span class="keyword">in</span> route <span class="keyword">and</span> <span class="string">'action'</span> <span class="keyword">not</span> <span class="keyword">in</span> kargs:</span><br><span class="line">        <span class="keyword">raise</span> BottleException(<span class="string">"Routes to controller classes or object MUST"</span></span><br><span class="line">                              <span class="string">" contain an &#123;action&#125; placeholder or use the action-parameter"</span>)</span><br><span class="line">    <span class="keyword">for</span> action <span class="keyword">in</span> (m <span class="keyword">for</span> m <span class="keyword">in</span> dir(controller) <span class="keyword">if</span> <span class="keyword">not</span> m.startswith(<span class="string">'_'</span>)):</span><br><span class="line">        handler = getattr(controller, action)</span><br><span class="line">        <span class="keyword">if</span> callable(handler) <span class="keyword">and</span> action == kargs.get(<span class="string">'action'</span>, action):</span><br><span class="line">            self.add_route(route.replace(<span class="string">'&#123;action&#125;'</span>, action), handler, **kargs)   <span class="comment"># 特别注意.相互调用</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_route</span><span class="params">(self, route, handler, method=<span class="string">'GET'</span>, simple=False, **kargs)</span>:</span></span><br><span class="line">    <span class="string">""" Adds a new route to the route mappings. """</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(handler, type) <span class="keyword">and</span> issubclass(handler, BaseController):</span><br><span class="line">        handler = handler()</span><br><span class="line">    <span class="keyword">if</span> isinstance(handler, BaseController):</span><br><span class="line">        self.add_controller(route, handler, method=method, simple=simple, **kargs)   <span class="comment"># 特别注意.相互调用</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    method = method.strip().upper()</span><br><span class="line">    route = route.strip().lstrip(<span class="string">'$^/ '</span>).rstrip(<span class="string">'$^ '</span>)</span><br><span class="line">    <span class="keyword">if</span> re.match(<span class="string">r'^(\w+/)*\w*$'</span>, route) <span class="keyword">or</span> simple:</span><br><span class="line">        self.simple_routes.setdefault(method, &#123;&#125;)[route] = handler</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        route = re.sub(<span class="string">r':([a-zA-Z_]+)(?P&lt;uniq&gt;[^\w/])(?P&lt;re&gt;.+?)(?P=uniq)'</span>,</span><br><span class="line">                       <span class="string">r'(?P&lt;\1&gt;\g&lt;re&gt;)'</span>, route)</span><br><span class="line">        route = re.sub(<span class="string">r':([a-zA-Z_]+)'</span>, <span class="string">r'(?P&lt;\1&gt;[^/]+)'</span>, route)</span><br><span class="line">        route = re.compile(<span class="string">'^%s$'</span> % route)</span><br><span class="line">        self.regexp_routes.setdefault(method, []).append([route, handler])</span><br></pre></td></tr></table></figure>
+<h2 id="callable()_说明">callable() 说明</h2><ul>
+<li><p>简单说: 判断被传参元素,是否是”可调用对象”.(可以是函数,lambda表达式,定义了<strong>call</strong>()的类以及其实例)</p>
+</li>
+<li><p>安装过iPython,可以在python解释器中输入如下帮助命令:</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help(callable)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>回车,显示如下信息:</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Help on built-in function callable in module __builtin__:</span><br><span class="line"></span><br><span class="line">callable(...)</span><br><span class="line">    callable(object) -&gt; bool</span><br><span class="line">    </span><br><span class="line">    Return whether the object is callable (i.e., some kind of function).</span><br><span class="line">    Note that classes are callable, as are instances with a __call__() method.</span><br><span class="line"></span><br><span class="line">######################################## </span><br><span class="line"></span><br><span class="line">对应含义:</span><br><span class="line">    1. 判断 是否 是可调用对象.(返回 true or false)</span><br><span class="line">    2. 函数,是可调用的.</span><br><span class="line">    2. 实现了__call__()方法的类(以及实例),是可调用的.</span><br></pre></td></tr></table></figure>
+<h2 id="callable()测试实例代码:">callable()测试实例代码:</h2><ul>
+<li>以下测试代码,在iPython中测试通过.</li>
+<li>对比如下实例代码,就可以很明白的理解 callable() 的功能和使用方法.</li>
+<li>如下实例,包含了所有类型的测试.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">In[<span class="number">6</span>]: callable(<span class="number">1</span>)</span><br><span class="line">Out[<span class="number">6</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">7</span>]: callable(<span class="keyword">True</span>)</span><br><span class="line">Out[<span class="number">7</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">8</span>]: callable(<span class="keyword">False</span>)</span><br><span class="line">Out[<span class="number">8</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">9</span>]: callable(<span class="string">"hello"</span>)</span><br><span class="line">Out[<span class="number">9</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">10</span>]: callable([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">Out[<span class="number">10</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 所有的 Python 自带的类型,都是可调用的.</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">11</span>]: callable(list)</span><br><span class="line">Out[<span class="number">11</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">12</span>]: callable(set)</span><br><span class="line">Out[<span class="number">12</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">15</span>]: callable(tuple)</span><br><span class="line">Out[<span class="number">15</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">16</span>]: callable(str)</span><br><span class="line">Out[<span class="number">16</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">17</span>]: callable(dict)</span><br><span class="line">Out[<span class="number">17</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">18</span>]: callable(int)</span><br><span class="line">Out[<span class="number">18</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">19</span>]: callable(float)</span><br><span class="line">Out[<span class="number">19</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式是可调用的</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">27</span>]: f = <span class="keyword">lambda</span> x: x*<span class="number">2</span></span><br><span class="line">In[<span class="number">28</span>]: callable(f)</span><br><span class="line">Out[<span class="number">25</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数是可调用的.</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">31</span>]: <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></span><br><span class="line"><span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">"g()"</span></span><br><span class="line"><span class="prompt">... </span>    </span><br><span class="line">In[<span class="number">32</span>]: callable(g)</span><br><span class="line">Out[<span class="number">29</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 各种类定义对比,同时对比 类 和 类实例.</span></span><br><span class="line"></span><br><span class="line">In[<span class="number">5</span>]: <span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="prompt">... </span>    <span class="keyword">pass</span></span><br><span class="line"><span class="prompt">... </span>    </span><br><span class="line">In[<span class="number">6</span>]: callable(A)</span><br><span class="line">Out[<span class="number">6</span>]: <span class="keyword">True</span></span><br><span class="line">In[<span class="number">7</span>]: callable(A())</span><br><span class="line">Out[<span class="number">7</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In[<span class="number">2</span>]: <span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line"><span class="prompt">... </span>    <span class="keyword">pass</span></span><br><span class="line"><span class="prompt">... </span>    </span><br><span class="line">In[<span class="number">3</span>]: callable(B)</span><br><span class="line">Out[<span class="number">3</span>]: <span class="keyword">True</span></span><br><span class="line">In[<span class="number">4</span>]: callable(B())</span><br><span class="line">Out[<span class="number">4</span>]: <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In[<span class="number">8</span>]: <span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="prompt">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"class C."</span></span><br><span class="line"><span class="prompt">... </span>        </span><br><span class="line">In[<span class="number">9</span>]: callable(C())</span><br><span class="line">Out[<span class="number">9</span>]: <span class="keyword">True</span></span><br><span class="line">In[<span class="number">10</span>]: callable(C)</span><br><span class="line">Out[<span class="number">10</span>]: <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In[<span class="number">11</span>]: <span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span></span><br><span class="line"><span class="prompt">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"class D."</span></span><br><span class="line"><span class="prompt">... </span>        </span><br><span class="line">In[<span class="number">12</span>]: callable(D)</span><br><span class="line">Out[<span class="number">12</span>]: <span class="keyword">True</span></span><br><span class="line">In[<span class="number">13</span>]: callable(D())</span><br><span class="line">Out[<span class="number">13</span>]: <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Python的callable()函数的特点以及应用.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python常用标准库,第三方库,框架简介]]></title>
+    <link href="http://hhstore.github.io/2015/08/23/Python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E7%AE%80%E4%BB%8B/"/>
+    <id>http://hhstore.github.io/2015/08/23/Python常用标准库简介/</id>
+    <published>2015-08-23T12:12:10.000Z</published>
+    <updated>2015-09-14T05:13:45.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍一些比较值得深入学习和使用的Python常用标准库,第三方库以及框架.</p>
+<a id="more"></a>
+<h2 id="1-_Python常用标准库">1. Python常用标准库</h2><ul>
+<li>Python标准库,有很多强大的库,不应该重复造轮子</li>
+<li>学会高效利用Python自身的标准库.</li>
+<li>学习Python标准库里一些常用功能的源码,了解如何实现的</li>
+</ul>
+<h3 id="1-1_常用标准库索引">1.1 常用标准库索引</h3><ul>
+<li><a href="http://python.usyiyi.cn/python_278/library/index.html" target="_blank" rel="external">Python2索引</a></li>
+<li><a href="http://docspy3zh.readthedocs.org/en/latest/library/index.html" target="_blank" rel="external">Python3索引</a></li>
+<li>[常用库参考]<a href="http://www.pythonclub.org/modules/start(" target="_blank" rel="external">http://www.pythonclub.org/modules/start(</a>)</li>
+</ul>
+<h3 id="1-2_翻译社区">1.2 翻译社区</h3><ul>
+<li><a href="http://www.pythondoc.com/" target="_blank" rel="external">Python文档国内的翻译社区</a></li>
+<li><a href="http://python.usyiyi.cn/" target="_blank" rel="external">Python标准库翻译</a></li>
+</ul>
+<h3 id="1-3_值得深入学习的Python标准库">1.3 值得深入学习的Python标准库</h3><ul>
+<li><a href="">re — 正则表达式操作</a></li>
+<li><a href="">codecs — 编码解码器的注册和基本的类</a></li>
+<li><a href="">Queue — 同步队列类</a></li>
+<li><a href="">pprint — 打印整洁的数据</a></li>
+<li><p><a href="">shutil — 高级的文件操作</a></p>
+</li>
+<li><p><a href="">pickle — Python 对象序列化</a></p>
+</li>
+<li><a href="">sqlite3 — SQLite数据库DB-API 2.0接口</a></li>
+<li><a href="">csv — CSV 文件的读写</a></li>
+<li><a href="">json — JSON encoder and decoder</a></li>
+<li><p><a href="">base64 — RFC 3548: Base16, Base32, Base64 数据编码</a></p>
+</li>
+<li><p><a href="">sys — 系统相关的参数和函数</a></p>
+</li>
+<li><a href="">os — 操作系统的各种接口</a></li>
+<li><a href="">argparse — 命令行选项、参数和子命令的解析器</a></li>
+<li><p><a href="">logging — Python的日志工具</a></p>
+</li>
+<li><p><a href="">threading — 高层的线程</a></p>
+</li>
+<li><a href="">socket — 底层的网络接口</a></li>
+<li><a href="">asyncore — 异步套接字处理器</a></li>
+<li><p><a href="">BaseHTTPServer — 基本的HTTP 服务器</a></p>
+</li>
+<li><p><a href="">timeit — 测量小代码片段的执行时间</a></p>
+</li>
+</ul>
+<h2 id="2-_Python第三方库">2. Python第三方库</h2><ul>
+<li>pip源列表索引<a href="https://pypi.python.org/pypi" target="_blank" rel="external">PyPI - the Python Package Index</a></li>
+</ul>
+<h2 id="3-_Python常用框架">3. Python常用框架</h2><ul>
+<li>Django <a href="http://python.usyiyi.cn/django/index.html" target="_blank" rel="external">Django 1.8.2 文档</a></li>
+<li>Flask <a href="http://docs.jinkan.org/docs/flask/index.html" target="_blank" rel="external">Flask 0.10.1 文档</a> $$ <a href="http://www.pythondoc.com/flask/index.html" target="_blank" rel="external">参考2</a></li>
+<li>Bottle <a href=""></a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍一些比较值得深入学习和使用的Python常用标准库,第三方库以及框架.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python常用包 - argparse总结]]></title>
+    <link href="http://hhstore.github.io/2015/08/21/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20argparse/"/>
+    <id>http://hhstore.github.io/2015/08/21/Python常用包 - argparse/</id>
+    <published>2015-08-21T11:12:10.000Z</published>
+    <updated>2015-09-16T03:41:59.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍argparse包的使用总结.</p>
+<a id="more"></a>
+<h3 id="argparse模块参考">argparse模块参考</h3><ul>
+<li><a href="http://yongli1992.com/?p=72" target="_blank" rel="external">Python 命令行解析模块argparse使用学习</a></li>
+<li><a href="http://blog.xiayf.cn/2013/03/30/argparse/" target="_blank" rel="external">argparse - 命令行选项与参数解析</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍argparse包的使用总结.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Pythonic - 用优雅的方式写Python代码]]></title>
+    <link href="http://hhstore.github.io/2015/08/20/Pythonic-%E7%94%A8%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%86%99Python%E4%BB%A3%E7%A0%81/"/>
+    <id>http://hhstore.github.io/2015/08/20/Pythonic-用优雅的方式写Python代码/</id>
+    <published>2015-08-20T09:12:10.000Z</published>
+    <updated>2015-09-16T03:29:17.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇准备整理各种Python的编程规范,以及比较Pythonic的代码技巧.</p>
+<a id="more"></a>
+<h2 id="1-_前言">1. 前言</h2><ul>
+<li>写Python也比较久了,感觉有必要认真总结一下常用的Pythonic技巧.</li>
+<li>Python是一门很优雅的语言,对日常代码,有各种”推荐写法”.特别适合各种”强迫症”.</li>
+<li>官方有PEP8规范,强迫你按推荐”姿势”写代码.如果你的姿势不优雅,会被认为很low.</li>
+<li>初级的PEP8规范: 空格缩进,变量,函数,类命名规范,空行,注释规范.好在pycharm会自动提示.</li>
+<li>中级的代码推荐写法: 各种优雅的代码,越简洁明了,越推荐.杜绝各种”冗长代码”. &lt;<python cookbook="">&gt;里有很多技巧.<ul>
+<li>列表解析</li>
+<li>装饰器</li>
+<li>解包</li>
+<li>with语句</li>
+<li>yield语句</li>
+</ul>
+</python></li>
+<li>高级点的: 个人理解是充分理解Python的内部实现机制,正确合理选择适合的数据结构和算法,以及库和框架.做到物尽其用.<ul>
+<li>充分使用标准库(减少重复造轮子)</li>
+<li>正确的姿势使用第三方库</li>
+<li>优雅的使用框架</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-_什么是Pythonic?">2. 什么是Pythonic?</h2><p>对于这个词,我个人的理解是: </p>
+<ul>
+<li>请尽可能的用更优雅的方式写Python.</li>
+<li>请尽可能的使用Python标准写法.</li>
+<li>请尽可能的使用Python推荐写法.</li>
+<li>请杜绝丑陋的其他语言惯性的写法.</li>
+</ul>
+<p>更详细的解读,参考用google检索Pythonic,所找的的高质量的文章.</p>
+<ul>
+<li><a href="http://blog.startifact.com/posts/older/what-is-pythonic.html" target="_blank" rel="external">What is Pythonic?</a></li>
+<li><a href="http://blog.csdn.net/gzlaiyonghao/article/details/2762251" target="_blank" rel="external">赖勇浩: Pythonic到底是什么玩意儿？</a></li>
+<li><a href="http://www.zhihu.com/question/20336475" target="_blank" rel="external">知乎提问:初学 Python，有哪些 Pythonic 的源码推荐阅读？</a></li>
+<li><a href="http://wuzhiwei.net/be_pythonic/" target="_blank" rel="external">让你的python代码更加pythonic</a></li>
+<li><a href="http://www.pythonpub.com/article/1483" target="_blank" rel="external">写地道的PYTHON</a></li>
+<li><a href="http://www.codefrom.com/c/214" target="_blank" rel="external">十个我希望早点知道的python方法</a></li>
+<li><a href="http://michaelyou.github.io/2015/04/16/%E4%B8%80%E4%BA%9Bpythonic%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BE%8B%E5%AD%90/" target="_blank" rel="external">一些pythonic代码的例子</a></li>
+<li><a href="http://justjavac.com/python/2012/04/13/pythoner-handout.html" target="_blank" rel="external">Python实用技巧-成为Pythoner必经之路</a></li>
+<li><a href="http://justjavac.com/python/2012/07/27/python-a-few-things-to-remember.html" target="_blank" rel="external">Python 编码时应该注意的几件事情</a></li>
+<li><a href="https://github.com/lzjun567/note/blob/master/note/python/useful_features.md" target="_blank" rel="external">Python 实用技巧</a></li>
+<li><a href="http://justjavac.com/python/2013/06/11/a-guide-to-pythons-magic-methods.html" target="_blank" rel="external">干货: Python 的神奇方法指南</a></li>
+</ul>
+<p>在Python解释器中,执行: import this 回车,会显示如下信息:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import this</span><br><span class="line"></span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren't special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you're Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it's a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let's do more of those!</span><br></pre></td></tr></table></figure>
+<p>这首小诗,说明了Python的代码哲学.值得好好体会.</p>
+<h2 id="3-_更_Pythonic_的代码技巧清单">3. 更 Pythonic 的代码技巧清单</h2><h3 id="tips">tips</h3><ul>
+<li>tip01. 对换变量值.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic, 使用元组的unpack技巧,一行代码解决.</span></span><br><span class="line">a, b = b, a</span><br><span class="line">(a, b) =  (b, a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic, 典型的C语言思维.</span></span><br><span class="line">temp = b</span><br><span class="line">b = a</span><br><span class="line">a = temp</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip02. 链式比较</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line"><span class="number">1</span> &lt;= a &lt;= b &lt;<span class="number">10</span>                <span class="comment"># True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line">a &gt;= <span class="number">1</span> <span class="keyword">and</span> a &lt;=b <span class="keyword">and</span> b &lt; <span class="number">10</span>    <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>tip03. 真值测试</p>
+<ul>
+<li><p>为真条件: </p>
+<ul>
+<li>True值  </li>
+<li>任意(非空字符串, 非0数字, 非空容器)</li>
+<li>其他任意非False值</li>
+</ul>
+</li>
+<li><p>为假条件:</p>
+<ul>
+<li>False值</li>
+<li>空字符串: “”, ‘’</li>
+<li>数字0</li>
+<li>None</li>
+<li>空容器,包括 [], (,), {}, set()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line"><span class="keyword">if</span> 真:</span><br><span class="line">    <span class="keyword">print</span> 真</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line"><span class="keyword">if</span> 真 == 真:</span><br><span class="line">    <span class="keyword">print</span> 真</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip04. 字符串反转</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原始串: ABC</span></span><br><span class="line"><span class="comment"># 反转串: CBA</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line">s1 = <span class="string">"ABC"</span></span><br><span class="line">s2 = s1[::-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> s[::-<span class="number">1</span>]  <span class="comment"># 反转</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(s)</span>:</span></span><br><span class="line">    temp = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(s)-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">        temp = <span class="string">"&#123;0&#125;&#123;1&#125;"</span>.format(temp, s[i])  <span class="comment"># 逐个字母反转拼接</span></span><br><span class="line">    <span class="keyword">return</span> temp</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip05. 回文检测</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 应用上例技巧实现</span></span><br><span class="line"><span class="comment"># 回文串: AAABAAA (对称) // AAABBAAA</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> bool(s == s[::-<span class="number">1</span>])    <span class="comment"># return True or False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line"><span class="comment"># 各种尝试首尾单一字符比较判断的思路.</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 回文检测: 递归版本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome_recursion</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(s) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> s[<span class="number">0</span>] == s[-<span class="number">1</span>] <span class="keyword">and</span> is_palindrome_recursion(s[<span class="number">1</span>:-<span class="number">1</span>])</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 回文检测: 循环版本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)/<span class="number">2</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s[i] == s[len(s)-i-<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip06. 字符串列表连接(join函数应用)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用场景: 常见于 路径拼接</span></span><br><span class="line"><span class="comment"># 示例: str_list = ["c:", "users", "xiaoming", "hello.txt"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line">file_path = [<span class="string">"c:"</span>, <span class="string">"users"</span>, <span class="string">"xiaoming"</span>, <span class="string">"hello.txt"</span>]</span><br><span class="line">result = <span class="string">"/"</span>.join(file_path)  <span class="comment"># result = "c:/users/xiaoming/hello.txt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join_str</span><span class="params">(sources, sep)</span>:</span>  </span><br><span class="line">    <span class="keyword">return</span> sep.join(sources)   <span class="comment"># 简单包裹join函数: </span></span><br><span class="line">                               <span class="comment"># sep:连接符</span></span><br><span class="line">                               <span class="comment"># sources: 可迭代序列(可以是字符串,列表,元组)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line"><span class="comment"># 根据join函数特点,简单实现了一个同样效果版本.</span></span><br><span class="line"><span class="comment"># 初步测试效果同join(),由于没看join()的实现源码,可能不完善.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join_str_ex</span><span class="params">(sources, sep)</span>:</span></span><br><span class="line">    result = <span class="string">""</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(sources, (str, list, tuple)):</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> sources:</span><br><span class="line">            result = <span class="string">"&#123;0&#125;&#123;1&#125;&#123;2&#125;"</span>.format(result, item, sep)</span><br><span class="line">        result = result[<span class="number">0</span>:(len(result) - len(sep))]  <span class="comment"># 保持拼接效果完全一致</span></span><br><span class="line">    <span class="keyword">elif</span> isinstance(sources, dict):</span><br><span class="line">        <span class="keyword">for</span> key, value <span class="keyword">in</span> sources.iteritems():</span><br><span class="line">            result = <span class="string">"&#123;0&#125;&#123;1&#125;&#123;2&#125;"</span>.format(result, key, sep)</span><br><span class="line">        result = result[<span class="number">0</span>:(len(result) - len(sep))]</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip06. 列表内置函数应用(sum, max, min)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对数组元素,求和,寻找最大值,最小值,是常见需求.</span></span><br><span class="line"><span class="comment"># Python的list,已经内置了处理函数.无需自己写.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> mul</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, -<span class="number">1</span>]</span><br><span class="line"><span class="keyword">print</span> sum(nums), max(nums), min(nums), reduce(mul, nums, <span class="number">1</span>)   <span class="comment"># return 20, 6, -1, -720(乘积)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br><span class="line"></span><br><span class="line">sum_all = <span class="number">0</span></span><br><span class="line">max_num = -float(<span class="string">'inf'</span>)</span><br><span class="line">min_num = float(<span class="string">'inf'</span>)</span><br><span class="line">mul_all = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">if</span> num &gt; max_num:</span><br><span class="line">        max_num = num</span><br><span class="line">    <span class="keyword">if</span> num &lt; min_num:</span><br><span class="line">        min_num = num</span><br><span class="line">    sum_all += num</span><br><span class="line">    mul_all *= num</span><br><span class="line"><span class="keyword">print</span> sum_all, max_num, min_num, mul_all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单测试，在numList的长度为10000000时，对列表求和，</span></span><br><span class="line"><span class="comment"># Pythonic 耗时0.6s，Not-Pythonic 耗时1.3s，将近两倍的差距。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>tip07. 待更新补充.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Pythonic</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Not-Pythonic</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇准备整理各种Python的编程规范,以及比较Pythonic的代码技巧.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="Pythonic" scheme="http://hhstore.github.io/tags/Pythonic/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac配置Vagrant]]></title>
+    <link href="http://hhstore.github.io/2015/08/14/Mac%E9%85%8D%E7%BD%AEvagrant/"/>
+    <id>http://hhstore.github.io/2015/08/14/Mac配置vagrant/</id>
+    <published>2015-08-14T08:12:10.000Z</published>
+    <updated>2015-08-14T11:07:40.000Z</updated>
+    <content type="html"><![CDATA[<p>记录Mac配置Vagrant过程,已经遇到的问题解决.</p>
+<a id="more"></a>
+<h2 id="vagrant介绍">vagrant介绍</h2><h2 id="vagrant安装过程">vagrant安装过程</h2><p>网上有很多详细的教程,跟着步骤一步步走,基本不会错.<br>但是我在最后一步出了问题,特别记录下来.以备后人.<br>主要是这个问题,google了一圈,也没找到解答.</p>
+<h2 id="配置过程:">配置过程:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 下载box文件</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 切换到box文件目录下. 初始化</span><br><span class="line"></span><br><span class="line">vagrant box add <span class="string">"ubuntu_14.04"</span> ubuntu-<span class="number">14.04</span>.box   <span class="comment"># 添加box, 指定名字为ubuntu14.04. , 后面的是当前目录下的box文件.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 查看已经添加至系统的box:</span><br><span class="line">vagrant box list</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 初始化某个box:</span><br><span class="line">vagrant init <span class="string">"ubuntu_14.04"</span>   <span class="comment"># 指定名称,非base方式.</span></span><br><span class="line"></span><br><span class="line">成功初始化后,在当前目录生成一个 Vagrantfile的文件</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. 启动虚拟机.</span><br><span class="line"></span><br><span class="line">vagrant up</span><br></pre></td></tr></table></figure>
+<h2 id="问题重现:">问题重现:</h2><p>当我配置好,执行到 $ vagrant up 之后,一切都是正常的.</p>
+<p>然后,再执行 $ vagrant ssh, 就始终报错.</p>
+<p>信息如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh</span><br><span class="line">ssh: Could not resolve hostname ubuntu: nodename nor servname provided, or not known</span><br></pre></td></tr></table></figure>
+<p>出现该错误,我第一反应,是vagrant的配置有误.就花了很久来找问题解决办法,而方向是vagrant.<br>把网上找得到所有相关的解决办法,都尝试一遍,依然无解.<br>实在是要放弃了.结果想想看看.ssh目录吧.<br>然后看到有个config文件. cat查看内容.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line"></span><br><span class="line">Users/XXX/.ssh $ ls</span><br><span class="line">authorizedkeys iKey idboot2docker.pub id_rsa.pub</span><br><span class="line">config idboot2docker idrsa known_hosts</span><br><span class="line"></span><br><span class="line">$ cat config</span><br><span class="line">Host <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line">hostname ubuntu</span><br><span class="line">user root</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法:">解决办法:</h2><p>然后,就发现玄机.问题就出在这个config里配置了无效的hostname.<br>黑线…实在不记得配置这个config的缘由了.</p>
+<p>然后,删除该config之后.</p>
+<p>再次切换到vagrant的虚拟机目录.执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh</span><br><span class="line">Welcome to Ubuntu <span class="number">14.04</span> LTS (GNU/Linux <span class="number">3.13</span>.<span class="number">0</span>-<span class="number">45</span>-generic x86_64)</span><br><span class="line"></span><br><span class="line">Documentation: https://help.ubuntu.com/</span><br><span class="line"></span><br><span class="line">Last login: Thu Feb <span class="number">12</span> <span class="number">10</span>:<span class="number">37</span>:<span class="number">57</span> <span class="number">2015</span> from <span class="number">10.0</span>.<span class="number">2.2</span></span><br><span class="line">vagrant@vagrant:~$ ls</span><br><span class="line">setuptools-<span class="number">12.1</span>.zip</span><br></pre></td></tr></table></figure>
+<p>终于正常了.faint.搞了2天,总算是把这个问题解决了.<br>以后还真是要特别注意,删掉各种无效的配置文件.<br>指不定什么时候,就坑你一下.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录Mac配置Vagrant过程,已经遇到的问题解决.</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="Vagrant" scheme="http://hhstore.github.io/tags/Vagrant/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac文本比较工具推荐]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/Mac-%E6%96%87%E6%9C%AC%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
+    <id>http://hhstore.github.io/2015/08/06/Mac-文本比较工具推荐/</id>
+    <published>2015-08-06T13:42:13.000Z</published>
+    <updated>2015-09-17T16:28:15.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Mac中的文本比较工具.</p>
+<a id="more"></a>
+<h3 id="比较工具">比较工具</h3><ul>
+<li>FileMerge: Mac自带,免费.简单比较.(可能需要先安装Xcode)</li>
+<li>VisualDiffer: 功能不错,提示异同点.(百度网盘有收藏)</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Mac中的文本比较工具.</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="VisualDiffer" scheme="http://hhstore.github.io/tags/VisualDiffer/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac搭建Docker开发环境]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/Mac%E6%90%AD%E5%BB%BADocker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://hhstore.github.io/2015/08/06/Mac搭建Docker开发环境/</id>
+    <published>2015-08-06T08:12:10.000Z</published>
+    <updated>2015-08-06T09:47:43.000Z</updated>
+    <content type="html"><![CDATA[<p>记录Mac搭建Docker开发环境过程.</p>
+<a id="more"></a>
+<h2 id="Docker简介">Docker简介</h2><h2 id="Mac搭建Docker环境">Mac搭建Docker环境</h2><ul>
+<li>之前不太想在Mac上部署Docker,后来发现实在影响开发效率.索性还是配置一下吧.</li>
+<li>Mac配置Docker开发环境,需要安装Boot2Docker.详细步骤如下.</li>
+<li><a href="https://docs.docker.com/installation/mac/" target="_blank" rel="external">参考:官方文档</a></li>
+</ul>
+<h3 id="1-_下载_Boot2Docker_安装包">1. 下载 Boot2Docker 安装包</h3><ul>
+<li><a href="http://get.daocloud.io/#install-boot2docker" target="_blank" rel="external">下载地址</a></li>
+<li>下载 Boot2Docker-1.7.1.pkg 并安装.</li>
+<li>安装完成,会在Launchpad里添加Boot2Docker图标.</li>
+</ul>
+<h3 id="2-_初始化-">2. 初始化.</h3><ul>
+<li>第一次,在Launchpad中,打开Boot2Docker软件,会自动打开终端,显示如下信息.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">Last login: Thu Aug  <span class="number">6</span> <span class="number">16</span>:<span class="number">47</span>:<span class="number">00</span> on ttys012</span><br><span class="line"><span class="built_in">unset</span> DYLD_LIBRARY_PATH ; <span class="built_in">unset</span> LD_LIBRARY_PATH</span><br><span class="line">mkdir -p ~/.boot2docker</span><br><span class="line"><span class="keyword">if</span> [ ! <span class="operator">-f</span> ~/.boot2docker/boot2docker.iso ]; <span class="keyword">then</span> cp /usr/<span class="built_in">local</span>/share/boot2docker/boot2docker.iso ~/.boot2docker/ ; <span class="keyword">fi</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/boot2docker init</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/boot2docker up</span><br><span class="line">$(/usr/<span class="built_in">local</span>/bin/boot2docker shellinit)</span><br><span class="line">docker version</span><br><span class="line">hhstore@hhstore-rMBP15.local:/Users/hhstore  $ bash</span><br><span class="line">bash-<span class="number">3.2</span>$ <span class="built_in">unset</span> DYLD_LIBRARY_PATH ; <span class="built_in">unset</span> LD_LIBRARY_PATH</span><br><span class="line">bash-<span class="number">3.2</span>$ mkdir -p ~/.boot2docker</span><br><span class="line">bash-<span class="number">3.2</span>$ <span class="keyword">if</span> [ ! <span class="operator">-f</span> ~/.boot2docker/boot2docker.iso ]; <span class="keyword">then</span> cp /usr/<span class="built_in">local</span>/share/boot2docker/boot2docker.iso ~/.boot2docker/ ; <span class="keyword">fi</span></span><br><span class="line">bash-<span class="number">3.2</span>$ /usr/<span class="built_in">local</span>/bin/boot2docker init</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/hhstore/.ssh/id_boot2docker.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/hhstore/.ssh/id_boot2docker.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line"><span class="number">43</span>:<span class="number">0</span>d:<span class="number">3</span>c:<span class="number">7</span>a:<span class="number">02</span>:dc:<span class="number">6</span>c:<span class="number">2</span>a:<span class="number">21</span>:<span class="number">02</span>:<span class="number">26</span>:<span class="number">81</span>:f0:f7:ae:<span class="number">61</span> hhstore@hhstore-rMBP15.local</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|Oo . o ..        |</span><br><span class="line">|*.. o + oo       |</span><br><span class="line">|.....+ ....      |</span><br><span class="line">|  ....o..        |</span><br><span class="line">|   .  .oS        |</span><br><span class="line">|     .   .       |</span><br><span class="line">|    E .          |</span><br><span class="line">|   . o           |</span><br><span class="line">|    .            |</span><br><span class="line">+-----------------+</span><br><span class="line">Initialization of virtual machine "boot2docker-vm" complete.</span><br><span class="line">Use `boot2docker up` to start it.</span><br><span class="line">bash-3.2$ /usr/local/bin/boot2docker up</span><br><span class="line">$(/usr/local/bin/boot2docker shellinit)</span><br><span class="line">docker version</span><br><span class="line"></span><br><span class="line">Waiting for VM and Docker daemon to start...</span><br><span class="line">........................oooooooooooooooo</span><br><span class="line">Started.</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line"></span><br><span class="line">To connect the Docker client to the Docker daemon, please set:</span><br><span class="line">    export DOCKER_CERT_PATH=/Users/hhstore/.boot2docker/certs/boot2docker-vm</span><br><span class="line">    export DOCKER_TLS_VERIFY=1</span><br><span class="line">    export DOCKER_HOST=tcp://192.168.59.103:2376</span><br><span class="line"></span><br><span class="line">Or run: `eval "$(boot2docker shellinit)"`</span><br><span class="line"></span><br><span class="line">bash-3.2$ $(/usr/local/bin/boot2docker shellinit)</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line">bash-3.2$ docker version</span><br><span class="line">Client version: 1.7.1</span><br><span class="line">Client API version: 1.19</span><br><span class="line">Go version (client): go1.4.2</span><br><span class="line">Git commit (client): 786b29d</span><br><span class="line">OS/Arch (client): darwin/amd64</span><br><span class="line">Server version: 1.7.1</span><br><span class="line">Server API version: 1.19</span><br><span class="line">Go version (server): go1.4.2</span><br><span class="line">Git commit (server): 786b29d</span><br><span class="line">OS/Arch (server): linux/amd64</span><br><span class="line">bash-3.2$</span><br><span class="line">bash-3.2$</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-_配置Docker加速器(Docker_1-3-2版本以上支持加速器)">3. 配置Docker加速器(Docker 1.3.2版本以上支持加速器)</h3><ul>
+<li><a href="https://dashboard.daocloud.io/mirror" target="_blank" rel="external">参考:加速器</a></li>
+</ul>
+<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://e73f9bcf.m.daocloud.io\""</span> | sudo tee -a /etc/<span class="keyword">default</span>/docker</span><br><span class="line">sudo <span class="keyword">service</span> docker <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-_下载image,测试正常-">4. 下载image,测试正常.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无需再添加 mirror源地址.正常执行时,会开始下载image.耐心等待.</span></span><br><span class="line">sudo docker pull ubuntu:<span class="number">14.04</span>  </span><br><span class="line">docker pull hello-world</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整提示信息:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bash-<span class="number">3.2</span>$ docker pull ubuntu:<span class="number">14.04</span></span><br><span class="line"><span class="number">14.04</span>: Pulling from ubuntu</span><br><span class="line"><span class="number">2</span>eaf0096818b: Pull complete</span><br><span class="line">dac7bccb8ac3: Pull complete</span><br><span class="line"><span class="number">389028</span>aa9e91: Pull complete</span><br><span class="line"><span class="number">63</span>e3c10217b8: Already exists</span><br><span class="line">ubuntu:<span class="number">14.04</span>: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.</span><br><span class="line">Digest: sha256:<span class="number">44</span>beefbcad1eb02996bf8eca28817cce4acfb16abf3736bf7040cb34244bf56f</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:<span class="number">14.04</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-_查看已经下载的image">5. 查看已经下载的image</h3><ul>
+<li>启动Docker服务.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boot2docker init   <span class="comment"># 初始化.</span></span><br><span class="line">boot2docker up     <span class="comment"># 启动.第一次,可能弹出如下报错提示,后提供解决办法.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一次执行上述命令,弹出如下报错信息:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ boot2docker up</span><br><span class="line">Waiting <span class="keyword">for</span> VM and Docker daemon to start...</span><br><span class="line">.o</span><br><span class="line">Started.</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line"></span><br><span class="line">To connect the Docker client to the Docker daemon, please <span class="built_in">set</span>:</span><br><span class="line">    <span class="built_in">export</span> DOCKER_HOST=tcp://<span class="number">192.168</span>.<span class="number">59.103</span>:<span class="number">2376</span></span><br><span class="line">    <span class="built_in">export</span> DOCKER_CERT_PATH=/Users/hhstore/.boot2docker/certs/boot2docker-vm</span><br><span class="line">    <span class="built_in">export</span> DOCKER_TLS_VERIFY=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">Or run: `<span class="built_in">eval</span> <span class="string">"<span class="variable">$(boot2docker shellinit)</span>"</span>`</span><br></pre></td></tr></table></figure>
+<ul>
+<li>根据报错提示,最后一句要求执行:$(boot2docker shellinit)命令:</li>
+<li>执行该命令,只是当次有效,下次关闭终端,需要重新设置.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意,含$符号.</span></span><br><span class="line">$(boot2docker shellinit)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看已安装的image.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当前返回结果如下:</span></span><br><span class="line">$ docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span><br><span class="line">ubuntu              <span class="number">14.04</span>               <span class="number">63</span>e3c10217b8        <span class="number">41</span> hours ago        <span class="number">188.4</span> MB</span><br><span class="line">hello-world         latest              <span class="number">91</span>c95931e552        <span class="number">3</span> months ago        <span class="number">910</span> B</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用Docker-image.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输入如下命令,正常输出提示信息:</span></span><br><span class="line">$ docker run hello-world</span><br><span class="line"></span><br><span class="line">Hello from Docker.</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> <span class="number">1</span>. The Docker client contacted the Docker daemon.</span><br><span class="line"> <span class="number">2</span>. The Docker daemon pulled the <span class="string">"hello-world"</span> image from the Docker Hub.</span><br><span class="line">    (Assuming it was not already locally available.)</span><br><span class="line"> <span class="number">3</span>. The Docker daemon created a new container from that image <span class="built_in">which</span> runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> <span class="number">4</span>. The Docker daemon streamed that output to the Docker client, <span class="built_in">which</span> sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> http://docs.docker.com/userguide/</span><br></pre></td></tr></table></figure>
+<h3 id="2-_配置_Boot2Docker">2. 配置 Boot2Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.boot2docker</span><br><span class="line"><span class="built_in">echo</span> ISOURL = \<span class="string">"https://get.daocloud.io/boot2docker/boot2docker-lastest.iso\" &gt; ~/.boot2docker/profile</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-_初始化并启动虚拟机">3. 初始化并启动虚拟机</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boot2docker init</span><br><span class="line">boot2docker up</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录Mac搭建Docker开发环境过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Docker应用:利用Dockerfile制作Image]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/Docker_image%E5%88%B6%E4%BD%9C/"/>
+    <id>http://hhstore.github.io/2015/08/06/Docker_image制作/</id>
+    <published>2015-08-06T08:12:10.000Z</published>
+    <updated>2015-08-15T08:33:10.000Z</updated>
+    <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
+<a id="more"></a>
+<h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
+<h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
+<p>Dockerfile 文件内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
+<h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://tech.uc.cn/?p=2726" target="_blank" rel="external">参考1: 这篇很详细</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Python常用包 - uwsgi 使用总结]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20uwsgi%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>http://hhstore.github.io/2015/08/06/Python常用包 - uwsgi使用总结/</id>
+    <published>2015-08-06T02:12:10.000Z</published>
+    <updated>2015-09-14T08:49:04.000Z</updated>
+    <content type="html"><![CDATA[<p>记录一下使用uwsgi碰到的问题,总结常犯的错误.</p>
+<a id="more"></a>
+<h2 id="uwsgi简介">uwsgi简介</h2><h2 id="应用">应用</h2><ul>
+<li>在使用python开发web应用.比如使用flask框架,开发时,使用flask框架自带的web服务器调试.</li>
+<li>等到部署到实际生产环境,就需要使用专业的web服务器,而uwsgi是很好的选择.</li>
+<li>在配置uwsgi过程中,遇到不少奇奇怪怪的问题.零零散散的.感觉有必要总结一下.</li>
+</ul>
+<h2 id="问题记录">问题记录</h2><blockquote>
+<ol>
+<li>将修改后的测试代码,部署到生产环境.发现始终没有效果.</li>
+</ol>
+</blockquote>
+<ul>
+<li>开始以为是代码改的不对,死活看不出问题在哪.后来灵机一动,想想是不是没有重启uwsgi服务的问题.</li>
+<li>通过: ps aux | grep uwsgi, 看到后台的uwsgi进程.</li>
+<li>然后,终端输入: service uwsgi reload , 重启服务进程.再测试,发现OK.</li>
+</ul>
+<p>通过这里,可以分析,代码更改后,uwsgi并不会自动捕捉到更改,而内存里依然是旧的代码.<br>所以,在生产环境调试代码,就一定要记得重启uwsgi服务进程.保证重新加载最新的代码.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录一下使用uwsgi碰到的问题,总结常犯的错误.</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
+    
+      <category term="uwsgi" scheme="http://hhstore.github.io/tags/uwsgi/"/>
+    
+      <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Windos-SSH远程登录软件对比]]></title>
+    <link href="http://hhstore.github.io/2015/08/05/Windows-SSH%E7%99%BB%E5%BD%95%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94/"/>
+    <id>http://hhstore.github.io/2015/08/05/Windows-SSH登录软件对比/</id>
+    <published>2015-08-05T14:12:10.000Z</published>
+    <updated>2015-08-05T03:32:11.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍windows下的SSH远程登录软件.</p>
+<a id="more"></a>
+<h2 id="1-_SSH登录软件">1. SSH登录软件</h2><p>经常需要在windows下,远程连接 虚拟机里的(ubuntu),或者阿里云的云主机(Linux系统).<br>把主流SSH软件都测试一遍,效果对比如下.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">软件</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">特点</th>
+<th style="text-align:left">推荐度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Putty</td>
+<td style="text-align:left">商业</td>
+<td style="text-align:left">太简陋,而且网上各种破解版有病毒,慎用.</td>
+<td style="text-align:left">1星</td>
+</tr>
+<tr>
+<td style="text-align:left">WinSCP</td>
+<td style="text-align:left">免费</td>
+<td style="text-align:left">搭配Putty使用,自带功能太弱.</td>
+<td style="text-align:left">1星</td>
+</tr>
+<tr>
+<td style="text-align:left">Xshell</td>
+<td style="text-align:left">开源</td>
+<td style="text-align:left">在某些配置vim下,会出现光标定位不准确的问题.极难使用</td>
+<td style="text-align:left">2星</td>
+</tr>
+<tr>
+<td style="text-align:left">SecureCRT</td>
+<td style="text-align:left">商业</td>
+<td style="text-align:left">功能蛮强大,只是配色太丑.</td>
+<td style="text-align:left">3星</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://mobaxterm.mobatek.net/download.html" target="_blank" rel="external">MobaXterm</a></td>
+<td style="text-align:left">个人版免费</td>
+<td style="text-align:left">功能强大,各种酷炫的功能,下面详细介绍</td>
+<td style="text-align:left">5星推荐</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.bitvise.com/download-area#" target="_blank" rel="external">Bitvise</a></td>
+<td style="text-align:left">个人版免费</td>
+<td style="text-align:left">带FTP功能</td>
+<td style="text-align:left">4星推荐</td>
+</tr>
+<tr>
+<td style="text-align:left">Cygwin</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">知乎讨论,有些人用,有点像bitvise的窗口风格</td>
+<td style="text-align:left">3星</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-_初步筛选MobaXterm和MobaXterm值得推荐-">2. 初步筛选MobaXterm和MobaXterm值得推荐.</h2><ul>
+<li>MobaXterm: 非常推荐,测试效果非常满意.</li>
+<li>Bitvise: 自带FTP功能,非常实用,除了终端窗口是windows默认风格,不太满意.其他都挺好.</li>
+</ul>
+<h2 id="3-_重点介绍MobaXterm">3. 重点介绍MobaXterm</h2><h3 id="说明:">说明:</h3><p>通过MobaXterm进行远程终端链接，你可以创建 SSH, Telnet, Rlogin, RDP, VNC, XDMCP, FTP, SFTP or 串口等链接。你的每次链接都会自动保存并且出现在左侧链接窗口中。</p>
+<h3 id="亮点:">亮点:</h3><ul>
+<li>自动保存SSH账号,密码.</li>
+<li>可以打开N个登陆窗口.</li>
+<li>窗口高亮,代码高亮.UI配色漂亮.</li>
+<li>自带SFTP服务,甚至可以跟踪命令窗口,随时切换显示当前目录下文件列表.支持拖放上传文件.</li>
+<li>分屏显示,方便管理多台服务器，并且你可以仅输入一次，让一条命令同时在这些不同的服务器终端执行</li>
+<li>内置文本编辑器,可以打开 远程主机的 文件,进行编辑,修改,保存.强大到不能忍.</li>
+<li>通过 RDP 协议,远程链接,并控制你的windows电脑.(类似QQ远程连接,方便)</li>
+<li>在Windows 电脑上，通过XDMCP协议，远程控制Solaris 桌面系统。</li>
+<li>有很多免费的插件</li>
+</ul>
+<h3 id="总结:">总结:</h3><p>说了这么多,强力推荐这个软件.非常非常好用.</p>
+<h2 id="参考">参考</h2><ul>
+<li><a href="https://linux.cn/article-5468-1.html" target="_blank" rel="external">Windows 下的免费 SSH 客户端工具</a></li>
+<li><a href="http://jingxuan.io/?p=182" target="_blank" rel="external">全能型开源远程终端MobaXterm</a></li>
+<li><a href="http://www.xdowns.com/soft/6/99/2012/Soft_84973.html" target="_blank" rel="external">MobaXterm下载</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍windows下的SSH远程登录软件.</p>]]>
+    
+    </summary>
+    
+      <category term="SSH" scheme="http://hhstore.github.io/tags/SSH/"/>
+    
+      <category term="Windows" scheme="http://hhstore.github.io/tags/Windows/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac配置iTerm2+tumx+zsh]]></title>
+    <link href="http://hhstore.github.io/2015/08/05/Mac-iTerm2+tumx%E9%85%8D%E7%BD%AE/"/>
+    <id>http://hhstore.github.io/2015/08/05/Mac-iTerm2+tumx配置/</id>
+    <published>2015-08-05T12:12:10.000Z</published>
+    <updated>2015-08-05T06:46:30.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Mac中的iTerm2和tumx配合使用配置.</p>
+<a id="more"></a>
+<h3 id="参考">参考</h3><ul>
+<li><a href="http://blog.chh.tw/posts/tmux-terminal-multiplexer/" target="_blank" rel="external">tmux快捷键说明很清楚</a></li>
+<li><a href="http://blog.chh.tw/posts/tmux-terminal-multiplexer/" target="_blank" rel="external">参考2</a></li>
+<li><a href="http://pgbar.com/t/maczhong-duan-terminal-huan-jing-geng-huan-he-sheng-ji-iterm2-plus-tmuxpei-zhi/85" target="_blank" rel="external">Mac终端 (Terminal )环境更换和升级 iTerm2 + tmux配置</a></li>
+<li><a href="http://www.wangyuxiong.com/archives/52137" target="_blank" rel="external">mac工作软件推荐－iterm ＋ zsh ＋ tmux</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Mac中的iTerm2和tumx配合使用配置.</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="iTerm2" scheme="http://hhstore.github.io/tags/iTerm2/"/>
+    
+      <category term="tumx" scheme="http://hhstore.github.io/tags/tumx/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Ubuntu14.04安装Docker详细教程]]></title>
+    <link href="http://hhstore.github.io/2015/07/07/Ubuntu14.04%E5%AE%89%E8%A3%85Docker%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/"/>
+    <id>http://hhstore.github.io/2015/07/07/Ubuntu14.04安装Docker详细教程/</id>
+    <published>2015-07-07T13:21:50.000Z</published>
+    <updated>2015-07-07T13:31:29.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍ubuntu环境安装Docker详细配置过程.</p>
+<a id="more"></a>
+<ul>
+<li><a href="https://docs.docker.com/installation/ubuntulinux/" target="_blank" rel="external">官方文档</a></li>
+</ul>
+<h2 id="前言">前言</h2><ul>
+<li>最近项目重新部署,要重新安装docker,发现docker官网更新版本,添加一些新的功能.故写此文档,以备复查.</li>
+<li>安装docker推荐ubuntu环境,包括centos,Mac 我都尝试过,还是ubuntu最不容易出错.</li>
+<li>这里只记录ubuntu的安装配置过程.其他版本,请参考官方文档.</li>
+</ul>
+<h2 id="1-推荐安装环境:">1.推荐安装环境:</h2><h3 id="1-_云服务器安装Docker-(推荐)">1. 云服务器安装Docker.(推荐)</h3><ul>
+<li>1.推荐使用亚马逊云,Linode,阿里云等方式安装.</li>
+<li>2.之前Docker的image源被墙,国内要采用镜像站点更新,很不稳定.</li>
+<li>3.先在云主机上,安装ubuntu14.04.(要求如下)</li>
+</ul>
+<h3 id="1-2_宿主机要求:">1.2 宿主机要求:</h3><ul>
+<li>1.Linux系统: 64位版本的ubuntu14.04 LTS系统.(64位,为必要条件)</li>
+<li>2.Linux内核版本号: 3.10以上.(内核版本号,为必要条件)</li>
+</ul>
+<h2 id="2-安装Docker:">2.安装Docker:</h2><h3 id="2-1_查看内核版本号:">2.1 查看内核版本号:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r   <span class="comment"># 返回: 3.11.0-15-generic</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2_准备工作:">2.2 准备工作:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1</span>. 更新apt-get</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    </span><br><span class="line"><span class="number">2</span>. 更新依赖</span><br><span class="line">    sudo apt-get install linux-image-generic-lts-trusty</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 重启</span><br><span class="line">    sudo reboot</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 系统重启后,开始安装docker</span><br></pre></td></tr></table></figure>
+<h3 id="2-3_安装">2.3 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 查看是否已安装wget.(这是一个下载工具)</span><br><span class="line">    <span class="built_in">which</span> wget  </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 安装wget.</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    sudo apt-get install wget</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 下载并安装docker.</span><br><span class="line">    wget -qO- https://get.docker.com/ | sh</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 确认docker安装成功.</span><br><span class="line">    sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="3-配置Docker">3.配置Docker</h2><h3 id="3-1_创建Docker用户组-">3.1 创建Docker用户组.</h3><ul>
+<li>为避免每次操作,都加上sudo提权.故创建docker用户组.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 以具有sudo权限的用户账号,登录.</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 创建docker用户组,并添加该用户账号至docker用户组.</span><br><span class="line">    sudo usermod <span class="operator">-a</span>G docker ubuntu</span><br><span class="line"></span><br><span class="line">    示例:</span><br><span class="line">    sudo usermod <span class="operator">-a</span>G docker bingwei   <span class="comment"># 登录用户为bingwei</span></span><br><span class="line">    &gt; sent invalidate(passwd) request, exiting</span><br><span class="line">    &gt; sent invalidate(group) request, exiting</span><br><span class="line">    &gt; sent invalidate(passwd) request, exiting</span><br><span class="line">    &gt; sent invalidate(group) request, exiting</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 退出登录,再次重新登录该用户账号.</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 测试用户组,生效.</span><br><span class="line">    docker run hello-world  <span class="comment"># 不带sudo前缀.若成功,则说明OK.</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2_重启Docker">3.2 重启Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="4-_升级Docker">4. 升级Docker</h2><ul>
+<li>与安装一样.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure>
+<h2 id="5-_卸载Docker">5. 卸载Docker</h2><h3 id="5-1_卸载docker软件包">5.1 卸载docker软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge lxc-docker</span><br></pre></td></tr></table></figure>
+<h3 id="5-2_删除docker已安装的images">5.2 删除docker已安装的images</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+<h2 id="6-_常用操作命令">6. 常用操作命令</h2><ul>
+<li><a href="https://docs.docker.com/userguide/dockerimages/" target="_blank" rel="external">参考</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo docker images          <span class="comment"># 查看已安装image</span></span><br><span class="line">sudo docker search sinatra  <span class="comment"># 搜索某image</span></span><br><span class="line">sudo docker pull XXXX       <span class="comment"># 下载安装image</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-_创建自己的image">7. 创建自己的image</h2><ul>
+<li><a href="https://docs.docker.com/userguide/dockerimages/" target="_blank" rel="external">参考</a></li>
+<li>待补充更新.</li>
+</ul>
+<ol>
+<li>We can update a container created from an image and commit the results to an image.</li>
+<li>We can use a Dockerfile to specify instructions to create an image.</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍ubuntu环境安装Docker详细配置过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="EC2" scheme="http://hhstore.github.io/tags/EC2/"/>
+    
+      <category term="Linode" scheme="http://hhstore.github.io/tags/Linode/"/>
+    
+      <category term="Ubuntu" scheme="http://hhstore.github.io/tags/Ubuntu/"/>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/categories/Docker/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,806 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+  <meta name="google-site-verification" content="alDgEpeIzoLpI3vCAsOEfs6B1RFOuiKueg8-tTxG8xw" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="My Python Blog" />
+
+
+
+  <meta name="keywords" content="Hexo,Next," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="hhstore's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?50c15455e37f70aea674ff4a663eef27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <title> Hexo博客优化 - Next主题个性化定制 // hhstore's blog </title>
+</head>
+
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <!-- add Fork me on Github-->
+    <a href="https://github.com/hhstore"><img style="position: absolute; top: 500; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+    <!-- add Fork me on Github-->
+    
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">hhstore's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools">
+            <i class="menu-item-icon icon-tools"></i> <br />
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            <i class="menu-item-icon icon-books"></i> <br />
+            书单
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-projects">
+          <a href="/projects">
+            <i class="menu-item-icon icon-projects"></i> <br />
+            项目
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            <i class="menu-item-icon icon-links"></i> <br />
+            Links
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+<form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'LvGMYBjz-8ZVB7BazNT_','2.0.0');
+</script>
+
+<div class="site-search-toggle"></div>
+    </div>
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Hexo博客优化 - Next主题个性化定制
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-24
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Hexo/">Hexo</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/24/Github-Hexo-Next主题个性化定制/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/24/Github-Hexo-Next主题个性化定制/"></span>
+            </a>
+          </span>
+          
+        
+
+
+
+        
+          <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+        
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>本篇详细介绍Hexo-Next主题的一些个性化定制.</p>
+<a id="more"></a>
+<h2 id="1-_添加自定义导航分类(以Next主题为例,其他主题类似)">1. 添加自定义导航分类(以Next主题为例,其他主题类似)</h2><h3 id="需求:">需求:</h3><ul>
+<li>默认自带分类:首页,归档,分类,标签,关于.不够用.</li>
+<li>想增加一些自定义的分类.</li>
+<li>本文以添加 <code>工具(tools)</code> 分类为例.</li>
+<li>摸索了半天,修改并不复杂.只需要修改3处地方.</li>
+</ul>
+<h3 id="修改点:">修改点:</h3><ul>
+<li>iBlog/source/tools/index.md</li>
+<li>iBlog/themes/next/_config.yml</li>
+<li>iBlog/themes/next/languages/zh-Hans.yml</li>
+</ul>
+<h3 id="步骤:">步骤:</h3><h4 id="1-_新建source/tools/index-md文件-">1. 新建source/tools/index.md文件.</h4><blockquote>
+<p>在/source/ 文件夹,新建 tools目录,并添加一个index.md文件.可以拷贝其他目录(如tags)中的index.md文件.</p>
+</blockquote>
+<h4 id="2-_修改themes/next/_config-yml文件参数-">2. 修改themes/next/_config.yml文件参数.</h4><blockquote>
+<p>找到menu标签项, 添加子项:  tools: /tools</p>
+</blockquote>
+<ul>
+<li>配置修改:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># when running hexo in a subdirectory (e.g. domain.tld/blog), remove leading slashes ( "/archives" -&gt; "archives" )</span></span><br><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  categories: /categories</span><br><span class="line">  tags: /tags</span><br><span class="line">  tools: /tools      <span class="comment"># 添加位置</span></span><br><span class="line">  about: /about</span><br><span class="line">  <span class="comment">#commonweal: /404.html</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-_修改themes/next/languages/zh-Hans-yml">3. 修改themes/next/languages/zh-Hans.yml</h4><blockquote>
+<p>该文件,就对应中英文替换.如果漏修改此次.导航栏,就显示英文,很丑.</p>
+</blockquote>
+<ul>
+<li>配置修改:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">title:</span><br><span class="line">  archive: 归档</span><br><span class="line">  category: 分类</span><br><span class="line">  tag: 标签</span><br><span class="line"></span><br><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  tools: 工具       <span class="comment"># 添加位置</span></span><br><span class="line">  about: 关于</span><br><span class="line">  commonweal: 公益<span class="number">404</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-_修改完,重新编译部署即可-">4. 修改完,重新编译部署即可.</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<h2 id="2-_添加Fork_Me_On_Github">2. 添加Fork Me On Github</h2><ul>
+<li>添加<code>Fork Me On Github</code>挂件在博客左上角(右上角).官网<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">可选样式</a></li>
+</ul>
+<h3 id="1-_拷贝Github挂件样式代码如下:">1. 拷贝Github挂件样式代码如下:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://github.com/you"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">style</span>=<span class="value">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attribute">src</span>=<span class="value">"https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67"</span> <span class="attribute">alt</span>=<span class="value">"Fork me on GitHub"</span> <span class="attribute">data-canonical-src</span>=<span class="value">"https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-_修改上述代码中href地址为自己的github地址-">2. 修改上述代码中href地址为自己的github地址.</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://github.com/you"</span>&gt;</span></span><br><span class="line">改为:</span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://github.com/hhstore"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-_修改hexo主题(这里以Next主题为例,不同主题修改略有差异,请注意)">3. 修改hexo主题(这里以Next主题为例,不同主题修改略有差异,请注意)</h3><ul>
+<li>修改文件: themes/next/layout/_layout.swig</li>
+<li>打开_layout.swig文件,找到如下对应位置,添加上述样式代码段即可.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">class</span>=<span class="value">"theme-next &#123;% if theme.use_motion %&#125;use-motion&#123;% endif %&#125; &#123;% if theme.scheme %&#125;theme-next-&#123;&#123; theme.scheme | lower &#125;&#125;&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  &#123;% include '_partials/head.swig' %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  &#123;% include '_partials/old-browsers.swig' %&#125;</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container one-column &#123;% block page_class %&#125;&#123;% endblock %&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"headband"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!----------- add Fork me on Github ------------&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://github.com/hhstore"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">style</span>=<span class="value">"position: absolute; top: 500; left: 0; border: 0;"</span> <span class="attribute">src</span>=<span class="value">"https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67"</span> <span class="attribute">alt</span>=<span class="value">"Fork me on GitHub"</span> <span class="attribute">data-canonical-src</span>=<span class="value">"https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!----------- add Fork me on Github ------------&gt;</span>   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"header"</span> <span class="attribute">class</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"header-inner"</span>&gt;</span></span><br><span class="line">        &#123;% include '_partials/header.swig' %&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-------------省略-------------------&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-------------省略-------------------&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"back-to-top"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-_添加博客访问量统计">3. 添加博客访问量统计</h2><ul>
+<li><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子</a></li>
+<li><a href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/" target="_blank" rel="external">hexo添加访问统计</a></li>
+<li>使用不蒜子脚本.</li>
+<li>修改主题模板,几处地方,效果如本博客.</li>
+</ul>
+<h3 id="3-1_博文访问量统计修改点:(只适用于Next主题,其他主题,参考修改)">3.1 博文访问量统计修改点:(只适用于Next主题,其他主题,参考修改)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">iB<span class="built_in">log</span>/themes/next/layout/_macro/post.swig</span><br><span class="line"></span><br><span class="line">在&lt;div class=<span class="string">"post-header"</span>&gt;&lt;/div&gt; 中找到&lt;div class=<span class="string">"post-meta"</span>&gt;&lt;/div&gt;</span><br><span class="line">在其中,最末尾处,添加如下代码:(该代码实现,非博客主页,才显示阅读量统计)</span><br><span class="line"></span><br><span class="line">        &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">          &lt;span id=<span class="string">"busuanzi_container_page_pv"</span>&gt;  |  阅读量 &lt;span id=<span class="string">"busuanzi_value_page_pv"</span>&gt;&lt;/span&gt; 次&lt;/span&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-_添加多说评论">4. 添加多说评论</h2><ul>
+<li><a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">Hexo使用多说教程</a></li>
+<li><a href="http://dev.duoshuo.com/docs/5016427f77cf5fa30500000e" target="_blank" rel="external">多说API - 代码显示【文章评论数】方法</a></li>
+</ul>
+<h2 id="5-_添加站内搜索">5. 添加站内搜索</h2><ul>
+<li>站内搜索服务: 百度,google.考虑google被墙,建议选择第三方的.</li>
+<li>第三方站内搜索服务: tinysou/Swiftype </li>
+<li><a href="https://swiftype.com/" target="_blank" rel="external">swiftype服务</a></li>
+<li><a href="http://doc.tinysou.com/" target="_blank" rel="external">tinysou服务</a></li>
+<li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-base/" target="_blank" rel="external">参考: 动动手指，NexT主题与Hexo更搭哦（基础篇）</a></li>
+<li>特别提醒: 参考如上文档修改后,如果博客中的swiftype搜索框,无法正常弹出.请注意检查chrome浏览器的广告插件(Adblock Plus),设置成”对当前网站禁用”,刷新即可.</li>
+</ul>
+<h2 id="6-_SEO优化">6. SEO优化</h2><h3 id="6-1_优化title">6.1 优化title</h3><p>更改index.swig文件，文件路径是your-hexo-site\themes\next\layout，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">将下面代码:</span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125; </span><br><span class="line">  &#123;&#123; config.title &#125;&#125; </span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">改成:</span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125; </span><br><span class="line">  &#123;&#123; config.title &#125;&#125; - &#123;&#123; theme.description &#125;&#125; </span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>首页标题,会更符合 “网站名称 - 网站描述” 这习惯。</li>
+</ul>
+<h3 id="6-2_进阶:_seo优化，在Title中显示关键词">6.2 进阶: seo优化，在Title中显示关键词</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block title %&#125; </span><br><span class="line">  &#123;&#123; theme.keywords &#125;&#125; - &#123;&#123; config.title &#125;&#125; - &#123;&#123; theme.description &#125;&#125; </span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：别堆砌关键字，整个标题一般不超过80个字符，可以通过chinaz的seo综合查询检查。</li>
+</ul>
+<h2 id="7-_添加友情链接">7. 添加友情链接</h2><ul>
+<li><a href="http://zipperary.com/2013/05/30/hexo-guide-4/" target="_blank" rel="external">参考</a></li>
+</ul>
+<h2 id="8-_添加最近访客">8. 添加最近访客</h2><ul>
+<li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-duoshuo/" target="_blank" rel="external">动动手指，给你的Hexo站点添加最近访客（多说篇）</a></li>
+</ul>
+<h2 id="9-_博客迁移至gitcafe">9. 博客迁移至gitcafe</h2><ul>
+<li><a href="https://gitcafe.com/" target="_blank" rel="external">gitcafe</a></li>
+<li>参考: <a href="http://zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">《托管博客到gitcafe》</a></li>
+<li>由于 Google 被大陆屏蔽，Github 从大陆访问也比较慢，且不太稳定。</li>
+<li>考虑把 Blog 迁移到国内，Gitcafe提供的免费 Page 服务，方便迁移。</li>
+<li>建议把 google 提供的 jquery 和 fonts api 全换掉。</li>
+<li>由于不同的主题其位置不同，最好是搜索一下。</li>
+</ul>
+<h2 id="10_博文中添加图片,音乐,视频-">10 博文中添加图片,音乐,视频.</h2><ul>
+<li><a href="http://zipperary.com/2013/06/27/media-on-hexo/" target="_blank" rel="external">参考</a></li>
+</ul>
+<h2 id="11-_博客绑定二级域名">11. 博客绑定二级域名</h2><ul>
+<li>待更新.</li>
+</ul>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/"> #Hexo </a>
+          
+            <a href="/tags/Next/"> #Next </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/25/Mac配置Shell神器Zsh/">Mac配置Shell神器Zsh</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/24/Git配置教程/">Git配置教程</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="post-spread">
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      </div>
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/06/24/Github-Hexo-Next主题个性化定制/"
+               data-title="Hexo博客优化 - Next主题个性化定制" data-url="http://hhstore.github.io/2015/06/24/Github-Hexo-Next主题个性化定制/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787" alt="hhstore" />
+          <p class="site-author-name">hhstore</p>
+        </div>
+        <p class="site-description motion-element">My Python Blog</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/hhstore" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="selfrefactor@gmail.com" target="_blank">邮箱</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.douban.com/people/darkforce/" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/hhstore" target="_blank">ZhiHu</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_添加自定义导航分类(以Next主题为例,其他主题类似)"><span class="nav-text">1. 添加自定义导航分类(以Next主题为例,其他主题类似)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求:"><span class="nav-text">需求:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改点:"><span class="nav-text">修改点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤:"><span class="nav-text">步骤:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-_新建source/tools/index-md文件-"><span class="nav-text">1. 新建source/tools/index.md文件.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_修改themes/next/_config-yml文件参数-"><span class="nav-text">2. 修改themes/next/_config.yml文件参数.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_修改themes/next/languages/zh-Hans-yml"><span class="nav-text">3. 修改themes/next/languages/zh-Hans.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-_修改完,重新编译部署即可-"><span class="nav-text">4. 修改完,重新编译部署即可.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_添加Fork_Me_On_Github"><span class="nav-text">2. 添加Fork Me On Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_拷贝Github挂件样式代码如下:"><span class="nav-text">1. 拷贝Github挂件样式代码如下:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_修改上述代码中href地址为自己的github地址-"><span class="nav-text">2. 修改上述代码中href地址为自己的github地址.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_修改hexo主题(这里以Next主题为例,不同主题修改略有差异,请注意)"><span class="nav-text">3. 修改hexo主题(这里以Next主题为例,不同主题修改略有差异,请注意)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_添加博客访问量统计"><span class="nav-text">3. 添加博客访问量统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_博文访问量统计修改点:(只适用于Next主题,其他主题,参考修改)"><span class="nav-text">3.1 博文访问量统计修改点:(只适用于Next主题,其他主题,参考修改)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_添加多说评论"><span class="nav-text">4. 添加多说评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_添加站内搜索"><span class="nav-text">5. 添加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_SEO优化"><span class="nav-text">6. SEO优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1_优化title"><span class="nav-text">6.1 优化title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2_进阶:_seo优化，在Title中显示关键词"><span class="nav-text">6.2 进阶: seo优化，在Title中显示关键词</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_添加友情链接"><span class="nav-text">7. 添加友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_添加最近访客"><span class="nav-text">8. 添加最近访客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_博客迁移至gitcafe"><span class="nav-text">9. 博客迁移至gitcafe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10_博文中添加图片,音乐,视频-"><span class="nav-text">10 博文中添加图片,音乐,视频.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-_博客绑定二级域名"><span class="nav-text">11. 博客绑定二级域名</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">hhstore</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span id="busuanzi_container_site_uv">   本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hhstore"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+
+</html>

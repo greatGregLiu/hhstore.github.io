@@ -1,0 +1,765 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+  <meta name="google-site-verification" content="alDgEpeIzoLpI3vCAsOEfs6B1RFOuiKueg8-tTxG8xw" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="My Python Blog" />
+
+
+
+  <meta name="keywords" content="Docker,Mac," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="hhstore's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?50c15455e37f70aea674ff4a663eef27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <title> Mac搭建Docker开发环境 // hhstore's blog </title>
+</head>
+
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <!-- add Fork me on Github-->
+    <a href="https://github.com/hhstore"><img style="position: absolute; top: 500; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+    <!-- add Fork me on Github-->
+    
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">hhstore's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools">
+            <i class="menu-item-icon icon-tools"></i> <br />
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            <i class="menu-item-icon icon-books"></i> <br />
+            书单
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-projects">
+          <a href="/projects">
+            <i class="menu-item-icon icon-projects"></i> <br />
+            项目
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            <i class="menu-item-icon icon-links"></i> <br />
+            Links
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+<form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'LvGMYBjz-8ZVB7BazNT_','2.0.0');
+</script>
+
+<div class="site-search-toggle"></div>
+    </div>
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Mac搭建Docker开发环境
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-08-06
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Tools/">Tools</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/08/06/Mac搭建Docker开发环境/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/06/Mac搭建Docker开发环境/"></span>
+            </a>
+          </span>
+          
+        
+
+
+
+        
+          <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+        
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>记录Mac搭建Docker开发环境过程.</p>
+<a id="more"></a>
+<h2 id="Docker简介">Docker简介</h2><h2 id="Mac搭建Docker环境">Mac搭建Docker环境</h2><ul>
+<li>之前不太想在Mac上部署Docker,后来发现实在影响开发效率.索性还是配置一下吧.</li>
+<li>Mac配置Docker开发环境,需要安装Boot2Docker.详细步骤如下.</li>
+<li><a href="https://docs.docker.com/installation/mac/" target="_blank" rel="external">参考:官方文档</a></li>
+</ul>
+<h3 id="1-_下载_Boot2Docker_安装包">1. 下载 Boot2Docker 安装包</h3><ul>
+<li><a href="http://get.daocloud.io/#install-boot2docker" target="_blank" rel="external">下载地址</a></li>
+<li>下载 Boot2Docker-1.7.1.pkg 并安装.</li>
+<li>安装完成,会在Launchpad里添加Boot2Docker图标.</li>
+</ul>
+<h3 id="2-_初始化-">2. 初始化.</h3><ul>
+<li>第一次,在Launchpad中,打开Boot2Docker软件,会自动打开终端,显示如下信息.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">Last login: Thu Aug  <span class="number">6</span> <span class="number">16</span>:<span class="number">47</span>:<span class="number">00</span> on ttys012</span><br><span class="line"><span class="built_in">unset</span> DYLD_LIBRARY_PATH ; <span class="built_in">unset</span> LD_LIBRARY_PATH</span><br><span class="line">mkdir -p ~/.boot2docker</span><br><span class="line"><span class="keyword">if</span> [ ! <span class="operator">-f</span> ~/.boot2docker/boot2docker.iso ]; <span class="keyword">then</span> cp /usr/<span class="built_in">local</span>/share/boot2docker/boot2docker.iso ~/.boot2docker/ ; <span class="keyword">fi</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/boot2docker init</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/boot2docker up</span><br><span class="line">$(/usr/<span class="built_in">local</span>/bin/boot2docker shellinit)</span><br><span class="line">docker version</span><br><span class="line">hhstore@hhstore-rMBP15.local:/Users/hhstore  $ bash</span><br><span class="line">bash-<span class="number">3.2</span>$ <span class="built_in">unset</span> DYLD_LIBRARY_PATH ; <span class="built_in">unset</span> LD_LIBRARY_PATH</span><br><span class="line">bash-<span class="number">3.2</span>$ mkdir -p ~/.boot2docker</span><br><span class="line">bash-<span class="number">3.2</span>$ <span class="keyword">if</span> [ ! <span class="operator">-f</span> ~/.boot2docker/boot2docker.iso ]; <span class="keyword">then</span> cp /usr/<span class="built_in">local</span>/share/boot2docker/boot2docker.iso ~/.boot2docker/ ; <span class="keyword">fi</span></span><br><span class="line">bash-<span class="number">3.2</span>$ /usr/<span class="built_in">local</span>/bin/boot2docker init</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/hhstore/.ssh/id_boot2docker.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/hhstore/.ssh/id_boot2docker.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line"><span class="number">43</span>:<span class="number">0</span>d:<span class="number">3</span>c:<span class="number">7</span>a:<span class="number">02</span>:dc:<span class="number">6</span>c:<span class="number">2</span>a:<span class="number">21</span>:<span class="number">02</span>:<span class="number">26</span>:<span class="number">81</span>:f0:f7:ae:<span class="number">61</span> hhstore@hhstore-rMBP15.local</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|Oo . o ..        |</span><br><span class="line">|*.. o + oo       |</span><br><span class="line">|.....+ ....      |</span><br><span class="line">|  ....o..        |</span><br><span class="line">|   .  .oS        |</span><br><span class="line">|     .   .       |</span><br><span class="line">|    E .          |</span><br><span class="line">|   . o           |</span><br><span class="line">|    .            |</span><br><span class="line">+-----------------+</span><br><span class="line">Initialization of virtual machine "boot2docker-vm" complete.</span><br><span class="line">Use `boot2docker up` to start it.</span><br><span class="line">bash-3.2$ /usr/local/bin/boot2docker up</span><br><span class="line">$(/usr/local/bin/boot2docker shellinit)</span><br><span class="line">docker version</span><br><span class="line"></span><br><span class="line">Waiting for VM and Docker daemon to start...</span><br><span class="line">........................oooooooooooooooo</span><br><span class="line">Started.</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line"></span><br><span class="line">To connect the Docker client to the Docker daemon, please set:</span><br><span class="line">    export DOCKER_CERT_PATH=/Users/hhstore/.boot2docker/certs/boot2docker-vm</span><br><span class="line">    export DOCKER_TLS_VERIFY=1</span><br><span class="line">    export DOCKER_HOST=tcp://192.168.59.103:2376</span><br><span class="line"></span><br><span class="line">Or run: `eval "$(boot2docker shellinit)"`</span><br><span class="line"></span><br><span class="line">bash-3.2$ $(/usr/local/bin/boot2docker shellinit)</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line">bash-3.2$ docker version</span><br><span class="line">Client version: 1.7.1</span><br><span class="line">Client API version: 1.19</span><br><span class="line">Go version (client): go1.4.2</span><br><span class="line">Git commit (client): 786b29d</span><br><span class="line">OS/Arch (client): darwin/amd64</span><br><span class="line">Server version: 1.7.1</span><br><span class="line">Server API version: 1.19</span><br><span class="line">Go version (server): go1.4.2</span><br><span class="line">Git commit (server): 786b29d</span><br><span class="line">OS/Arch (server): linux/amd64</span><br><span class="line">bash-3.2$</span><br><span class="line">bash-3.2$</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-_配置Docker加速器(Docker_1-3-2版本以上支持加速器)">3. 配置Docker加速器(Docker 1.3.2版本以上支持加速器)</h3><ul>
+<li><a href="https://dashboard.daocloud.io/mirror" target="_blank" rel="external">参考:加速器</a></li>
+</ul>
+<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://e73f9bcf.m.daocloud.io\""</span> | sudo tee -a /etc/<span class="keyword">default</span>/docker</span><br><span class="line">sudo <span class="keyword">service</span> docker <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-_下载image,测试正常-">4. 下载image,测试正常.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无需再添加 mirror源地址.正常执行时,会开始下载image.耐心等待.</span></span><br><span class="line">sudo docker pull ubuntu:<span class="number">14.04</span>  </span><br><span class="line">docker pull hello-world</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整提示信息:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bash-<span class="number">3.2</span>$ docker pull ubuntu:<span class="number">14.04</span></span><br><span class="line"><span class="number">14.04</span>: Pulling from ubuntu</span><br><span class="line"><span class="number">2</span>eaf0096818b: Pull complete</span><br><span class="line">dac7bccb8ac3: Pull complete</span><br><span class="line"><span class="number">389028</span>aa9e91: Pull complete</span><br><span class="line"><span class="number">63</span>e3c10217b8: Already exists</span><br><span class="line">ubuntu:<span class="number">14.04</span>: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.</span><br><span class="line">Digest: sha256:<span class="number">44</span>beefbcad1eb02996bf8eca28817cce4acfb16abf3736bf7040cb34244bf56f</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:<span class="number">14.04</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-_查看已经下载的image">5. 查看已经下载的image</h3><ul>
+<li>启动Docker服务.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boot2docker init   <span class="comment"># 初始化.</span></span><br><span class="line">boot2docker up     <span class="comment"># 启动.第一次,可能弹出如下报错提示,后提供解决办法.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一次执行上述命令,弹出如下报错信息:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ boot2docker up</span><br><span class="line">Waiting <span class="keyword">for</span> VM and Docker daemon to start...</span><br><span class="line">.o</span><br><span class="line">Started.</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/ca.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/cert.pem</span><br><span class="line">Writing /Users/hhstore/.boot2docker/certs/boot2docker-vm/key.pem</span><br><span class="line"></span><br><span class="line">To connect the Docker client to the Docker daemon, please <span class="built_in">set</span>:</span><br><span class="line">    <span class="built_in">export</span> DOCKER_HOST=tcp://<span class="number">192.168</span>.<span class="number">59.103</span>:<span class="number">2376</span></span><br><span class="line">    <span class="built_in">export</span> DOCKER_CERT_PATH=/Users/hhstore/.boot2docker/certs/boot2docker-vm</span><br><span class="line">    <span class="built_in">export</span> DOCKER_TLS_VERIFY=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">Or run: `<span class="built_in">eval</span> <span class="string">"<span class="variable">$(boot2docker shellinit)</span>"</span>`</span><br></pre></td></tr></table></figure>
+<ul>
+<li>根据报错提示,最后一句要求执行:$(boot2docker shellinit)命令:</li>
+<li>执行该命令,只是当次有效,下次关闭终端,需要重新设置.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意,含$符号.</span></span><br><span class="line">$(boot2docker shellinit)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看已安装的image.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当前返回结果如下:</span></span><br><span class="line">$ docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span><br><span class="line">ubuntu              <span class="number">14.04</span>               <span class="number">63</span>e3c10217b8        <span class="number">41</span> hours ago        <span class="number">188.4</span> MB</span><br><span class="line">hello-world         latest              <span class="number">91</span>c95931e552        <span class="number">3</span> months ago        <span class="number">910</span> B</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用Docker-image.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输入如下命令,正常输出提示信息:</span></span><br><span class="line">$ docker run hello-world</span><br><span class="line"></span><br><span class="line">Hello from Docker.</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> <span class="number">1</span>. The Docker client contacted the Docker daemon.</span><br><span class="line"> <span class="number">2</span>. The Docker daemon pulled the <span class="string">"hello-world"</span> image from the Docker Hub.</span><br><span class="line">    (Assuming it was not already locally available.)</span><br><span class="line"> <span class="number">3</span>. The Docker daemon created a new container from that image <span class="built_in">which</span> runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> <span class="number">4</span>. The Docker daemon streamed that output to the Docker client, <span class="built_in">which</span> sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> http://docs.docker.com/userguide/</span><br></pre></td></tr></table></figure>
+<h3 id="2-_配置_Boot2Docker">2. 配置 Boot2Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.boot2docker</span><br><span class="line"><span class="built_in">echo</span> ISOURL = \<span class="string">"https://get.daocloud.io/boot2docker/boot2docker-lastest.iso\" &gt; ~/.boot2docker/profile</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-_初始化并启动虚拟机">3. 初始化并启动虚拟机</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boot2docker init</span><br><span class="line">boot2docker up</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/"> #Docker </a>
+          
+            <a href="/tags/Mac/"> #Mac </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/06/Mac-文本比较工具推荐/">Mac文本比较工具推荐</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/06/Docker_image制作/">Docker应用:利用Dockerfile制作Image</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="post-spread">
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      </div>
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/08/06/Mac搭建Docker开发环境/"
+               data-title="Mac搭建Docker开发环境" data-url="http://hhstore.github.io/2015/08/06/Mac搭建Docker开发环境/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787" alt="hhstore" />
+          <p class="site-author-name">hhstore</p>
+        </div>
+        <p class="site-description motion-element">My Python Blog</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/hhstore" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="selfrefactor@gmail.com" target="_blank">邮箱</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.douban.com/people/darkforce/" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/hhstore" target="_blank">ZhiHu</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker简介"><span class="nav-text">Docker简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac搭建Docker环境"><span class="nav-text">Mac搭建Docker环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_下载_Boot2Docker_安装包"><span class="nav-text">1. 下载 Boot2Docker 安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_初始化-"><span class="nav-text">2. 初始化.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_配置Docker加速器(Docker_1-3-2版本以上支持加速器)"><span class="nav-text">3. 配置Docker加速器(Docker 1.3.2版本以上支持加速器)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_下载image,测试正常-"><span class="nav-text">4. 下载image,测试正常.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_查看已经下载的image"><span class="nav-text">5. 查看已经下载的image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_配置_Boot2Docker"><span class="nav-text">2. 配置 Boot2Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_初始化并启动虚拟机"><span class="nav-text">3. 初始化并启动虚拟机</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">hhstore</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span id="busuanzi_container_site_uv">   本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hhstore"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+
+</html>
