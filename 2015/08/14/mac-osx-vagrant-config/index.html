@@ -24,7 +24,7 @@
 
 
 
-  <meta name="keywords" content="Chrome,plugin," />
+  <meta name="keywords" content="Mac,Vagrant," />
 
 
 
@@ -59,7 +59,7 @@
 
 
 
-  <title> Chrome必装插件 // hhstore's blog </title>
+  <title> Mac配置Vagrant // hhstore's blog </title>
 </head>
 
 
@@ -224,7 +224,7 @@
           
           
             
-              Chrome必装插件
+              Mac配置Vagrant
             
           
         </h1>
@@ -232,7 +232,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-25
+          发表于 2015-08-14
         </span>
 
         
@@ -252,8 +252,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/25/Chrome必装插件/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/25/Chrome必装插件/"></span>
+            <a href="/2015/08/14/mac-osx-vagrant-config/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/14/mac-osx-vagrant-config/"></span>
             </a>
           </span>
           
@@ -278,28 +278,21 @@
       
 
       
-        <p>本篇介绍Chrome好用的必装插件.</p>
+        <p>记录Mac配置Vagrant过程,已经遇到的问题解决.</p>
 <a id="more"></a>
-<p>翻墙后,在google应用商店搜索下载安装.</p>
-<ul>
-<li>Adblock Plus : 广告屏蔽</li>
-<li>Chrono下载管理器 : 管理下载</li>
-<li>Search by Image (by Google) : google搜图</li>
-<li>UndoCloseTab : 撤销已关闭页面</li>
-<li>Save as PDF : 页面保存为PDF</li>
-<li>Docs PDF/PowerPoint Viewer（由 Google 提供） : PDF阅读</li>
-<li>Highlight Keywords for Google Search: 搜索高亮关键词</li>
-<li>一键管理所有扩展 : 如是说.</li>
-<li>印象笔记·剪藏 : 网页剪切,同步印象笔记</li>
-<li>Infinity新标签页 : 辅助多标签</li>
-<li>红杏 : VPN插件</li>
-<li>Proxy SwitchySharp : 代理VPN</li>
-<li>Postman - REST Client : 模拟HTTP请求</li>
-<li>Web Developer : web开发工具</li>
-<li>WEB前端助手(FeHelper) : web开发</li>
-<li>React Developer Tools : react调试工具</li>
-<li>Bookmark Search : 搜索收藏夹</li>
-</ul>
+<h2 id="vagrant介绍">vagrant介绍</h2><h2 id="vagrant安装过程">vagrant安装过程</h2><p>网上有很多详细的教程,跟着步骤一步步走,基本不会错.<br>但是我在最后一步出了问题,特别记录下来.以备后人.<br>主要是这个问题,google了一圈,也没找到解答.</p>
+<h2 id="配置过程:">配置过程:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 下载box文件</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 切换到box文件目录下. 初始化</span><br><span class="line"></span><br><span class="line">vagrant box add <span class="string">"ubuntu_14.04"</span> ubuntu-<span class="number">14.04</span>.box   <span class="comment"># 添加box, 指定名字为ubuntu14.04. , 后面的是当前目录下的box文件.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 查看已经添加至系统的box:</span><br><span class="line">vagrant box list</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 初始化某个box:</span><br><span class="line">vagrant init <span class="string">"ubuntu_14.04"</span>   <span class="comment"># 指定名称,非base方式.</span></span><br><span class="line"></span><br><span class="line">成功初始化后,在当前目录生成一个 Vagrantfile的文件</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. 启动虚拟机.</span><br><span class="line"></span><br><span class="line">vagrant up</span><br></pre></td></tr></table></figure>
+<h2 id="问题重现:">问题重现:</h2><p>当我配置好,执行到 $ vagrant up 之后,一切都是正常的.</p>
+<p>然后,再执行 $ vagrant ssh, 就始终报错.</p>
+<p>信息如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh</span><br><span class="line">ssh: Could not resolve hostname ubuntu: nodename nor servname provided, or not known</span><br></pre></td></tr></table></figure>
+<p>出现该错误,我第一反应,是vagrant的配置有误.就花了很久来找问题解决办法,而方向是vagrant.<br>把网上找得到所有相关的解决办法,都尝试一遍,依然无解.<br>实在是要放弃了.结果想想看看.ssh目录吧.<br>然后看到有个config文件. cat查看内容.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line"></span><br><span class="line">Users/XXX/.ssh $ ls</span><br><span class="line">authorizedkeys iKey idboot2docker.pub id_rsa.pub</span><br><span class="line">config idboot2docker idrsa known_hosts</span><br><span class="line"></span><br><span class="line">$ cat config</span><br><span class="line">Host <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line">hostname ubuntu</span><br><span class="line">user root</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法:">解决办法:</h2><p>然后,就发现玄机.问题就出在这个config里配置了无效的hostname.<br>黑线…实在不记得配置这个config的缘由了.</p>
+<p>然后,删除该config之后.</p>
+<p>再次切换到vagrant的虚拟机目录.执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh</span><br><span class="line">Welcome to Ubuntu <span class="number">14.04</span> LTS (GNU/Linux <span class="number">3.13</span>.<span class="number">0</span>-<span class="number">45</span>-generic x86_64)</span><br><span class="line"></span><br><span class="line">Documentation: https://help.ubuntu.com/</span><br><span class="line"></span><br><span class="line">Last login: Thu Feb <span class="number">12</span> <span class="number">10</span>:<span class="number">37</span>:<span class="number">57</span> <span class="number">2015</span> from <span class="number">10.0</span>.<span class="number">2.2</span></span><br><span class="line">vagrant@vagrant:~$ ls</span><br><span class="line">setuptools-<span class="number">12.1</span>.zip</span><br></pre></td></tr></table></figure>
+<p>终于正常了.faint.搞了2天,总算是把这个问题解决了.<br>以后还真是要特别注意,删掉各种无效的配置文件.<br>指不定什么时候,就坑你一下.</p>
 
       
     </div>
@@ -308,9 +301,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Chrome/"> #Chrome </a>
+            <a href="/tags/Mac/"> #Mac </a>
           
-            <a href="/tags/plugin/"> #plugin </a>
+            <a href="/tags/Vagrant/"> #Vagrant </a>
           
         </div>
       
@@ -319,13 +312,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/26/Ubuntu安装配置软件/">ubuntu安装配置软件</a>
+              <a href="/2015/08/20/python-write-python-in-pythonic-way/">Pythonic - 用优雅的方式写Python代码</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/25/Mac配置Shell神器Zsh/">Mac配置Shell神器Zsh</a>
+              <a href="/2015/08/06/mac-osx-text-edit-tools-diff/">Mac文本比较工具推荐</a>
             
           </div>
         </div>
@@ -368,8 +361,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/06/25/Chrome必装插件/"
-               data-title="Chrome必装插件" data-url="http://hhstore.github.io/2015/06/25/Chrome必装插件/">
+          <div class="ds-thread" data-thread-key="2015/08/14/mac-osx-vagrant-config/"
+               data-title="Mac配置Vagrant" data-url="http://hhstore.github.io/2015/08/14/mac-osx-vagrant-config/">
           </div>
         
       </div>
@@ -485,7 +478,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vagrant介绍"><span class="nav-text">vagrant介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vagrant安装过程"><span class="nav-text">vagrant安装过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置过程:"><span class="nav-text">配置过程:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题重现:"><span class="nav-text">问题重现:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法:"><span class="nav-text">解决办法:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -72,8 +72,8 @@
   
   <entry>
     <title></title>
-    <link href="http://hhstore.github.io/2016/03/16/MongoDB-Replica-Set/"/>
-    <id>http://hhstore.github.io/2016/03/16/MongoDB-Replica-Set/</id>
+    <link href="http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/"/>
+    <id>http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/</id>
     <published>2016-03-16T07:28:31.000Z</published>
     <updated>2016-03-16T07:28:31.000Z</updated>
     <content type="html"><![CDATA[<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
@@ -622,10 +622,10 @@
   
   <entry>
     <title><![CDATA[Pythonic - 用优雅的方式写Python代码]]></title>
-    <link href="http://hhstore.github.io/2015/08/20/Pythonic-%E7%94%A8%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%86%99Python%E4%BB%A3%E7%A0%81/"/>
-    <id>http://hhstore.github.io/2015/08/20/Pythonic-用优雅的方式写Python代码/</id>
+    <link href="http://hhstore.github.io/2015/08/20/python-write-python-in-pythonic-way/"/>
+    <id>http://hhstore.github.io/2015/08/20/python-write-python-in-pythonic-way/</id>
     <published>2015-08-20T09:12:10.000Z</published>
-    <updated>2015-09-16T03:29:17.000Z</updated>
+    <updated>2016-08-12T06:23:45.000Z</updated>
     <content type="html"><![CDATA[<p>本篇准备整理各种Python的编程规范,以及比较Pythonic的代码技巧.</p>
 <a id="more"></a>
 <h2 id="1-_前言">1. 前言</h2><ul>
@@ -739,8 +739,8 @@
   
   <entry>
     <title><![CDATA[Mac配置Vagrant]]></title>
-    <link href="http://hhstore.github.io/2015/08/14/Mac%E9%85%8D%E7%BD%AEvagrant/"/>
-    <id>http://hhstore.github.io/2015/08/14/Mac配置vagrant/</id>
+    <link href="http://hhstore.github.io/2015/08/14/mac-osx-vagrant-config/"/>
+    <id>http://hhstore.github.io/2015/08/14/mac-osx-vagrant-config/</id>
     <published>2015-08-14T08:12:10.000Z</published>
     <updated>2015-08-14T11:07:40.000Z</updated>
     <content type="html"><![CDATA[<p>记录Mac配置Vagrant过程,已经遇到的问题解决.</p>
@@ -774,8 +774,8 @@
   
   <entry>
     <title><![CDATA[Mac文本比较工具推荐]]></title>
-    <link href="http://hhstore.github.io/2015/08/06/Mac-%E6%96%87%E6%9C%AC%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
-    <id>http://hhstore.github.io/2015/08/06/Mac-文本比较工具推荐/</id>
+    <link href="http://hhstore.github.io/2015/08/06/mac-osx-text-edit-tools-diff/"/>
+    <id>http://hhstore.github.io/2015/08/06/mac-osx-text-edit-tools-diff/</id>
     <published>2015-08-06T13:42:13.000Z</published>
     <updated>2015-09-17T16:28:15.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍Mac中的文本比较工具.</p>
@@ -799,41 +799,9 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Docker应用:利用Dockerfile制作Image]]></title>
-    <link href="http://hhstore.github.io/2015/08/06/Docker_image%E5%88%B6%E4%BD%9C/"/>
-    <id>http://hhstore.github.io/2015/08/06/Docker_image制作/</id>
-    <published>2015-08-06T08:12:10.000Z</published>
-    <updated>2015-08-15T08:33:10.000Z</updated>
-    <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
-<a id="more"></a>
-<h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
-<h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
-<p>Dockerfile 文件内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
-<h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
-<h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://tech.uc.cn/?p=2726" target="_blank" rel="external">参考1: 这篇很详细</a></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>]]>
-    
-    </summary>
-    
-      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
-    
-      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
-    
-      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Mac搭建Docker开发环境]]></title>
-    <link href="http://hhstore.github.io/2015/08/06/Mac%E6%90%AD%E5%BB%BADocker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>http://hhstore.github.io/2015/08/06/Mac搭建Docker开发环境/</id>
+    <link href="http://hhstore.github.io/2015/08/06/docker-mac-osx-dev-env-build/"/>
+    <id>http://hhstore.github.io/2015/08/06/docker-mac-osx-dev-env-build/</id>
     <published>2015-08-06T08:12:10.000Z</published>
     <updated>2015-08-06T09:47:43.000Z</updated>
     <content type="html"><![CDATA[<p>记录Mac搭建Docker开发环境过程.</p>
@@ -887,6 +855,38 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>记录Mac搭建Docker开发环境过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Docker应用:利用Dockerfile制作Image]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/"/>
+    <id>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</id>
+    <published>2015-08-06T08:12:10.000Z</published>
+    <updated>2015-08-15T08:33:10.000Z</updated>
+    <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
+<a id="more"></a>
+<h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
+<h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
+<p>Dockerfile 文件内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
+<h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://tech.uc.cn/?p=2726" target="_blank" rel="external">参考1: 这篇很详细</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>]]>
     
     </summary>
     
@@ -1037,8 +1037,8 @@
   
   <entry>
     <title><![CDATA[Mac配置iTerm2+tumx+zsh]]></title>
-    <link href="http://hhstore.github.io/2015/08/05/Mac-iTerm2+tumx%E9%85%8D%E7%BD%AE/"/>
-    <id>http://hhstore.github.io/2015/08/05/Mac-iTerm2+tumx配置/</id>
+    <link href="http://hhstore.github.io/2015/08/05/mac-osx-iterm2-tmux-config/"/>
+    <id>http://hhstore.github.io/2015/08/05/mac-osx-iterm2-tmux-config/</id>
     <published>2015-08-05T12:12:10.000Z</published>
     <updated>2015-08-05T06:46:30.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍Mac中的iTerm2和tumx配合使用配置.</p>

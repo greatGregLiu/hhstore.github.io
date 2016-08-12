@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hhstore.github.io/2015/08/20/python-write-python-in-pythonic-way/</loc>
+    <lastmod>2016-08-12T06:23:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hhstore.github.io/images/index.html</loc>
     <lastmod>2016-08-12T03:27:38.000Z</lastmod>
   </url>
@@ -17,7 +22,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2016/03/16/MongoDB-Replica-Set/</loc>
+    <loc>http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/</loc>
     <lastmod>2016-03-16T07:28:31.000Z</lastmod>
   </url>
   
@@ -52,7 +57,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/24/Git%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://hhstore.github.io/2015/06/24/git-config-manual/</loc>
     <lastmod>2015-10-12T08:46:55.000Z</lastmod>
   </url>
   
@@ -87,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/06/Mac-%E6%96%87%E6%9C%AC%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
+    <loc>http://hhstore.github.io/2015/08/06/mac-osx-text-edit-tools-diff/</loc>
     <lastmod>2015-09-17T16:28:15.000Z</lastmod>
   </url>
   
@@ -107,12 +112,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/20/Pythonic-%E7%94%A8%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%86%99Python%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2015-09-16T03:29:17.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/06/24/Github-Hexo-Next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E5%AE%9A%E5%88%B6/</loc>
+    <loc>http://hhstore.github.io/2015/06/24/github-hexo-themes-next-config/</loc>
     <lastmod>2015-09-14T09:04:19.000Z</lastmod>
   </url>
   
@@ -132,12 +132,12 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/25/Chrome%E5%BF%85%E8%A3%85%E6%8F%92%E4%BB%B6/</loc>
+    <loc>http://hhstore.github.io/2015/06/25/chrome-plugins/</loc>
     <lastmod>2015-09-14T06:17:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/27/MongoDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://hhstore.github.io/2015/06/27/mongodb-notes/</loc>
     <lastmod>2015-09-14T06:16:54.000Z</lastmod>
   </url>
   
@@ -152,22 +152,22 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/06/Docker_image%E5%88%B6%E4%BD%9C/</loc>
+    <loc>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</loc>
     <lastmod>2015-08-15T08:33:10.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/14/Mac%E9%85%8D%E7%BD%AEvagrant/</loc>
+    <loc>http://hhstore.github.io/2015/08/14/mac-osx-vagrant-config/</loc>
     <lastmod>2015-08-14T11:07:40.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/06/Mac%E6%90%AD%E5%BB%BADocker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <loc>http://hhstore.github.io/2015/08/06/docker-mac-osx-dev-env-build/</loc>
     <lastmod>2015-08-06T09:47:43.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/05/Mac-iTerm2+tumx%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://hhstore.github.io/2015/08/05/mac-osx-iterm2-tmux-config/</loc>
     <lastmod>2015-08-05T06:46:30.000Z</lastmod>
   </url>
   
@@ -187,7 +187,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/24/Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://hhstore.github.io/2015/06/24/github-hexo-build-blog/</loc>
     <lastmod>2015-07-09T04:11:22.000Z</lastmod>
   </url>
   
@@ -202,7 +202,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/25/Mac%E9%85%8D%E7%BD%AEShell%E7%A5%9E%E5%99%A8Zsh/</loc>
+    <loc>http://hhstore.github.io/2015/06/25/mac-osx-zsh-config/</loc>
     <lastmod>2015-06-25T07:54:07.000Z</lastmod>
   </url>
   
