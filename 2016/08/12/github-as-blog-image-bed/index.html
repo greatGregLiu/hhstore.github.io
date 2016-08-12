@@ -291,31 +291,25 @@
 <h2 id="3-_使用_github_本身做图床:">3. 使用 github 本身做图床:</h2><ul>
 <li>考虑不喜欢用微博, 用七牛又嫌麻烦.</li>
 <li>博客配图比较少, 索性研究一下如何用 github 本身做图床.</li>
+<li>如下操作前提: 假定是用 github + hexo 搭建的博客.</li>
 </ul>
-<h3 id="3-1_配置过程:">3.1 配置过程:</h3><ul>
-<li>假定是用 github + hexo 搭建的博客的前提.</li>
-<li>下述操作都遵循此前提.</li>
+<h3 id="3-1_创建图片目录:">3.1 创建图片目录:</h3><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor"># 博客目录, 终端命令行:</span></span><br><span class="line">hexo <span class="keyword">new</span> page image</span><br></pre></td></tr></table></figure>
+<h3 id="3-2_并在此目录下,_新建:_2016/08_目录,_并添加测试图片-">3.2 并在此目录下, 新建: 2016/08 目录, 并添加测试图片.</h3><ul>
+<li>图片目录: images/2016/08</li>
+<li>图片引用 URL 头: <a href="https://github.com/hhstore/hhstore.github.io/blob/master/your-images-dir" target="_blank" rel="external">https://github.com/hhstore/hhstore.github.io/blob/master/your-images-dir</a><ul>
+<li>注意必须拼接: /blob/master, 至于为何是 blob, 暂时不明. </li>
 </ul>
-<ol>
-<li>创建图片目录:</li>
-</ol>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor"># 博客目录, 终端命令行:</span></span><br><span class="line">hexo <span class="keyword">new</span> page image</span><br></pre></td></tr></table></figure>
-<ol>
-<li>此目录下新建: 2016/08 目录, 并添加测试图片.</li>
-</ol>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>/<span class="regexp">/github.com/hhstore</span><span class="regexp">/hhstore.github.io/blob</span><span class="regexp">/master/images</span><span class="regexp">/2016/</span>08/<span class="number">20160812</span>-<span class="number">001</span>.jpg</span><br><span class="line"></span><br><span class="line"><span class="symbol">https:</span>/<span class="regexp">/github.com/hhstore</span><span class="regexp">/hhstore.github.io/blob</span><span class="regexp">/master/</span><span class="number">2016</span>/08/<span class="number">12</span>/github-as-blog-image-bed/index.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="symbol">https:</span>/<span class="regexp">/github.com/hhstore</span><span class="regexp">/hhstore.github.io/images</span><span class="regexp">/</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>测试引用:</li>
-</ol>
-<p><img src="../images/2016/08/20160812-001.jpg?raw=true" alt="测试配图"></p>
-<ul>
-<li>引用:</li>
+</li>
+<li>图片引用 URL 尾: ?raw=true  </li>
+<li>必须拼接 URL 尾巴, 否则无法正常显示</li>
+</ul>
+<p>示例图片 URL: </p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>/<span class="regexp">/github.com/hhstore</span><span class="regexp">/hhstore.github.io/blob</span><span class="regexp">/master/images</span><span class="regexp">/2016/</span>08/<span class="number">20160812</span>-<span class="number">001</span>.jpg</span><br></pre></td></tr></table></figure>
+<h3 id="3-3_测试引用效果:">3.3 测试引用效果:</h3><ul>
+<li>有效引用:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试图片"></li>
 </ul>
 <ul>
-<li>引用:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试图片"></li>
-</ul>
-<ul>
-<li>引用:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg" alt="测试图片"></li>
+<li>无效引用(缺少 ?raw=true 拼接):<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg" alt="测试图片"></li>
 </ul>
 
       
@@ -502,7 +496,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_参考文档:"><span class="nav-text">1. 参考文档:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_图床常规选择:"><span class="nav-text">2. 图床常规选择:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_使用_github_本身做图床:"><span class="nav-text">3. 使用 github 本身做图床:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_配置过程:"><span class="nav-text">3.1 配置过程:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_参考文档:"><span class="nav-text">1. 参考文档:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_图床常规选择:"><span class="nav-text">2. 图床常规选择:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_使用_github_本身做图床:"><span class="nav-text">3. 使用 github 本身做图床:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_创建图片目录:"><span class="nav-text">3.1 创建图片目录:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_并在此目录下,_新建:_2016/08_目录,_并添加测试图片-"><span class="nav-text">3.2 并在此目录下, 新建: 2016/08 目录, 并添加测试图片.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3_测试引用效果:"><span class="nav-text">3.3 测试引用效果:</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
