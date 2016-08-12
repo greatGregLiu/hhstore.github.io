@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Python]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hhstore.github.io//"/>
-  <updated>2016-08-12T02:53:30.000Z</updated>
+  <updated>2016-08-12T02:54:25.000Z</updated>
   <id>http://hhstore.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hhstore.github.io/2016/08/12/github-as-blog-image-bed/"/>
     <id>http://hhstore.github.io/2016/08/12/github-as-blog-image-bed/</id>
     <published>2016-08-12T02:12:10.000Z</published>
-    <updated>2016-08-12T02:53:30.000Z</updated>
+    <updated>2016-08-12T02:54:25.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍如何使用 github 做博客图床.</p>
 <a id="more"></a>
 <h2 id="图床常规选择:">图床常规选择:</h2><ul>
@@ -49,6 +49,9 @@
 <li>测试引用:</li>
 </ol>
 <p><img src="../images/2016/08/20160812-001.jpg" alt="测试配图"></p>
+<ul>
+<li>引用2:</li>
+</ul>
 <p><img src="/tree/master/images/2016/08/20160812-001.jpg" alt="测试配图2"></p>
 ]]></content>
     <summary type="html">
