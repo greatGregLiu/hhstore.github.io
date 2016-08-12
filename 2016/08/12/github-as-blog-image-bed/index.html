@@ -24,7 +24,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Blog,Github,Hexo," />
 
 
 
@@ -59,7 +59,7 @@
 
 
 
-  <title> 分类: Python // hhstore's blog </title>
+  <title> Github + Hexo 搭建博客教程: 使用 Github 本身做图床 // hhstore's blog </title>
 </head>
 
 
@@ -74,7 +74,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column ">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
     <!-- add Fork me on Github-->
     <a href="https://github.com/hhstore"><img style="position: absolute; top: 500; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
@@ -212,110 +212,174 @@
         <div id="content" class="content">
           
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Python
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
 
-  <div class="post post-type-normal">
+  <div class="post post-type-normal ">
     <div class="post-header">
 
-      <div class="post-title">
-        
-            <a class="post-title-link" href="/2015/07/04/Python常用包 - threading/">
-              Python 常用包 - threading 多线程
-            </a>
-        
-      </div>
-
-      <div class="post-meta">
-        <span class="post-time"> 07-04 </span>
-      </div>
-
-    </div>
-  </div>
-
-
-    
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Github + Hexo 搭建博客教程: 使用 Github 本身做图床
+            
+          
+        </h1>
       
 
-  <div class="post post-type-normal">
-    <div class="post-header">
-
-      <div class="post-title">
-        
-            <a class="post-title-link" href="/2015/07/03/Ubuntu部署uwsgi脚本问题解决/">
-              Ubuntu部署uwsgi脚本问题解决
-            </a>
-        
-      </div>
-
       <div class="post-meta">
-        <span class="post-time"> 07-03 </span>
+        <span class="post-time">
+          发表于 2016-08-12
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Tools/">Tools</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/08/12/github-as-blog-image-bed/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/github-as-blog-image-bed/"></span>
+            </a>
+          </span>
+          
+        
+
+
+
+        
+          <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+        
+
+
+
+
+
       </div>
-
     </div>
-  </div>
 
+    <div class="post-body">
 
-    
+      
       
 
-  <div class="post post-type-normal">
-    <div class="post-header">
+      
+        <p>本篇介绍如何使用 github 做博客图床.</p>
+<a id="more"></a>
+<h2 id="图床常规选择:">图床常规选择:</h2><ul>
+<li>微博</li>
+<li>七牛</li>
+<li>github 本身</li>
+</ul>
+<h2 id="使用_github_本身做图床:">使用 github 本身做图床:</h2><ul>
+<li>考虑不喜欢用微博, 用七牛又嫌麻烦.</li>
+<li>博客配图比较少, 索性研究一下如何用 github 本身做图床.</li>
+<li>参考: <a href="http://pein0119.github.io/2014/08/03/hexo%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%BA%90/" target="_blank" rel="external">hexo使用github作为图片链接源</a></li>
+</ul>
+<h3 id="配置过程:">配置过程:</h3><ul>
+<li>假定是用 github + hexo 搭建的博客的前提.</li>
+<li>下述操作都遵循此前提.</li>
+</ul>
+<ol>
+<li>创建图片目录:</li>
+</ol>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor"># 博客目录, 终端命令行:</span></span><br><span class="line">hexo <span class="keyword">new</span> page image</span><br></pre></td></tr></table></figure>
+<ol>
+<li>此目录下新建: 2016/08 目录, 并添加测试图片.</li>
+</ol>
+<ol>
+<li>测试引用:</li>
+</ol>
+<p><img src="../images/2016/08/20160812-001.jpg" alt="测试配图"></p>
 
-      <div class="post-title">
-        
-            <a class="post-title-link" href="/2015/07/03/Python常用包 - Sqlalchemy使用/">
-              Python常用包 - Sqlalchemy 使用
-            </a>
-        
-      </div>
-
-      <div class="post-meta">
-        <span class="post-time"> 07-03 </span>
-      </div>
-
+      
     </div>
-  </div>
 
-
-    
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blog/"> #Blog </a>
+          
+            <a href="/tags/Github/"> #Github </a>
+          
+            <a href="/tags/Hexo/"> #Hexo </a>
+          
+        </div>
       
 
-  <div class="post post-type-normal">
-    <div class="post-header">
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
 
-      <div class="post-title">
-        
-            <a class="post-title-link" href="/2015/07/02/Python常用包 - virtualenv使用/">
-              Python常用包 - virtualenv 使用
-            </a>
-        
-      </div>
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/16/MongoDB-Replica-Set/"></a>
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <span class="post-time"> 07-02 </span>
-      </div>
-
+      
+      
     </div>
   </div>
 
 
+
+    
+      <div class="post-spread">
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      </div>
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2016/08/12/github-as-blog-image-bed/"
+               data-title="Github + Hexo 搭建博客教程: 使用 Github 本身做图床" data-url="http://hhstore.github.io/2016/08/12/github-as-blog-image-bed/">
+          </div>
+        
+      </div>
     
   </div>
-
-  
-  <div class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/Python/">&laquo;</a><a class="page-number" href="/categories/Python/">1</a><span class="page-number current">2</span>
-  </div>
-
 
 
         </div>
@@ -337,6 +401,15 @@
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <div class="site-overview">
@@ -412,6 +485,17 @@
       </div>
 
       
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图床常规选择:"><span class="nav-text">图床常规选择:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用_github_本身做图床:"><span class="nav-text">使用 github 本身做图床:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置过程:"><span class="nav-text">配置过程:</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
 
     </div>
   </div>
@@ -461,12 +545,6 @@
 
   
   
-  
-    <script type="text/javascript">
-      postMotionOptions = {stagger: 100, drag: true};
-    </script>
-  
-
 
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
@@ -486,6 +564,145 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
@@ -498,6 +715,26 @@
   
 
   
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hhstore"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
 
   
   
