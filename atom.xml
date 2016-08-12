@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Python]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hhstore.github.io//"/>
-  <updated>2016-08-12T03:26:52.000Z</updated>
+  <updated>2016-08-12T11:31:01.000Z</updated>
   <id>http://hhstore.github.io//</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[阿里云部署禅道系统步骤]]></title>
+    <link href="http://hhstore.github.io/2016/08/12/aliyun-deploy-zentao-manual/"/>
+    <id>http://hhstore.github.io/2016/08/12/aliyun-deploy-zentao-manual/</id>
+    <published>2016-08-12T14:12:10.000Z</published>
+    <updated>2016-08-12T11:31:01.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍 阿里云部署禅道系统.</p>
+<a id="more"></a>
+<h2 id="禅道系统介绍:">禅道系统介绍:</h2><h2 id="部署主机环境:">部署主机环境:</h2><ul>
+<li>阿里云: 2核/4G/1Mbps/500G 普通主机</li>
+<li>系统: Ubuntu 14.04, x64</li>
+</ul>
+<h2 id="下载安装包:">下载安装包:</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="安装:">安装:</h2><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="livecodeserver"></span><br><span class="line"><span class="comment"># 运行:</span></span><br><span class="line">/opt/zbox/zbox <span class="built_in">start</span> -ap <span class="number">8080</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>浏览器访问: 170.100.100.1:8080 (阿里云主机 IP + 端口)</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍 阿里云部署禅道系统.</p>]]>
+    
+    </summary>
+    
+      <category term="aliyun" scheme="http://hhstore.github.io/tags/aliyun/"/>
+    
+      <category term="禅道" scheme="http://hhstore.github.io/tags/%E7%A6%85%E9%81%93/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Github + Hexo 搭建博客教程: 使用 Github 本身做图床]]></title>
@@ -767,37 +798,6 @@
       <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
     
       <category term="Vagrant" scheme="http://hhstore.github.io/tags/Vagrant/"/>
-    
-      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[阿里云部署禅道系统步骤]]></title>
-    <link href="http://hhstore.github.io/2015/08/12/aliyun-deploy-zentao-manual/"/>
-    <id>http://hhstore.github.io/2015/08/12/aliyun-deploy-zentao-manual/</id>
-    <published>2015-08-12T14:12:10.000Z</published>
-    <updated>2016-08-12T11:29:33.000Z</updated>
-    <content type="html"><![CDATA[<p>本篇介绍 阿里云部署禅道系统.</p>
-<a id="more"></a>
-<h2 id="禅道系统介绍:">禅道系统介绍:</h2><h2 id="部署主机环境:">部署主机环境:</h2><ul>
-<li>阿里云: 2核/4G/1Mbps/500G 普通主机</li>
-<li>系统: Ubuntu 14.04, x64</li>
-</ul>
-<h2 id="下载安装包:">下载安装包:</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="安装:">安装:</h2><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="livecodeserver"></span><br><span class="line"><span class="comment"># 运行:</span></span><br><span class="line">/opt/zbox/zbox <span class="built_in">start</span> -ap <span class="number">8080</span></span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>浏览器访问: 170.100.100.1:8080 (阿里云主机 IP + 端口)</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>本篇介绍 阿里云部署禅道系统.</p>]]>
-    
-    </summary>
-    
-      <category term="aliyun" scheme="http://hhstore.github.io/tags/aliyun/"/>
-    
-      <category term="禅道" scheme="http://hhstore.github.io/tags/%E7%A6%85%E9%81%93/"/>
     
       <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
     
