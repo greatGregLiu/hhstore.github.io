@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Python]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hhstore.github.io//"/>
-  <updated>2016-08-12T03:07:36.000Z</updated>
+  <updated>2016-08-12T03:19:05.000Z</updated>
   <id>http://hhstore.github.io//</id>
   
   <author>
@@ -20,20 +20,22 @@
     <link href="http://hhstore.github.io/2016/08/12/github-as-blog-image-bed/"/>
     <id>http://hhstore.github.io/2016/08/12/github-as-blog-image-bed/</id>
     <published>2016-08-12T02:12:10.000Z</published>
-    <updated>2016-08-12T03:07:36.000Z</updated>
+    <updated>2016-08-12T03:19:05.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍如何使用 github 做博客图床.</p>
 <a id="more"></a>
-<h2 id="图床常规选择:">图床常规选择:</h2><ul>
+<h2 id="1-_参考文档:">1. 参考文档:</h2><ul>
+<li><a href="http://pein0119.github.io/2014/08/03/hexo%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%BA%90/" target="_blank" rel="external">hexo使用github作为图片链接源</a></li>
+</ul>
+<h2 id="2-_图床常规选择:">2. 图床常规选择:</h2><ul>
 <li>微博</li>
 <li>七牛</li>
 <li>github 本身</li>
 </ul>
-<h2 id="使用_github_本身做图床:">使用 github 本身做图床:</h2><ul>
+<h2 id="3-_使用_github_本身做图床:">3. 使用 github 本身做图床:</h2><ul>
 <li>考虑不喜欢用微博, 用七牛又嫌麻烦.</li>
 <li>博客配图比较少, 索性研究一下如何用 github 本身做图床.</li>
-<li>参考: <a href="http://pein0119.github.io/2014/08/03/hexo%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%BA%90/" target="_blank" rel="external">hexo使用github作为图片链接源</a></li>
 </ul>
-<h3 id="配置过程:">配置过程:</h3><ul>
+<h3 id="3-1_配置过程:">3.1 配置过程:</h3><ul>
 <li>假定是用 github + hexo 搭建的博客的前提.</li>
 <li>下述操作都遵循此前提.</li>
 </ul>
@@ -50,19 +52,13 @@
 </ol>
 <p><img src="../images/2016/08/20160812-001.jpg?raw=true" alt="测试配图"></p>
 <ul>
-<li>引用2:</li>
+<li>引用:</li>
 </ul>
-<p><img src="/tree/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试配图2"></p>
 <ul>
-<li>引用3:</li>
+<li>引用:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试图片"></li>
 </ul>
-<p><img src="/tree/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试配图2"></p>
 <ul>
-<li>引用4:</li>
-</ul>
-<p><img src="https://github.com/hhstore/hhstore.github.io/images/2016/08/20160812-001.jpg?raw=true" alt="测试配图2"></p>
-<ul>
-<li>引用5:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg?raw=true" alt="测试图片"></li>
+<li>引用:<br><img src="https://github.com/hhstore/hhstore.github.io/blob/master/images/2016/08/20160812-001.jpg" alt="测试图片"></li>
 </ul>
 ]]></content>
     <summary type="html">
