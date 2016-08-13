@@ -102,12 +102,14 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/"/>
-    <id>http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/</id>
-    <published>2016-03-16T07:28:31.000Z</published>
-    <updated>2016-03-16T07:28:31.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
+    <title><![CDATA[MongoDB 开发笔记]]></title>
+    <link href="http://hhstore.github.io/2016/06/25/mongodb-replica-set-config/"/>
+    <id>http://hhstore.github.io/2016/06/25/mongodb-replica-set-config/</id>
+    <published>2016-06-25T14:12:10.000Z</published>
+    <updated>2016-08-13T07:00:08.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Chrome好用的必装插件.</p>
+<a id="more"></a>
+<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
 <li>使用pymongo</li>
 </ul>
 <p>参考文档:</p>
@@ -139,156 +141,24 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
-<li>使用pymongo</li>
-</ul>
-<p>参考文档:</p>
-<p>官方文档,必看, 看完,就可以配置.</p>
-<ul>
-<li><a href="https://api.]]>
+    <![CDATA[<p>本篇介绍Chrome好用的必装插件.</p>]]>
+    
     </summary>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://hhstore.github.io/2016/02/16/python-best-practice-law/"/>
-    <id>http://hhstore.github.io/2016/02/16/python-best-practice-law/</id>
-    <published>2016-02-16T09:19:36.000Z</published>
-    <updated>2016-02-16T09:19:36.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="python最佳实践基本法">python最佳实践基本法</h2><ol>
-<li><p>模块化,低耦合</p>
-</li>
-<li><p>代码越少越好.杜绝一坨烂代码</p>
-</li>
-<li><p>函数,类,模块,命名高度语义化, 命名自洽(表意准确,力求精确)</p>
-</li>
-<li><p>do not repeat youself.&lt;杜绝重复烂代码&gt;</p>
-<ul>
-<li>当同一块代码,重复出现多次,说明代码有异味,需要及时重构</li>
-</ul>
-</li>
-<li><p>重构基本法.</p>
-<ul>
-<li>大事化小.</li>
-<li>反复重构,及时重构</li>
-<li>重构是第一生产力.(切记: 烂代码,遗留时间越久,危害越大.)</li>
-</ul>
-</li>
-<li><p>思维和行为自洽.(言行一致)</p>
-<ol>
-<li><p>函数自洽.</p>
-<ul>
-<li>言行一致: 命名 和 实际功能,统一</li>
-<li>杜绝: 命名指向 A 功能, 实际是 A,B,C,D功能合集.</li>
-<li>less is better.&lt;极简主义&gt; (经验: 通常情况下, 超过50行, 注意是否需要重构)</li>
-</ul>
-</li>
-<li><p>类自洽.</p>
-<ul>
-<li>言行一致: 命名 和 实际功能,统一</li>
-<li>深入理解需求,业务场景.</li>
-<li>合理抽象,准确建模.</li>
-<li>多维度抽象.</li>
-<li>少继承,多组合.(mixin机制)</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>合理组织代码结构.</p>
-<ul>
-<li>良好的结构, 不仅仅是赏心悦目.</li>
-<li>方便重构,复用成熟模块</li>
-<li>逻辑清晰</li>
-<li>一篇好的文章,自然逻辑和结构都是完美的.</li>
-</ul>
-</li>
-<li><p>遵循代码规范.(PEP8是基本法)</p>
-<ul>
-<li>变量,函数,等命名</li>
-<li>缩进,空行,注释规则</li>
-<li>导包规则</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>谨慎造轮子.<ul>
-<li>杜绝恶心的hack烂代码.</li>
-<li>杜绝无聊的炫技.&lt;请说人话,代码是给人看的&gt;</li>
-<li>简单,明了.&lt;下里巴人 vs 阳春白雪&gt;</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>提升代码品位.<ul>
-<li>提高写代码的姿势水平.</li>
-<li>阅读github经典项目源码.(人丑就应该多读书)</li>
-<li>和大牛做朋友.</li>
-<li>远离猪队友.(人蠢,不思进取,不学习,代码臭不可闻)</li>
-</ul>
-</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="python最佳实践基本法">python最佳实践基本法</h2><ol>
-<li><p>模块化,低耦合</p>
-</li>
-<li><p>代码越少越好.杜绝一坨烂代码</p>
-</li>
-<li><p>函数,类,模块,命名高度语义化, 命名自洽(表意准确,力求精]]>
-    </summary>
+      <category term="NoSQL" scheme="http://hhstore.github.io/tags/NoSQL/"/>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://hhstore.github.io/2016/02/15/RPC-VS-MQ/"/>
-    <id>http://hhstore.github.io/2016/02/15/RPC-VS-MQ/</id>
-    <published>2016-02-15T08:58:18.000Z</published>
-    <updated>2016-02-15T08:58:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="RPC(分布式远程过程调用)_和_MQ(消息队列)_的_应用场景_和区别">RPC(分布式远程过程调用) 和 MQ(消息队列) 的 应用场景 和区别</h2><ul>
-<li><p><a href="http://blog.sina.com.cn/s/blog_4e017a9001000951.html" target="_blank" rel="external">消息机制和RPC的区别</a></p>
-</li>
-<li><p><a href="http://oldratlee.com/post/2013-02-01/synchronous-rpc-vs-asynchronous-message/" target="_blank" rel="external">远程调用服务(RPC)和消息(Message Queue)对比及其适用/不适用场合</a></p>
-</li>
-</ul>
-<ul>
-<li><a href="http://ternarysearch.blogspot.com/2013/01/message-queues-and-rpc.html" target="_blank" rel="external">Message Queues and RPC</a></li>
-</ul>
-<h3 id="系统结构">系统结构</h3><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">RPC系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Consumer</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Provider</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Consumer调用的Provider提供的服务。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">Message</span> <span class="comment">Queue系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Sender</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Queue</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Receiver</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Sender发送消息给Queue；Receiver从Queue拿到消息来处理。</span></span><br></pre></td></tr></table></figure>
-<p>功能特点<br>在架构上，RPC和Message的差异点是，Message有一个中间结点Message Queue，可以把消息存储。</p>
-<h2 id="区别:">区别:</h2><p>消息机制主要用于端到端的延迟通信;<br>而RPC用于端到端的同步通信。</p>
-<p>在RPC机制下，用于接收数据的进程必须在数据发送时处于执行状态。</p>
-<p>如果在消息发送过程中，接收进程死掉了，则数据将不能再传输。</p>
-<p>相反，在消息传递机制下，则可以在服务进程死掉后，仍然可以发送消息，而不必因为此时服务进程没有接收消息而阻塞或重发消息。<br>这是因为，基于消息机制时，消息被放置在一个消息队列中，而且服务进程可以在任何时候取得所属自己的消息。<br>因此，在发送消息时，服务进程是否在执行不再重要。</p>
-<p>消息机制和RPC的各自特点:</p>
-<p>消息机制的特点<br>客户在等待对方进程的应答时，可以自由的执行其他的操作。<br>消息机制允许对一个请求发多个应答或多个请求发一个应答。<br>消息机制适合具有较长交易周期的应用。<br>消息机制可以通过以任何顺序从消息队列中取走消息、的形式，来支持优先级和负载均衡。<br>消息机制可以支持容错。<br>消息机制主要用于支持大型系统和分布范围很广的分布式系统。</p>
-<p>RPC机制的特点<br>提供了一个较高层次上的通信抽象，更完全地隐藏了应用分布的实质。<br>尽可能地优化了客户和服务器之间的交互，因为这种机制直接的请求/应答协议支持。<br>客户在等待一个服务应答时，只是简单地等待。</p>
-<h3 id="消息队列的使用场景:">消息队列的使用场景:</h3><p>（一）短信发送</p>
-<p>短信通常都是由第三方服务商提供的服务，对于其稳定性与可靠度来说，通常也就是打90分吧。对于那些需要发送短信的应用程序来说，通常将其放入队列中去处理，而不是傻傻的等待。</p>
-<p>（二）日志记录</p>
-<p>不是所有的日志记录都需要使用消息队列来处理。通常只有那些同时操作一个日志文件的情况下才会使用消息队列。另外的一种情况是，需要对日志进行同步处理后分析的场景。</p>
-<p>（三）邮件服务</p>
-<p>邮件服务于短信发送类似，对于那些不需要即时回复和响应速度并不特别特别快的第三方应用，使用队列来处理是最大的好处。既能节省资源，又能提高用户体验，还能防止系统崩溃。</p>
-<p>（四）通知服务</p>
-<p>对于给用户发消息这样的业务来说，使用消息队列也是极好的，尽管几十万内的插入语句使用SQL就可以完全搞定。使用通知服务对于那些SQL不是很好的人来说，也是很好的福利。</p>
-<p>另外，对于多应用使用缓存提高查询效率的情景，使用消息队列也是极好的。试想一下，当你更新一个用户后，使用发布/订阅者模式处理缓存，是不是比其它任何模式都要高效呢。</p>
-<p>（五）高并发请求</p>
-<p>是不是又想起了淘宝双11网站瘫痪，12306一票难求，京东图书大促网页打不开，消息队列尤其适用于这种超负载的场景。通过过消息队列，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务，改善网站系统的性能，这样可以有效地抵御促销活动刚开始就开始大量涌入的订单对系统造成的冲击 。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="RPC(分布式远程过程调用)_和_MQ(消息队列)_的_应用场景_和区别">RPC(分布式远程过程调用) 和 MQ(消息队列) 的 应用场景 和区别</h2><ul>
-<li><p><a href="http://blog.sina.com.cn/s/blog_4]]>
-    </summary>
+      <category term="mongodb" scheme="http://hhstore.github.io/tags/mongodb/"/>
+    
+      <category term="高可用" scheme="http://hhstore.github.io/tags/%E9%AB%98%E5%8F%AF%E7%94%A8/"/>
+    
+      <category term="DB" scheme="http://hhstore.github.io/categories/DB/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Python实践 - 爬虫]]></title>
-    <link href="http://hhstore.github.io/2015/09/12/Python%E5%AE%9E%E8%B7%B5%20-%20%E7%88%AC%E8%99%AB/"/>
-    <id>http://hhstore.github.io/2015/09/12/Python实践 - 爬虫/</id>
+    <link href="http://hhstore.github.io/2015/09/12/python-web-spider/"/>
+    <id>http://hhstore.github.io/2015/09/12/python-web-spider/</id>
     <published>2015-09-12T11:12:10.000Z</published>
     <updated>2015-10-11T04:37:43.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍 Python 爬虫相关的实践.</p>
@@ -350,8 +220,8 @@
   
   <entry>
     <title><![CDATA[Python常用包 - requests]]></title>
-    <link href="http://hhstore.github.io/2015/09/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20requests/"/>
-    <id>http://hhstore.github.io/2015/09/02/Python常用包 - requests/</id>
+    <link href="http://hhstore.github.io/2015/09/02/python-lib-requests/"/>
+    <id>http://hhstore.github.io/2015/09/02/python-lib-requests/</id>
     <published>2015-09-02T06:12:10.000Z</published>
     <updated>2015-10-12T16:47:40.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍Python的 requests 包的使用方法.</p>
@@ -377,8 +247,8 @@
   
   <entry>
     <title><![CDATA[Python拾遗 - WSGI规范]]></title>
-    <link href="http://hhstore.github.io/2015/09/01/Python%E6%8B%BE%E9%81%97%20-%20WSGI/"/>
-    <id>http://hhstore.github.io/2015/09/01/Python拾遗 - WSGI/</id>
+    <link href="http://hhstore.github.io/2015/09/01/python-note-wsgi/"/>
+    <id>http://hhstore.github.io/2015/09/01/python-note-wsgi/</id>
     <published>2015-09-01T09:12:10.000Z</published>
     <updated>2015-10-12T16:46:39.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍Python的 WSGI 规范.</p>
@@ -458,10 +328,10 @@
   
   <entry>
     <title><![CDATA[Python面试题汇总]]></title>
-    <link href="http://hhstore.github.io/2015/08/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>http://hhstore.github.io/2015/08/25/Python面试题汇总/</id>
+    <link href="http://hhstore.github.io/2015/08/25/python-interview-test/"/>
+    <id>http://hhstore.github.io/2015/08/25/python-interview-test/</id>
     <published>2015-08-25T13:22:10.000Z</published>
-    <updated>2015-09-14T05:17:07.000Z</updated>
+    <updated>2016-08-13T07:00:30.000Z</updated>
     <content type="html"><![CDATA[<p>本篇汇总整理一些常见的Python面试题,找工作必备.</p>
 <a id="more"></a>
 <h1 id="面试专题学习">面试专题学习</h1><ul>
@@ -508,14 +378,16 @@
     
       <category term="Python" scheme="http://hhstore.github.io/tags/Python/"/>
     
+      <category term="interview" scheme="http://hhstore.github.io/tags/interview/"/>
+    
       <category term="Python" scheme="http://hhstore.github.io/categories/Python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Python拾遗 - callable()函数]]></title>
-    <link href="http://hhstore.github.io/2015/08/25/Python%E6%8B%BE%E9%81%97%20-%20callable()%E5%87%BD%E6%95%B0/"/>
-    <id>http://hhstore.github.io/2015/08/25/Python拾遗 - callable()函数/</id>
+    <link href="http://hhstore.github.io/2015/08/25/python-note-callable-function/"/>
+    <id>http://hhstore.github.io/2015/08/25/python-note-callable-function/</id>
     <published>2015-08-25T09:12:10.000Z</published>
     <updated>2015-09-18T16:14:46.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍Python的callable()函数的特点以及应用.</p>
@@ -558,8 +430,8 @@
   
   <entry>
     <title><![CDATA[Python常用标准库,第三方库,框架简介]]></title>
-    <link href="http://hhstore.github.io/2015/08/23/Python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E7%AE%80%E4%BB%8B/"/>
-    <id>http://hhstore.github.io/2015/08/23/Python常用标准库简介/</id>
+    <link href="http://hhstore.github.io/2015/08/23/python-std-libs/"/>
+    <id>http://hhstore.github.io/2015/08/23/python-std-libs/</id>
     <published>2015-08-23T12:12:10.000Z</published>
     <updated>2015-09-14T05:13:45.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍一些比较值得深入学习和使用的Python常用标准库,第三方库以及框架.</p>
@@ -629,8 +501,8 @@
   
   <entry>
     <title><![CDATA[Python常用包 - argparse总结]]></title>
-    <link href="http://hhstore.github.io/2015/08/21/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20argparse/"/>
-    <id>http://hhstore.github.io/2015/08/21/Python常用包 - argparse/</id>
+    <link href="http://hhstore.github.io/2015/08/21/python-lib-argparse/"/>
+    <id>http://hhstore.github.io/2015/08/21/python-lib-argparse/</id>
     <published>2015-08-21T11:12:10.000Z</published>
     <updated>2015-09-16T03:41:59.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍argparse包的使用总结.</p>
@@ -898,18 +770,18 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Docker应用:利用Dockerfile制作Image]]></title>
+    <title><![CDATA[Docker: 利用Dockerfile制作Image]]></title>
     <link href="http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/"/>
     <id>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</id>
     <published>2015-08-06T08:12:10.000Z</published>
-    <updated>2015-08-15T08:33:10.000Z</updated>
+    <updated>2016-08-13T06:59:02.000Z</updated>
     <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
 <a id="more"></a>
 <h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
 <h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
 <p>Dockerfile 文件内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag"><span class="keyword">note</span></span>:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
 <h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
 <h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
 <ul>
@@ -931,8 +803,8 @@
   
   <entry>
     <title><![CDATA[Python常用包 - uwsgi 使用总结]]></title>
-    <link href="http://hhstore.github.io/2015/08/06/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20uwsgi%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
-    <id>http://hhstore.github.io/2015/08/06/Python常用包 - uwsgi使用总结/</id>
+    <link href="http://hhstore.github.io/2015/08/06/python-lib-uwsgi/"/>
+    <id>http://hhstore.github.io/2015/08/06/python-lib-uwsgi/</id>
     <published>2015-08-06T02:12:10.000Z</published>
     <updated>2015-09-14T08:49:04.000Z</updated>
     <content type="html"><![CDATA[<p>记录一下使用uwsgi碰到的问题,总结常犯的错误.</p>
@@ -968,11 +840,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Windos-SSH远程登录软件对比]]></title>
-    <link href="http://hhstore.github.io/2015/08/05/Windows-SSH%E7%99%BB%E5%BD%95%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94/"/>
-    <id>http://hhstore.github.io/2015/08/05/Windows-SSH登录软件对比/</id>
+    <title><![CDATA[Windows-SSH远程登录软件对比]]></title>
+    <link href="http://hhstore.github.io/2015/08/05/windows-ssh-tools-diff/"/>
+    <id>http://hhstore.github.io/2015/08/05/windows-ssh-tools-diff/</id>
     <published>2015-08-05T14:12:10.000Z</published>
-    <updated>2015-08-05T03:32:11.000Z</updated>
+    <updated>2016-08-13T06:59:22.000Z</updated>
     <content type="html"><![CDATA[<p>本篇介绍windows下的SSH远程登录软件.</p>
 <a id="more"></a>
 <h2 id="1-_SSH登录软件">1. SSH登录软件</h2><p>经常需要在windows下,远程连接 虚拟机里的(ubuntu),或者阿里云的云主机(Linux系统).<br>把主流SSH软件都测试一遍,效果对比如下.</p>
@@ -1063,6 +935,105 @@
       <category term="Windows" scheme="http://hhstore.github.io/tags/Windows/"/>
     
       <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac配置iTerm2+tumx+zsh]]></title>
+    <link href="http://hhstore.github.io/2015/08/05/mac-osx-iterm2-tmux-config/"/>
+    <id>http://hhstore.github.io/2015/08/05/mac-osx-iterm2-tmux-config/</id>
+    <published>2015-08-05T12:12:10.000Z</published>
+    <updated>2015-08-05T06:46:30.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍Mac中的iTerm2和tumx配合使用配置.</p>
+<a id="more"></a>
+<h3 id="参考">参考</h3><ul>
+<li><a href="http://blog.chh.tw/posts/tmux-terminal-multiplexer/" target="_blank" rel="external">tmux快捷键说明很清楚</a></li>
+<li><a href="http://blog.chh.tw/posts/tmux-terminal-multiplexer/" target="_blank" rel="external">参考2</a></li>
+<li><a href="http://pgbar.com/t/maczhong-duan-terminal-huan-jing-geng-huan-he-sheng-ji-iterm2-plus-tmuxpei-zhi/85" target="_blank" rel="external">Mac终端 (Terminal )环境更换和升级 iTerm2 + tmux配置</a></li>
+<li><a href="http://www.wangyuxiong.com/archives/52137" target="_blank" rel="external">mac工作软件推荐－iterm ＋ zsh ＋ tmux</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍Mac中的iTerm2和tumx配合使用配置.</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="iTerm2" scheme="http://hhstore.github.io/tags/iTerm2/"/>
+    
+      <category term="tumx" scheme="http://hhstore.github.io/tags/tumx/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Ubuntu14.04安装Docker详细教程]]></title>
+    <link href="http://hhstore.github.io/2015/07/07/Ubuntu14.04-install-docker/"/>
+    <id>http://hhstore.github.io/2015/07/07/Ubuntu14.04-install-docker/</id>
+    <published>2015-07-07T13:21:50.000Z</published>
+    <updated>2015-07-07T13:31:29.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇介绍ubuntu环境安装Docker详细配置过程.</p>
+<a id="more"></a>
+<ul>
+<li><a href="https://docs.docker.com/installation/ubuntulinux/" target="_blank" rel="external">官方文档</a></li>
+</ul>
+<h2 id="前言">前言</h2><ul>
+<li>最近项目重新部署,要重新安装docker,发现docker官网更新版本,添加一些新的功能.故写此文档,以备复查.</li>
+<li>安装docker推荐ubuntu环境,包括centos,Mac 我都尝试过,还是ubuntu最不容易出错.</li>
+<li>这里只记录ubuntu的安装配置过程.其他版本,请参考官方文档.</li>
+</ul>
+<h2 id="1-推荐安装环境:">1.推荐安装环境:</h2><h3 id="1-_云服务器安装Docker-(推荐)">1. 云服务器安装Docker.(推荐)</h3><ul>
+<li>1.推荐使用亚马逊云,Linode,阿里云等方式安装.</li>
+<li>2.之前Docker的image源被墙,国内要采用镜像站点更新,很不稳定.</li>
+<li>3.先在云主机上,安装ubuntu14.04.(要求如下)</li>
+</ul>
+<h3 id="1-2_宿主机要求:">1.2 宿主机要求:</h3><ul>
+<li>1.Linux系统: 64位版本的ubuntu14.04 LTS系统.(64位,为必要条件)</li>
+<li>2.Linux内核版本号: 3.10以上.(内核版本号,为必要条件)</li>
+</ul>
+<h2 id="2-安装Docker:">2.安装Docker:</h2><h3 id="2-1_查看内核版本号:">2.1 查看内核版本号:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r   <span class="comment"># 返回: 3.11.0-15-generic</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2_准备工作:">2.2 准备工作:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1</span>. 更新apt-get</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    </span><br><span class="line"><span class="number">2</span>. 更新依赖</span><br><span class="line">    sudo apt-get install linux-image-generic-lts-trusty</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 重启</span><br><span class="line">    sudo reboot</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 系统重启后,开始安装docker</span><br></pre></td></tr></table></figure>
+<h3 id="2-3_安装">2.3 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 查看是否已安装wget.(这是一个下载工具)</span><br><span class="line">    <span class="built_in">which</span> wget  </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 安装wget.</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    sudo apt-get install wget</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 下载并安装docker.</span><br><span class="line">    wget -qO- https://get.docker.com/ | sh</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 确认docker安装成功.</span><br><span class="line">    sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="3-配置Docker">3.配置Docker</h2><h3 id="3-1_创建Docker用户组-">3.1 创建Docker用户组.</h3><ul>
+<li>为避免每次操作,都加上sudo提权.故创建docker用户组.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 以具有sudo权限的用户账号,登录.</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 创建docker用户组,并添加该用户账号至docker用户组.</span><br><span class="line">    sudo usermod <span class="operator">-a</span>G docker ubuntu</span><br><span class="line"></span><br><span class="line">    示例:</span><br><span class="line">    sudo usermod <span class="operator">-a</span>G docker bingwei   <span class="comment"># 登录用户为bingwei</span></span><br><span class="line">    &gt; sent invalidate(passwd) request, exiting</span><br><span class="line">    &gt; sent invalidate(group) request, exiting</span><br><span class="line">    &gt; sent invalidate(passwd) request, exiting</span><br><span class="line">    &gt; sent invalidate(group) request, exiting</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 退出登录,再次重新登录该用户账号.</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 测试用户组,生效.</span><br><span class="line">    docker run hello-world  <span class="comment"># 不带sudo前缀.若成功,则说明OK.</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2_重启Docker">3.2 重启Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="4-_升级Docker">4. 升级Docker</h2><ul>
+<li>与安装一样.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure>
+<h2 id="5-_卸载Docker">5. 卸载Docker</h2><h3 id="5-1_卸载docker软件包">5.1 卸载docker软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge lxc-docker</span><br></pre></td></tr></table></figure>
+<h3 id="5-2_删除docker已安装的images">5.2 删除docker已安装的images</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+<h2 id="6-_常用操作命令">6. 常用操作命令</h2><ul>
+<li><a href="https://docs.docker.com/userguide/dockerimages/" target="_blank" rel="external">参考</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo docker images          <span class="comment"># 查看已安装image</span></span><br><span class="line">sudo docker search sinatra  <span class="comment"># 搜索某image</span></span><br><span class="line">sudo docker pull XXXX       <span class="comment"># 下载安装image</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-_创建自己的image">7. 创建自己的image</h2><ul>
+<li><a href="https://docs.docker.com/userguide/dockerimages/" target="_blank" rel="external">参考</a></li>
+<li>待补充更新.</li>
+</ul>
+<ol>
+<li>We can update a container created from an image and commit the results to an image.</li>
+<li>We can use a Dockerfile to specify instructions to create an image.</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇介绍ubuntu环境安装Docker详细配置过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="EC2" scheme="http://hhstore.github.io/tags/EC2/"/>
+    
+      <category term="Linode" scheme="http://hhstore.github.io/tags/Linode/"/>
+    
+      <category term="Ubuntu" scheme="http://hhstore.github.io/tags/Ubuntu/"/>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/categories/Docker/"/>
     
   </entry>
   

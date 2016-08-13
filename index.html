@@ -406,8 +406,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/03/16/mongodb-replica-set-config/">
-                未命名
+              <a class="post-title-link" href="/2016/06/25/mongodb-replica-set-config/">
+                MongoDB 开发笔记
               </a>
             
           
@@ -416,17 +416,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2016-03-16
+          发表于 2016-06-25
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/DB/">DB</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/03/16/mongodb-replica-set-config/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/16/mongodb-replica-set-config/"></span>
+            <a href="/2016/06/25/mongodb-replica-set-config/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/25/mongodb-replica-set-config/"></span>
             </a>
           </span>
           
@@ -450,37 +461,12 @@
 
       
         
-          <h2 id="MongoDB_高可用配置">MongoDB 高可用配置</h2><ul>
-<li>使用pymongo</li>
-</ul>
-<p>参考文档:</p>
-<p>官方文档,必看, 看完,就可以配置.</p>
-<ul>
-<li><a href="https://api.mongodb.org/python/current/examples/high_availability.html" target="_blank" rel="external">High Availability and PyMongo</a></li>
-</ul>
-<ul>
-<li><a href="https://api.mongodb.org/python/current/api/pymongo/mongo_client.html" target="_blank" rel="external">MongoClient</a></li>
-</ul>
-<p>下面这个API可能要废弃, 因为MongoClient 已经包含 MongoReplicaSetClient() 全部功能</p>
-<ul>
-<li><a href="https://api.mongodb.org/python/current/api/pymongo/mongo_replica_set_client.html" target="_blank" rel="external">mongo_replica_set_client</a></li>
-</ul>
-<h2 id="两阶段提交2PC">两阶段提交2PC</h2><p>四、缺陷<br>算法执行过程中，所有节点都处于阻塞状态，所有节点所持有的资源（例如数据库数据，本地文件等）都处于封锁状态。</p>
-<p>六、结论<br>2PC效率很低，分布式事务很难做。</p>
-<p><a href="http://chuansong.me/n/1928604" target="_blank" rel="external">http://chuansong.me/n/1928604</a></p>
-<h2 id="pool">pool</h2><ul>
-<li><a href="http://api.mongodb.org/python/current/faq.html#how-does-connection-pooling-work-in-pymongo" target="_blank" rel="external">How does connection pooling work in PyMongo?</a></li>
-</ul>
-<h2 id="mongodb_不支持_事务,_解决:">mongodb 不支持 事务, 解决:</h2><ul>
-<li><a href="http://www.uml.org.cn/sjjm/2014081111.asp?artid=10313" target="_blank" rel="external">五个解决方案让MongoDB拥有RDBMS的鲁棒性事务</a></li>
-</ul>
-<ul>
-<li><a href="https://coding.net/u/tuxpy/p/tmongo/git/blob/master/tmongo.py" target="_blank" rel="external">实现事务支持: 源码 - py</a></li>
-</ul>
-<ul>
-<li><a href="http://www.tuicool.com/articles/f6ZBjm" target="_blank" rel="external">MongoDB两阶段提交实现事务</a></li>
-</ul>
-
+          <p>本篇介绍Chrome好用的必装插件.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/25/mongodb-replica-set-config/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -510,258 +496,7 @@
           
           
             
-              <a class="post-title-link" href="/2016/02/16/python-best-practice-law/">
-                未命名
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2016-02-16
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2016/02/16/python-best-practice-law/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/16/python-best-practice-law/"></span>
-            </a>
-          </span>
-          
-        
-
-
-
-        
-
-
-
-
-
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="python最佳实践基本法">python最佳实践基本法</h2><ol>
-<li><p>模块化,低耦合</p>
-</li>
-<li><p>代码越少越好.杜绝一坨烂代码</p>
-</li>
-<li><p>函数,类,模块,命名高度语义化, 命名自洽(表意准确,力求精确)</p>
-</li>
-<li><p>do not repeat youself.&lt;杜绝重复烂代码&gt;</p>
-<ul>
-<li>当同一块代码,重复出现多次,说明代码有异味,需要及时重构</li>
-</ul>
-</li>
-<li><p>重构基本法.</p>
-<ul>
-<li>大事化小.</li>
-<li>反复重构,及时重构</li>
-<li>重构是第一生产力.(切记: 烂代码,遗留时间越久,危害越大.)</li>
-</ul>
-</li>
-<li><p>思维和行为自洽.(言行一致)</p>
-<ol>
-<li><p>函数自洽.</p>
-<ul>
-<li>言行一致: 命名 和 实际功能,统一</li>
-<li>杜绝: 命名指向 A 功能, 实际是 A,B,C,D功能合集.</li>
-<li>less is better.&lt;极简主义&gt; (经验: 通常情况下, 超过50行, 注意是否需要重构)</li>
-</ul>
-</li>
-<li><p>类自洽.</p>
-<ul>
-<li>言行一致: 命名 和 实际功能,统一</li>
-<li>深入理解需求,业务场景.</li>
-<li>合理抽象,准确建模.</li>
-<li>多维度抽象.</li>
-<li>少继承,多组合.(mixin机制)</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>合理组织代码结构.</p>
-<ul>
-<li>良好的结构, 不仅仅是赏心悦目.</li>
-<li>方便重构,复用成熟模块</li>
-<li>逻辑清晰</li>
-<li>一篇好的文章,自然逻辑和结构都是完美的.</li>
-</ul>
-</li>
-<li><p>遵循代码规范.(PEP8是基本法)</p>
-<ul>
-<li>变量,函数,等命名</li>
-<li>缩进,空行,注释规则</li>
-<li>导包规则</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>谨慎造轮子.<ul>
-<li>杜绝恶心的hack烂代码.</li>
-<li>杜绝无聊的炫技.&lt;请说人话,代码是给人看的&gt;</li>
-<li>简单,明了.&lt;下里巴人 vs 阳春白雪&gt;</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>提升代码品位.<ul>
-<li>提高写代码的姿势水平.</li>
-<li>阅读github经典项目源码.(人丑就应该多读书)</li>
-<li>和大牛做朋友.</li>
-<li>远离猪队友.(人蠢,不思进取,不学习,代码臭不可闻)</li>
-</ul>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2016/02/15/RPC-VS-MQ/">
-                未命名
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2016-02-15
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2016/02/15/RPC-VS-MQ/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/RPC-VS-MQ/"></span>
-            </a>
-          </span>
-          
-        
-
-
-
-        
-
-
-
-
-
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="RPC(分布式远程过程调用)_和_MQ(消息队列)_的_应用场景_和区别">RPC(分布式远程过程调用) 和 MQ(消息队列) 的 应用场景 和区别</h2><ul>
-<li><p><a href="http://blog.sina.com.cn/s/blog_4e017a9001000951.html" target="_blank" rel="external">消息机制和RPC的区别</a></p>
-</li>
-<li><p><a href="http://oldratlee.com/post/2013-02-01/synchronous-rpc-vs-asynchronous-message/" target="_blank" rel="external">远程调用服务(RPC)和消息(Message Queue)对比及其适用/不适用场合</a></p>
-</li>
-</ul>
-<ul>
-<li><a href="http://ternarysearch.blogspot.com/2013/01/message-queues-and-rpc.html" target="_blank" rel="external">Message Queues and RPC</a></li>
-</ul>
-<h3 id="系统结构">系统结构</h3><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">RPC系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Consumer</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Provider</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Consumer调用的Provider提供的服务。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">Message</span> <span class="comment">Queue系统结构：</span></span><br><span class="line"></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">|</span> <span class="comment">Sender</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Queue</span> <span class="comment">|</span> &lt;<span class="comment">=</span>&gt; <span class="comment">|</span> <span class="comment">Receiver</span> <span class="comment">|</span></span><br><span class="line"><span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span>     <span class="literal">+</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">+</span></span><br><span class="line"><span class="comment">Sender发送消息给Queue；Receiver从Queue拿到消息来处理。</span></span><br></pre></td></tr></table></figure>
-<p>功能特点<br>在架构上，RPC和Message的差异点是，Message有一个中间结点Message Queue，可以把消息存储。</p>
-<h2 id="区别:">区别:</h2><p>消息机制主要用于端到端的延迟通信;<br>而RPC用于端到端的同步通信。</p>
-<p>在RPC机制下，用于接收数据的进程必须在数据发送时处于执行状态。</p>
-<p>如果在消息发送过程中，接收进程死掉了，则数据将不能再传输。</p>
-<p>相反，在消息传递机制下，则可以在服务进程死掉后，仍然可以发送消息，而不必因为此时服务进程没有接收消息而阻塞或重发消息。<br>这是因为，基于消息机制时，消息被放置在一个消息队列中，而且服务进程可以在任何时候取得所属自己的消息。<br>因此，在发送消息时，服务进程是否在执行不再重要。</p>
-<p>消息机制和RPC的各自特点:</p>
-<p>消息机制的特点<br>客户在等待对方进程的应答时，可以自由的执行其他的操作。<br>消息机制允许对一个请求发多个应答或多个请求发一个应答。<br>消息机制适合具有较长交易周期的应用。<br>消息机制可以通过以任何顺序从消息队列中取走消息、的形式，来支持优先级和负载均衡。<br>消息机制可以支持容错。<br>消息机制主要用于支持大型系统和分布范围很广的分布式系统。</p>
-<p>RPC机制的特点<br>提供了一个较高层次上的通信抽象，更完全地隐藏了应用分布的实质。<br>尽可能地优化了客户和服务器之间的交互，因为这种机制直接的请求/应答协议支持。<br>客户在等待一个服务应答时，只是简单地等待。</p>
-<h3 id="消息队列的使用场景:">消息队列的使用场景:</h3><p>（一）短信发送</p>
-<p>短信通常都是由第三方服务商提供的服务，对于其稳定性与可靠度来说，通常也就是打90分吧。对于那些需要发送短信的应用程序来说，通常将其放入队列中去处理，而不是傻傻的等待。</p>
-<p>（二）日志记录</p>
-<p>不是所有的日志记录都需要使用消息队列来处理。通常只有那些同时操作一个日志文件的情况下才会使用消息队列。另外的一种情况是，需要对日志进行同步处理后分析的场景。</p>
-<p>（三）邮件服务</p>
-<p>邮件服务于短信发送类似，对于那些不需要即时回复和响应速度并不特别特别快的第三方应用，使用队列来处理是最大的好处。既能节省资源，又能提高用户体验，还能防止系统崩溃。</p>
-<p>（四）通知服务</p>
-<p>对于给用户发消息这样的业务来说，使用消息队列也是极好的，尽管几十万内的插入语句使用SQL就可以完全搞定。使用通知服务对于那些SQL不是很好的人来说，也是很好的福利。</p>
-<p>另外，对于多应用使用缓存提高查询效率的情景，使用消息队列也是极好的。试想一下，当你更新一个用户后，使用发布/订阅者模式处理缓存，是不是比其它任何模式都要高效呢。</p>
-<p>（五）高并发请求</p>
-<p>是不是又想起了淘宝双11网站瘫痪，12306一票难求，京东图书大促网页打不开，消息队列尤其适用于这种超负载的场景。通过过消息队列，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务，改善网站系统的性能，这样可以有效地抵御促销活动刚开始就开始大量涌入的订单对系统造成的冲击 。</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/12/Python实践 - 爬虫/">
+              <a class="post-title-link" href="/2015/09/12/python-web-spider/">
                 Python实践 - 爬虫
               </a>
             
@@ -791,8 +526,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/12/Python实践 - 爬虫/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/12/Python实践 - 爬虫/"></span>
+            <a href="/2015/09/12/python-web-spider/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/12/python-web-spider/"></span>
             </a>
           </span>
           
@@ -818,7 +553,7 @@
         
           <p>本篇介绍 Python 爬虫相关的实践.</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/12/Python实践 - 爬虫/#more">
+            <a class="btn" href="/2015/09/12/python-web-spider/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -941,7 +676,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/02/Python常用包 - requests/">
+              <a class="post-title-link" href="/2015/09/02/python-lib-requests/">
                 Python常用包 - requests
               </a>
             
@@ -971,8 +706,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/02/Python常用包 - requests/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/Python常用包 - requests/"></span>
+            <a href="/2015/09/02/python-lib-requests/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/python-lib-requests/"></span>
             </a>
           </span>
           
@@ -998,7 +733,7 @@
         
           <p>本篇介绍Python的 requests 包的使用方法.</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/Python常用包 - requests/#more">
+            <a class="btn" href="/2015/09/02/python-lib-requests/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1031,7 +766,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/01/Python拾遗 - WSGI/">
+              <a class="post-title-link" href="/2015/09/01/python-note-wsgi/">
                 Python拾遗 - WSGI规范
               </a>
             
@@ -1061,8 +796,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/01/Python拾遗 - WSGI/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/Python拾遗 - WSGI/"></span>
+            <a href="/2015/09/01/python-note-wsgi/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/python-note-wsgi/"></span>
             </a>
           </span>
           
@@ -1088,7 +823,7 @@
         
           <p>本篇介绍Python的 WSGI 规范.</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/01/Python拾遗 - WSGI/#more">
+            <a class="btn" href="/2015/09/01/python-note-wsgi/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1121,7 +856,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/08/25/Python面试题汇总/">
+              <a class="post-title-link" href="/2015/08/25/python-interview-test/">
                 Python面试题汇总
               </a>
             
@@ -1151,8 +886,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/25/Python面试题汇总/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/Python面试题汇总/"></span>
+            <a href="/2015/08/25/python-interview-test/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/python-interview-test/"></span>
             </a>
           </span>
           
@@ -1178,7 +913,187 @@
         
           <p>本篇汇总整理一些常见的Python面试题,找工作必备.</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/25/Python面试题汇总/#more">
+            <a class="btn" href="/2015/08/25/python-interview-test/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/25/python-note-callable-function/">
+                Python拾遗 - callable()函数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-08-25
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Python/">Python</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/08/25/python-note-callable-function/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/python-note-callable-function/"></span>
+            </a>
+          </span>
+          
+        
+
+
+
+        
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本篇介绍Python的callable()函数的特点以及应用.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/25/python-note-callable-function/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/23/python-std-libs/">
+                Python常用标准库,第三方库,框架简介
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-08-23
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Python/">Python</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/08/23/python-std-libs/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/23/python-std-libs/"></span>
+            </a>
+          </span>
+          
+        
+
+
+
+        
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本篇介绍一些比较值得深入学习和使用的Python常用标准库,第三方库以及框架.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/23/python-std-libs/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1245,14 +1160,14 @@
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hhstore.github.io/2015/08/25/python-interview-test/</loc>
+    <lastmod>2016-08-13T07:00:30.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2016/06/25/mongodb-replica-set-config/</loc>
+    <lastmod>2016-08-13T07:00:08.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/06/27/mongodb-notes/</loc>
+    <lastmod>2016-08-13T06:59:58.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/06/27/sqlite-sql/</loc>
+    <lastmod>2016-08-13T06:59:42.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/08/05/windows-ssh-tools-diff/</loc>
+    <lastmod>2016-08-13T06:59:22.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</loc>
+    <lastmod>2016-08-13T06:59:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/06/25/rpc-vs-mq/</loc>
+    <lastmod>2016-08-13T06:58:24.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/06/27/python-best-practice-laws/</loc>
+    <lastmod>2016-08-13T06:47:55.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hhstore.github.io/2015/06/24/github-hexo-build-blog/</loc>
+    <lastmod>2016-08-13T06:43:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hhstore.github.io/2016/08/12/aliyun-deploy-zentao-manual/</loc>
     <lastmod>2016-08-12T11:31:01.000Z</lastmod>
   </url>
@@ -22,23 +67,8 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/26/Ubuntu%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>http://hhstore.github.io/2015/06/26/Ubuntu-config-tools/</loc>
     <lastmod>2016-06-11T08:29:22.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2016/03/16/mongodb-replica-set-config/</loc>
-    <lastmod>2016-03-16T07:28:31.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2016/02/16/python-best-practice-law/</loc>
-    <lastmod>2016-02-16T09:19:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2016/02/15/RPC-VS-MQ/</loc>
-    <lastmod>2016-02-15T08:58:18.000Z</lastmod>
   </url>
   
   <url>
@@ -52,12 +82,12 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/09/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20requests/</loc>
+    <loc>http://hhstore.github.io/2015/09/02/python-lib-requests/</loc>
     <lastmod>2015-10-12T16:47:40.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/09/01/Python%E6%8B%BE%E9%81%97%20-%20WSGI/</loc>
+    <loc>http://hhstore.github.io/2015/09/01/python-note-wsgi/</loc>
     <lastmod>2015-10-12T16:46:39.000Z</lastmod>
   </url>
   
@@ -67,7 +97,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/09/12/Python%E5%AE%9E%E8%B7%B5%20-%20%E7%88%AC%E8%99%AB/</loc>
+    <loc>http://hhstore.github.io/2015/09/12/python-web-spider/</loc>
     <lastmod>2015-10-11T04:37:43.000Z</lastmod>
   </url>
   
@@ -87,7 +117,7 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/25/Python%E6%8B%BE%E9%81%97%20-%20callable()%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://hhstore.github.io/2015/08/25/python-note-callable-function/</loc>
     <lastmod>2015-09-18T16:14:46.000Z</lastmod>
   </url>
   
@@ -102,17 +132,17 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/07/04/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20threading/</loc>
+    <loc>http://hhstore.github.io/2015/07/04/python-lib-threading/</loc>
     <lastmod>2015-09-16T09:47:58.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/07/03/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20Sqlalchemy%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://hhstore.github.io/2015/07/03/python-lib-sqlalchemy/</loc>
     <lastmod>2015-09-16T04:25:18.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/21/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20argparse/</loc>
+    <loc>http://hhstore.github.io/2015/08/21/python-lib-argparse/</loc>
     <lastmod>2015-09-16T03:41:59.000Z</lastmod>
   </url>
   
@@ -122,18 +152,13 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/06/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20uwsgi%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://hhstore.github.io/2015/08/06/python-lib-uwsgi/</loc>
     <lastmod>2015-09-14T08:49:04.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://hhstore.github.io/2015/07/02/python-tool-virtualenv/</loc>
     <lastmod>2015-09-14T08:46:25.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/06/27/Sqlite%E5%B8%B8%E7%94%A8SQL%E8%AF%AD%E5%8F%A5/</loc>
-    <lastmod>2015-09-14T06:17:48.000Z</lastmod>
   </url>
   
   <url>
@@ -142,23 +167,8 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/27/mongodb-notes/</loc>
-    <lastmod>2015-09-14T06:16:54.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/08/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2015-09-14T05:17:07.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/08/23/Python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E7%AE%80%E4%BB%8B/</loc>
+    <loc>http://hhstore.github.io/2015/08/23/python-std-libs/</loc>
     <lastmod>2015-09-14T05:13:45.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</loc>
-    <lastmod>2015-08-15T08:33:10.000Z</lastmod>
   </url>
   
   <url>
@@ -177,11 +187,6 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/08/05/Windows-SSH%E7%99%BB%E5%BD%95%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94/</loc>
-    <lastmod>2015-08-05T03:32:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://hhstore.github.io/books/index.html</loc>
     <lastmod>2015-07-20T11:46:29.000Z</lastmod>
   </url>
@@ -192,17 +197,12 @@
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/06/24/github-hexo-build-blog/</loc>
-    <lastmod>2015-07-09T04:11:22.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hhstore.github.io/2015/07/07/Ubuntu14.04%E5%AE%89%E8%A3%85Docker%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://hhstore.github.io/2015/07/07/Ubuntu14.04-install-docker/</loc>
     <lastmod>2015-07-07T13:31:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://hhstore.github.io/2015/07/03/Ubuntu%E9%83%A8%E7%BD%B2uwsgi%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    <loc>http://hhstore.github.io/2015/07/03/ubuntu-config-uwsgi-fix-issues/</loc>
     <lastmod>2015-07-03T13:00:04.000Z</lastmod>
   </url>
   
