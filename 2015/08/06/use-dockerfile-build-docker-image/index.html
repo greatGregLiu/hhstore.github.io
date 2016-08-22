@@ -140,6 +140,14 @@
         </li>
       
         
+        <li class="menu-item menu-item-translation">
+          <a href="/translation">
+            <i class="menu-item-icon icon-translation"></i> <br />
+            译文
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tools">
           <a href="/tools">
             <i class="menu-item-icon icon-tools"></i> <br />
@@ -284,7 +292,7 @@
 <h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
 <p>Dockerfile 文件内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag"><span class="keyword">note</span></span>:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
 <h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
 <h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
 <ul>
@@ -309,13 +317,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/06/docker-mac-osx-dev-env-build/">Mac搭建Docker开发环境</a>
+              <a href="/2015/08/06/mac-osx-text-edit-tools-diff/">Mac文本比较工具推荐</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/06/python-lib-uwsgi/">Python常用包 - uwsgi 使用总结</a>
+              <a href="/2015/08/06/docker-mac-osx-dev-env-build/">Mac搭建Docker开发环境</a>
             
           </div>
         </div>
@@ -406,14 +414,14 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
