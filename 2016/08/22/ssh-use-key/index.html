@@ -24,7 +24,7 @@
 
 
 
-  <meta name="keywords" content="Python,pip,virtualenv," />
+  <meta name="keywords" content="SSH,Ubuntu," />
 
 
 
@@ -59,7 +59,7 @@
 
 
 
-  <title> Python常用包 - virtualenv 使用 // hhstore's blog </title>
+  <title> SSH 使用 SSH-KEY 登录, 并禁用密码登录 // hhstore's blog </title>
 </head>
 
 
@@ -232,7 +232,7 @@
           
           
             
-              Python常用包 - virtualenv 使用
+              SSH 使用 SSH-KEY 登录, 并禁用密码登录
             
           
         </h1>
@@ -240,14 +240,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-07-02
+          发表于 2016-08-22
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/Python/">Python</a>
+              <a href="/categories/Tools/">Tools</a>
 
               
               
@@ -260,8 +260,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/07/02/python-tool-virtualenv/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/02/python-tool-virtualenv/"></span>
+            <a href="/2016/08/22/ssh-use-key/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/22/ssh-use-key/"></span>
             </a>
           </span>
           
@@ -286,97 +286,52 @@
       
 
       
-        <p>介绍virtualenv的安装和使用,以及配合pip的技巧运用.</p>
+        <p>SSH 使用 SSH-KEY 登录, 并禁用密码登录的配置方法.</p>
 <a id="more"></a>
-<h2 id="1-virtualenv简介">1.virtualenv简介</h2><h3 id="1-1_问题需求:">1.1 问题需求:</h3><ul>
-<li>在python开发中,经常涉及不同项目,依赖不同的python版本(2.7或者3.4),又或者依赖不同的第三方包.甚至可能涉及多个版本.</li>
-<li>项目开发中,开发环境,测试环境,线上部署环境.可能依赖不同的配置.很多时候,开发机可能安装了很多包,而线上部署,可能只需要很小的子集.</li>
+<h2 id="0-_更改_SSH_登录的背景:">0. 更改 SSH 登录的背景:</h2><ul>
+<li>最近查看阿里云主机的后台监控日志, 发现有被攻击, 查了下 log 详情.</li>
+<li>发现有人在对主机 SSH 登录端口22, 做暴力验证, 已经攻击了几天了, 瞬间吓尿有木有.</li>
+<li>赶紧把 SSH 登录的口令方式禁掉, 切到 密钥对方式登录.</li>
+<li>安全意识, 还是要提高, 懒癌要不得. 果断把其他几台主机, 都改了.</li>
 </ul>
-<h3 id="1-2_解决方案:_virtualenv">1.2 解决方案: virtualenv</h3><ul>
-<li>virtualenv 为每个不同项目提供一份 Python 安装.它并没有真正安装多个 Python 副本,但是它确实提供了一种巧妙的方式来让各项目环境保持独立.</li>
-<li>virtualenv,类似”python”中的虚拟机.</li>
-<li>可以对单一项目,在项目中,创建一个虚拟python开发环境.</li>
-<li>将该项目依赖的包,单独安装在该”虚拟环境”中,实现和其他项目隔离.</li>
-<li>该项目中,安装的python版本,不会和OS系统冲突.</li>
-<li>每次使用,都需要在项目中,激活该”虚拟环境”.</li>
-<li>使用完,退出”虚拟环境”.</li>
+<h2 id="1-_SSH_登录方式:">1. SSH 登录方式:</h2><ul>
+<li>密码口令登录: 简单, 但是不安全, 公网主机,容易被攻击.</li>
+<li>SSH-KEY 登录: 需要设置</li>
 </ul>
-<h2 id="2-安装virtualenv">2.安装virtualenv</h2><h3 id="2-1_使用pip安装">2.1 使用pip安装</h3><ul>
-<li>确认已经安装pip 包管理工具.</li>
-<li>执行如下命令安装.</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv</span><br></pre></td></tr></table></figure>
-<h3 id="2-2_使用系统包管理工具安装(Mac/Ubuntu)">2.2 使用系统包管理工具安装(Mac/Ubuntu)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv-virtualenv             <span class="comment"># Mac下,采用homebrew方式安装</span></span><br><span class="line"></span><br><span class="line">sudo apt-get install python-virtualenv    <span class="comment"># ubuntu下,采用apt-get方式安装</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-使用方法-">3.使用方法.</h2><ul>
-<li>假定当前有个项目名为: my_project_folder</li>
-<li>特别提醒: 项目中,每次使用virtualenv,都要先激活,否则默认使用系统的python环境.</li>
-<li>激活后,所有操作,都是在虚拟环境中.</li>
-</ul>
-<h3 id="3-1_在项目中,创建虚拟环境-">3.1 在项目中,创建虚拟环境.</h3><ul>
-<li>创建虚拟环境.有两种方式.</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my_project_folder                    <span class="comment"># 切换至项目目录</span></span><br><span class="line"></span><br><span class="line">方式<span class="number">1</span>: 使用 主机默认python版本,创建</span><br><span class="line">virtualenv venv                         <span class="comment"># 创建虚拟环境安装目录"venv".</span></span><br><span class="line"></span><br><span class="line">方式<span class="number">2</span>: 指定python版本(路径),创建</span><br><span class="line">virtualenv -p /usr/bin/python2.<span class="number">7</span> venv   <span class="comment"># 指定使用python2.7创建一个 项目虚拟环境.</span></span><br><span class="line"></span><br><span class="line">方式<span class="number">3</span>: 不依赖系统环境中已有的site package(即系统已安装的python包)</span><br><span class="line">virtualenv --no-site-packages venv  <span class="comment"># 加上参数 --no-site-packages.</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>执行上述命令,项目中,多出一个名为”venv”的文件夹.</li>
-<li>该文件夹,会从”宿主主机”,根据创建方式,拷贝一份”python环境”.</li>
-<li>该虚拟环境中,默认已安装pip.</li>
-</ul>
-<h3 id="3-2_在项目中,使用虚拟环境-">3.2 在项目中,使用虚拟环境.</h3><ul>
-<li>在 my_project_folder 目录下,执行:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> venv/bin/activate   <span class="comment"># 激活项目中的虚拟环境, venv为 创建虚拟环境时,给定名称</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>执行该命令后,终端(Mac/Linux)终端提示,会多出(venv)前缀,可作标志:</li>
-</ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(venv)<span class="constant">Your</span>-<span class="constant">Computer</span><span class="symbol">:your_project</span> <span class="constant">UserName</span><span class="variable">$)</span>&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>该(venv)前缀标志,代表之后的所有操作,都是对该虚拟环境进行的.</li>
-<li>比如再执行pip 安装包, 都将会 安装在该虚拟环境,而不是主机的全局环境.</li>
-</ul>
-<h3 id="3-3_执行操作-">3.3 执行操作.</h3><ul>
-<li>接上,执行如下操作,都将是在该项目的虚拟环境下.</li>
-</ul>
-<h4 id="3-3-1_安装开发包">3.3.1 安装开发包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install flask   <span class="comment"># 安装flask包</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-3-2_运行项目">3.3.2 运行项目</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python xxx.py</span><br></pre></td></tr></table></figure>
-<h3 id="3-4_结束虚拟环境-">3.4 结束虚拟环境.</h3><ul>
-<li>项目运行结束,执行如下命令:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate      <span class="comment"># 退出项目的 virtualenv 虚拟环境.</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-5_生成可打包环境">3.5 生成可打包环境</h3><ul>
-<li>某些特殊需求下,可能没有网络, 我们期望直接打包一个ENV, 可以解压后直接使用, 这时候可以使用virtualenv -relocatable指令将ENV修改为可更改位置的ENV</li>
-<li><a href="http://andrewliu.tk/2014/12/08/Virtualenv%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" target="_blank" rel="external">参考</a></li>
-</ul>
-<h3 id="3-6_查看帮助">3.6 查看帮助</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -h</span><br></pre></td></tr></table></figure>
-<h2 id="4-使用技巧(pip_+_virtualenv)">4.使用技巧(pip + virtualenv)</h2><p>经常有这样一种需求:就是把项目发布,需要知道项目依赖哪些包.</p>
-<h3 id="4-1_pip的常用操作-">4.1 pip的常用操作.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">导出:</span><br><span class="line">pip freeze &gt; requirements.txt   <span class="comment"># 导出项目依赖的包到requirements.txt文件</span></span><br><span class="line"></span><br><span class="line">批量安装:</span><br><span class="line">pip install -r requirements.txt  <span class="comment"># 从依赖文件,批量安装包.</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-2_配合virtualenv使用-">4.2 配合virtualenv使用.</h3><ul>
-<li><p>这里为何一定要用virtualenv呢?因为如果没有使用virtualenv,上述pip freeze操作,会将主机安装过的所有python包,都导出.这显然不是我们需要的.</p>
-</li>
-<li><p>对单一的项目,如果没有virtualenv,将导出一堆用不到的包.</p>
-</li>
-<li>有了virtualenv,就可以先激活项目中的virtualenv,再执行pip freeze操作.这样就可以保证获取到的都是项目依赖(无冗余).</li>
-</ul>
-<h2 id="5-使用virtualenvwrapper(略)">5.使用virtualenvwrapper(略)</h2><ul>
-<li>Virtaulenvwrapper是virtualenv的扩展包，用于更方便管理虚拟环境，个人感觉不太需要,想多了解,可参考如下文档.</li>
-<li><p>Virtaulenvwrapper特点：</p>
-<ul>
-<li><ol>
-<li>将所有虚拟环境整合在一个目录下</li>
+<h2 id="2-_使用_SSH-KEY_登录配置原理:">2. 使用 SSH-KEY 登录配置原理:</h2><ol>
+<li>本机(Mac or winPC), 生成 SSH-KEY(公钥 id_rsa.pub 和私钥 id_rsa)</li>
+<li>远程主机(Ubuntu), 创建目录和文件: ~/.ssh/authorized_keys</li>
+<li>将本机(Mac or winPC)公钥 id_rsa.pub 内容拷贝并添加到 远程主机(Ubuntu)的 authorized_keys 文件中</li>
+<li>本机, 使用 SSH 登录工具(如 ZOC), 输入用户名, 勾选本机 SSH-KEY 私钥, 连接远程主机.</li>
 </ol>
-</li>
-<li><ol>
-<li>管理（新增，删除，复制）虚拟环境</li>
-</ol>
-</li>
-<li><ol>
-<li>切换虚拟环境</li>
-</ol>
-</li>
-<li><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank" rel="external">官方文档参考</a></li>
+<h2 id="3-_配置过程:">3. 配置过程:</h2><h3 id="3-1_Mac_本机生成_SSH-KEY:">3.1 Mac 本机生成 SSH-KEY:</h3><ul>
+<li>略</li>
+<li>路径: ~/.ssh/</li>
+<li>私钥: ~/.ssh/id_rsa</li>
+<li>公钥: ~/.ssh/id_rsa.pub</li>
 </ul>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># ssh-keygen:生成秘钥对</span></span><br><span class="line"><span class="comment"># 其中：</span></span><br><span class="line"><span class="comment">#  -t指定算法</span></span><br><span class="line"><span class="comment">#  -f 指定生成秘钥路径</span></span><br><span class="line"><span class="comment">#  -N 指定密码</span></span><br><span class="line">ssh-keygen -t rsa </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地公钥, 上传到远程主机:</span></span><br><span class="line">scp ~/.ssh/id_rsa.pub root@<span class="number">192.168</span>.<span class="number">1.3</span>:~/.ssh/</span><br></pre></td></tr></table></figure>
+<h3 id="3-2_远程主机创建-ssh_目录">3.2 远程主机创建.ssh 目录</h3><ul>
+<li>文件和目录的权限千万别设置成chmod 777.这个权限太大了，不安全，数字签名也不支持</li>
+<li>本机生成的rsa/dsa签名的公钥, 是给远程主机使用的. 公钥内容, 要拷贝到远程主机的.ssh/authorized_keys中</li>
 </ul>
-<h2 id="6-pip常用操作">6.pip常用操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo pip install flask             <span class="comment"># 单一安装flask包</span></span><br><span class="line">pip install -r requirements.txt    <span class="comment"># 批量安装python包</span></span><br><span class="line">pip list                           <span class="comment"># 查看环境中,已安装的所有python包</span></span><br><span class="line">pip freeze &gt; requirements.txt      <span class="comment"># 导出环境中,已安装所有包至配置文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 创建目录:</span></span><br><span class="line">cd ~</span><br><span class="line">mkdir .ssh</span><br><span class="line">chmod <span class="number">700</span> .ssh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件:</span></span><br><span class="line">cd .ssh</span><br><span class="line">touch authorized_keys</span><br><span class="line">chmod <span class="number">600</span> authorized_keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入公钥内容:</span></span><br><span class="line">echo <span class="string">'ssh-rsa public '</span> <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入方法2:(该公钥,是有本地主机, 上传到远程主机上的)</span></span><br><span class="line">cat ~<span class="regexp">/.ssh/id</span>_dsa.pub <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys</span><br></pre></td></tr></table></figure>
+<h3 id="3-3_本机SSH_连接远程主机:">3.3 本机SSH 连接远程主机:</h3><ul>
+<li>ZOC 连接,设置步骤略.</li>
+<li>尝试连接, 若成功.则进行下一步,禁用密码登录方式.</li>
+</ul>
+<h3 id="3-4_禁用_SSH_的密码登录方式:">3.4 禁用 SSH 的密码登录方式:</h3><ul>
+<li>修改: vim /etc/ssh/sshd_config</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#禁用密码验证</span></span><br><span class="line">PasswordAuthentication no</span><br><span class="line"></span><br><span class="line"><span class="comment">#启用密钥验证</span></span><br><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定公钥数据库文件</span></span><br><span class="line">AuthorsizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重启 SSH 服务, 重新使用  SSH 口令方式登录远程主机, 验证是否已成功禁用</li>
+<li>若提示: [SSH] FAIL: Permission denied (publickey). 则表明禁用成功.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#RHEL/CentOS系统</span></span><br><span class="line">service sshd restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#ubuntu系统</span></span><br><span class="line">service ssh restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#debian系统</span></span><br><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<h2 id="4-_参考:">4. 参考:</h2><ul>
+<li><a href="https://linux.cn/article-5776-1.html" target="_blank" rel="external">SSH 使用密钥登录并禁止口令登录实践</a></li>
+</ul>
 
       
     </div>
@@ -385,11 +340,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/"> #Python </a>
+            <a href="/tags/SSH/"> #SSH </a>
           
-            <a href="/tags/pip/"> #pip </a>
-          
-            <a href="/tags/virtualenv/"> #virtualenv </a>
+            <a href="/tags/Ubuntu/"> #Ubuntu </a>
           
         </div>
       
@@ -398,13 +351,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/03/python-lib-sqlalchemy/">Python常用包 - Sqlalchemy 使用</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/27/mongodb-notes/">MongoDB学习笔记</a>
+              <a href="/2016/08/12/aliyun-deploy-zentao-manual/">阿里云部署禅道系统步骤</a>
             
           </div>
         </div>
@@ -447,8 +398,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/07/02/python-tool-virtualenv/"
-               data-title="Python常用包 - virtualenv 使用" data-url="http://hhstore.github.io/2015/07/02/python-tool-virtualenv/">
+          <div class="ds-thread" data-thread-key="2016/08/22/ssh-use-key/"
+               data-title="SSH 使用 SSH-KEY 登录, 并禁用密码登录" data-url="http://hhstore.github.io/2016/08/22/ssh-use-key/">
           </div>
         
       </div>
@@ -564,7 +515,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-virtualenv简介"><span class="nav-text">1.virtualenv简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1_问题需求:"><span class="nav-text">1.1 问题需求:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2_解决方案:_virtualenv"><span class="nav-text">1.2 解决方案: virtualenv</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装virtualenv"><span class="nav-text">2.安装virtualenv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_使用pip安装"><span class="nav-text">2.1 使用pip安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_使用系统包管理工具安装(Mac/Ubuntu)"><span class="nav-text">2.2 使用系统包管理工具安装(Mac/Ubuntu)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用方法-"><span class="nav-text">3.使用方法.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_在项目中,创建虚拟环境-"><span class="nav-text">3.1 在项目中,创建虚拟环境.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_在项目中,使用虚拟环境-"><span class="nav-text">3.2 在项目中,使用虚拟环境.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3_执行操作-"><span class="nav-text">3.3 执行操作.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1_安装开发包"><span class="nav-text">3.3.1 安装开发包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2_运行项目"><span class="nav-text">3.3.2 运行项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4_结束虚拟环境-"><span class="nav-text">3.4 结束虚拟环境.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5_生成可打包环境"><span class="nav-text">3.5 生成可打包环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6_查看帮助"><span class="nav-text">3.6 查看帮助</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-使用技巧(pip_+_virtualenv)"><span class="nav-text">4.使用技巧(pip + virtualenv)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1_pip的常用操作-"><span class="nav-text">4.1 pip的常用操作.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2_配合virtualenv使用-"><span class="nav-text">4.2 配合virtualenv使用.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-使用virtualenvwrapper(略)"><span class="nav-text">5.使用virtualenvwrapper(略)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-pip常用操作"><span class="nav-text">6.pip常用操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-_更改_SSH_登录的背景:"><span class="nav-text">0. 更改 SSH 登录的背景:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_SSH_登录方式:"><span class="nav-text">1. SSH 登录方式:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_使用_SSH-KEY_登录配置原理:"><span class="nav-text">2. 使用 SSH-KEY 登录配置原理:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_配置过程:"><span class="nav-text">3. 配置过程:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_Mac_本机生成_SSH-KEY:"><span class="nav-text">3.1 Mac 本机生成 SSH-KEY:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_远程主机创建-ssh_目录"><span class="nav-text">3.2 远程主机创建.ssh 目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3_本机SSH_连接远程主机:"><span class="nav-text">3.3 本机SSH 连接远程主机:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4_禁用_SSH_的密码登录方式:"><span class="nav-text">3.4 禁用 SSH 的密码登录方式:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_参考:"><span class="nav-text">4. 参考:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

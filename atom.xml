@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Python]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hhstore.github.io//"/>
-  <updated>2016-08-22T06:55:32.000Z</updated>
+  <updated>2016-08-24T10:08:56.000Z</updated>
   <id>http://hhstore.github.io//</id>
   
   <author>
@@ -16,17 +16,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[page]]></title>
-    <link href="http://hhstore.github.io/2016/08/22/page/"/>
-    <id>http://hhstore.github.io/2016/08/22/page/</id>
+    <title><![CDATA[SSH 使用 SSH-KEY 登录, 并禁用密码登录]]></title>
+    <link href="http://hhstore.github.io/2016/08/22/ssh-use-key/"/>
+    <id>http://hhstore.github.io/2016/08/22/ssh-use-key/</id>
     <published>2016-08-22T06:55:32.000Z</published>
-    <updated>2016-08-22T06:55:32.000Z</updated>
-    <content type="html"><![CDATA[<p>文章摘要部分</p>
-<a id="more"></a>]]></content>
+    <updated>2016-08-24T10:08:56.000Z</updated>
+    <content type="html"><![CDATA[<p>SSH 使用 SSH-KEY 登录, 并禁用密码登录的配置方法.</p>
+<a id="more"></a>
+<h2 id="0-_更改_SSH_登录的背景:">0. 更改 SSH 登录的背景:</h2><ul>
+<li>最近查看阿里云主机的后台监控日志, 发现有被攻击, 查了下 log 详情.</li>
+<li>发现有人在对主机 SSH 登录端口22, 做暴力验证, 已经攻击了几天了, 瞬间吓尿有木有.</li>
+<li>赶紧把 SSH 登录的口令方式禁掉, 切到 密钥对方式登录.</li>
+<li>安全意识, 还是要提高, 懒癌要不得. 果断把其他几台主机, 都改了.</li>
+</ul>
+<h2 id="1-_SSH_登录方式:">1. SSH 登录方式:</h2><ul>
+<li>密码口令登录: 简单, 但是不安全, 公网主机,容易被攻击.</li>
+<li>SSH-KEY 登录: 需要设置</li>
+</ul>
+<h2 id="2-_使用_SSH-KEY_登录配置原理:">2. 使用 SSH-KEY 登录配置原理:</h2><ol>
+<li>本机(Mac or winPC), 生成 SSH-KEY(公钥 id_rsa.pub 和私钥 id_rsa)</li>
+<li>远程主机(Ubuntu), 创建目录和文件: ~/.ssh/authorized_keys</li>
+<li>将本机(Mac or winPC)公钥 id_rsa.pub 内容拷贝并添加到 远程主机(Ubuntu)的 authorized_keys 文件中</li>
+<li>本机, 使用 SSH 登录工具(如 ZOC), 输入用户名, 勾选本机 SSH-KEY 私钥, 连接远程主机.</li>
+</ol>
+<h2 id="3-_配置过程:">3. 配置过程:</h2><h3 id="3-1_Mac_本机生成_SSH-KEY:">3.1 Mac 本机生成 SSH-KEY:</h3><ul>
+<li>略</li>
+<li>路径: ~/.ssh/</li>
+<li>私钥: ~/.ssh/id_rsa</li>
+<li>公钥: ~/.ssh/id_rsa.pub</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># ssh-keygen:生成秘钥对</span></span><br><span class="line"><span class="comment"># 其中：</span></span><br><span class="line"><span class="comment">#  -t指定算法</span></span><br><span class="line"><span class="comment">#  -f 指定生成秘钥路径</span></span><br><span class="line"><span class="comment">#  -N 指定密码</span></span><br><span class="line">ssh-keygen -t rsa </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地公钥, 上传到远程主机:</span></span><br><span class="line">scp ~/.ssh/id_rsa.pub root@<span class="number">192.168</span>.<span class="number">1.3</span>:~/.ssh/</span><br></pre></td></tr></table></figure>
+<h3 id="3-2_远程主机创建-ssh_目录">3.2 远程主机创建.ssh 目录</h3><ul>
+<li>文件和目录的权限千万别设置成chmod 777.这个权限太大了，不安全，数字签名也不支持</li>
+<li>本机生成的rsa/dsa签名的公钥, 是给远程主机使用的. 公钥内容, 要拷贝到远程主机的.ssh/authorized_keys中</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 创建目录:</span></span><br><span class="line">cd ~</span><br><span class="line">mkdir .ssh</span><br><span class="line">chmod <span class="number">700</span> .ssh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件:</span></span><br><span class="line">cd .ssh</span><br><span class="line">touch authorized_keys</span><br><span class="line">chmod <span class="number">600</span> authorized_keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入公钥内容:</span></span><br><span class="line">echo <span class="string">'ssh-rsa public '</span> <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入方法2:(该公钥,是有本地主机, 上传到远程主机上的)</span></span><br><span class="line">cat ~<span class="regexp">/.ssh/id</span>_dsa.pub <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys</span><br></pre></td></tr></table></figure>
+<h3 id="3-3_本机SSH_连接远程主机:">3.3 本机SSH 连接远程主机:</h3><ul>
+<li>ZOC 连接,设置步骤略.</li>
+<li>尝试连接, 若成功.则进行下一步,禁用密码登录方式.</li>
+</ul>
+<h3 id="3-4_禁用_SSH_的密码登录方式:">3.4 禁用 SSH 的密码登录方式:</h3><ul>
+<li>修改: vim /etc/ssh/sshd_config</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#禁用密码验证</span></span><br><span class="line">PasswordAuthentication no</span><br><span class="line"></span><br><span class="line"><span class="comment">#启用密钥验证</span></span><br><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定公钥数据库文件</span></span><br><span class="line">AuthorsizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重启 SSH 服务, 重新使用  SSH 口令方式登录远程主机, 验证是否已成功禁用</li>
+<li>若提示: [SSH] FAIL: Permission denied (publickey). 则表明禁用成功.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#RHEL/CentOS系统</span></span><br><span class="line">service sshd restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#ubuntu系统</span></span><br><span class="line">service ssh restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#debian系统</span></span><br><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<h2 id="4-_参考:">4. 参考:</h2><ul>
+<li><a href="https://linux.cn/article-5776-1.html" target="_blank" rel="external">SSH 使用密钥登录并禁止口令登录实践</a></li>
+</ul>
+]]></content>
     <summary type="html">
-    <![CDATA[<p>文章摘要部分</p>]]>
+    <![CDATA[<p>SSH 使用 SSH-KEY 登录, 并禁用密码登录的配置方法.</p>]]>
     
     </summary>
+    
+      <category term="SSH" scheme="http://hhstore.github.io/tags/SSH/"/>
+    
+      <category term="Ubuntu" scheme="http://hhstore.github.io/tags/Ubuntu/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
     
   </entry>
   
@@ -717,38 +768,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Docker: 利用Dockerfile制作Image]]></title>
-    <link href="http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/"/>
-    <id>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</id>
-    <published>2015-08-06T08:12:10.000Z</published>
-    <updated>2016-08-13T06:59:02.000Z</updated>
-    <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
-<a id="more"></a>
-<h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
-<h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
-<p>Dockerfile 文件内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
-<h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
-<h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://tech.uc.cn/?p=2726" target="_blank" rel="external">参考1: 这篇很详细</a></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>]]>
-    
-    </summary>
-    
-      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
-    
-      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
-    
-      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Mac搭建Docker开发环境]]></title>
     <link href="http://hhstore.github.io/2015/08/06/docker-mac-osx-dev-env-build/"/>
     <id>http://hhstore.github.io/2015/08/06/docker-mac-osx-dev-env-build/</id>
@@ -805,6 +824,38 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>记录Mac搭建Docker开发环境过程.</p>]]>
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hhstore.github.io/tags/Docker/"/>
+    
+      <category term="Mac" scheme="http://hhstore.github.io/tags/Mac/"/>
+    
+      <category term="Tools" scheme="http://hhstore.github.io/categories/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Docker: 利用Dockerfile制作Image]]></title>
+    <link href="http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/"/>
+    <id>http://hhstore.github.io/2015/08/06/use-dockerfile-build-docker-image/</id>
+    <published>2015-08-06T08:12:10.000Z</published>
+    <updated>2016-08-13T06:59:02.000Z</updated>
+    <content type="html"><![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>
+<a id="more"></a>
+<h3 id="更新_docker_版本">更新 docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 卸载docker：</span></span><br><span class="line">apt-get purge lxc-docker</span><br><span class="line">apt-get autoremove</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新docker,单纯更新，可以不用卸载:</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install lxc-docker</span><br></pre></td></tr></table></figure>
+<h3 id="利用Dockerfile制作image-">利用Dockerfile制作image.</h3><p>依赖源ubuntu14.04大小为200M.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dl.dockerpool.com:<span class="number">5000</span>/ubuntu   <span class="number">14.04</span>   <span class="number">5506</span>de2b643b   <span class="number">9</span> months ago     <span class="number">199.3</span> MB</span><br></pre></td></tr></table></figure>
+<p>Dockerfile 文件内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"><span class="comment"># VERSION 0.0.1</span></span><br><span class="line"><span class="comment"># date: 2015-02-03</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># note:</span></span><br><span class="line"><span class="comment"># install gcc, g++, python, ruby, go, perl, java.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># build_image:</span></span><br><span class="line"><span class="comment"># docker build --rm -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># docker build -t codebox:dev201508 .</span></span><br><span class="line"><span class="comment"># -t : 添加tag</span></span><br><span class="line"><span class="comment"># –rm: 完成image构建后,删除临时Container，</span></span><br><span class="line"><span class="comment"># Dockerfile的每一行指令都会创建一个临时的Container，一般不需要这些临时生成的Container.</span></span><br><span class="line"><span class="comment"># *******************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FROM base</span></span><br><span class="line">FROM dl.dockerpool.com:<span class="number">5000</span>/ubuntu:<span class="number">14.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加作者签名</span></span><br><span class="line">MAINTAINER hhstore</span><br><span class="line"></span><br><span class="line"><span class="comment"># install compile environment.</span></span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y build-essential</span><br><span class="line">RUN apt-get install -y gcc-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y g++-<span class="number">4.8</span></span><br><span class="line">RUN apt-get install -y python</span><br><span class="line">RUN apt-get install -y ruby</span><br><span class="line">RUN apt-get install -y perl</span><br><span class="line">RUN apt-get install -y openjdk-<span class="number">7</span>-jdk</span><br><span class="line">RUN apt-get install -y golang</span><br></pre></td></tr></table></figure>
+<h3 id="本地分发Docker-image">本地分发Docker-image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包image, 如果比较大,要耐心等一会.</span></span><br><span class="line">docker save codebox &gt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并装载image</span></span><br><span class="line">docker load &lt; ~/codebox.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看导入成功</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行image</span></span><br><span class="line">sudo docker run -i -t codebox /bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="删除image">删除image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性删除所有的镜像</span></span><br><span class="line">sudo docker rmi <span class="operator">-f</span> $(docker images -q)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://tech.uc.cn/?p=2726" target="_blank" rel="external">参考1: 这篇很详细</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>记录利用Dockerfile制作Docker Image的过程.</p>]]>
     
     </summary>
     
